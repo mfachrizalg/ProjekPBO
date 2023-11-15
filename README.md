@@ -1,6 +1,6 @@
 # Aplikasi Modul Pemrograman Dasar
 
-## Nama Kelompok = SEPUHHH
+## Kelompok SEPUHHH
 
 NIM & Nama Anggota:
 | NIM                    | Nama                                  |
