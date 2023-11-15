@@ -1,6 +1,6 @@
-#Aplikasi Modul Pemrograman Dasar
+# Aplikasi Modul Pemrograman Dasar
 
-##Nama Kelompok = SEPUHHH
+## Nama Kelompok = SEPUHHH
 
 NIM & Nama Anggota:
 | NIM                    | Nama                                  |
@@ -10,5 +10,5 @@ NIM & Nama Anggota:
 
 
 
-#SDGS :
-#No. 4 : Quality Education
+# SDGS :
+# No. 4 : Quality Education
