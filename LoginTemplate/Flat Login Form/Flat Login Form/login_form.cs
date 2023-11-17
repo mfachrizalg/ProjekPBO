@@ -19,7 +19,7 @@ namespace Flat_Login_Form
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Implementasi\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ProjekPBO\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,7 +54,6 @@ namespace Flat_Login_Form
 
         private void guna2HtmlLabel4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -181,6 +180,11 @@ namespace Flat_Login_Form
             this.Hide();
             Form1 f1 = new Form1();
             f1.Show();
+        }
+
+        private void guna2GradientPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
