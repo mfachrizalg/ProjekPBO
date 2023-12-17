@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace LoginRegister
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ProjekPBO\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -84,10 +85,9 @@ namespace LoginRegister
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-           String username, password;
+            String username, password;
             username = guna2TextBox1.Text;
             password = guna2TextBox2.Text;
-
             conn.Open();
 
             try
@@ -110,9 +110,13 @@ namespace LoginRegister
                             password = guna2TextBox2.Text;
 
                             MessageBox.Show("Login Successful");
-
+                            var level1 = new lvl1();
+                            var row = dt.Rows[0];
+                            level1.Username = row["username"].ToString();
                             guna2TextBox1.Clear();
                             guna2TextBox2.Clear();
+                            this.Hide();
+                            level1.Show();
 
                         }
                         else
