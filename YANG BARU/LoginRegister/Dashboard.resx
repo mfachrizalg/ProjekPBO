@@ -117,68 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gray settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray profile2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray profile2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-username-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-username-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray profile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray settings2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray settings2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-username-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-username-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dashboard 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dashboard 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white dash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white dash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-password-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-password-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3484567" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3484567.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray settings1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray settings1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="business_3d_young_women_looking_at_smartphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\business-3d-young-women-looking-at-smartphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray dash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray dash1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAftJREFUeF7tmlFOwzAMhnchhBg8IOAAICGWtHfjgYFgXBLaIoHdxmiKtrRb3TrJ
+        /EkRUxpif386YGMLRVEURVEUpYfa2msYb5W1z9VqdeamowH6Oq+L4gXGpjbmzk3zgPJQoILNf3FURfHd
+        GPPoLouDvWBPW/01rCHgydPm/0UgkBhCaOW3DmdrbNyS8cBmeGv5BcTvBP/kvbHuVjEACS/3FZIKISSP
+        81VZXnQrmWisvYcgvnYWhFvw25iVWzo5IP8Q7MXaJ7eUlxhCEJMnJEMQlyckQohGnpgzhOjkid4QGBqb
+        o8YopmwwenliikaTkSc4G05OnuBoPFl5YoxA8vLEMSLZyBOHCGUnTwwRy1aegL/iwi9bA9fwe9tNUid0
+        yrtGFifvMzSELOWJvhCylkdOOoCTfgqc9A/Bk/41GDp5OuUha9x2aXGIWHYhHCOUTQhjRJIPgUMg2RA4
+        37ruDWHGf8MNglOeSCaEKeSJ6EOYUp6INoQ55InoQphTnogmBAl5QjwESXlCLIQY5InZQ6jL8iq2l61Y
+        M9RTbcxlt5KB2tr3fYUk5IlQCPjZxm4VA7DZp18AbzVJeaINAXrx+4OeP9yS8eDHTqHID20uffI+/p0A
+        jxv4ettdZQJDwFRh4zWEsXTT0YA9QX+vbY9leeOmFUVRFEVRlN0sFn9PfBk9db1xZwAAAABJRU5ErkJg
+        gg==
+</value>
   </data>
 </root>
