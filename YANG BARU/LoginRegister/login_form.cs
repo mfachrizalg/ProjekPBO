@@ -19,7 +19,7 @@ namespace LoginRegister
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ProjekPBO\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {

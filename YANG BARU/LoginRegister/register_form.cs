@@ -17,7 +17,7 @@ namespace LoginRegister
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ProjekPBO\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
 
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,9 +172,10 @@ namespace LoginRegister
                         else
                         {
                             dr.Close();
-                            cmd = new SqlCommand("INSERT INTO Login values(@username,@password)", conn);
+                            cmd = new SqlCommand("INSERT INTO Login values(@username,@password, @userLevel)", conn);
                             cmd.Parameters.AddWithValue("@username", username);
                             cmd.Parameters.AddWithValue("@password", password);
+                            cmd.Parameters.AddWithValue("@userLevel", 1);
                             cmd.ExecuteNonQuery();
                             guna2TextBox1.Clear();
                             guna2TextBox2.Clear();
@@ -201,6 +202,11 @@ namespace LoginRegister
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             finally { conn.Close(); }
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
