@@ -17,7 +17,7 @@ namespace LoginRegister
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\acer\Documents\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\ProjekPBO\UserDB.mdf;Integrated Security=True;Connect Timeout=30");
 
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
