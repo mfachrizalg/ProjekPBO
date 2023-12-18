@@ -149,10 +149,11 @@ namespace LoginRegister
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            String email, password, confirm;
-            email = guna2TextBox1.Text;
+            String username, password, confirm, email;
+            username = guna2TextBox1.Text;
             password = guna2TextBox2.Text;
             confirm = guna2TextBox3.Text;
+            email = guna2TextBox4.Text;
 
             SqlDataReader dr;
             SqlCommand cmd;
@@ -161,11 +162,11 @@ namespace LoginRegister
 
             try
             {
-                if (email != string.Empty && password != string.Empty && confirm != string.Empty)
+                if (username != string.Empty && password != string.Empty && confirm != string.Empty && email != string.Empty)
                 {
                     if (password == confirm)
                     {
-                        cmd = new SqlCommand("SELECT * FROM Login WHERE username = '" + email + "'", conn);
+                        cmd = new SqlCommand("SELECT * FROM UserData WHERE username = '" + username + "'", conn);
                         dr = cmd.ExecuteReader();
 
                         if (dr.Read())
@@ -177,16 +178,17 @@ namespace LoginRegister
                         {
                             dr.Close();
                             cmd = new SqlCommand("INSERT INTO Login values(@username,@password, @userLevel)", conn);
-                            cmd.Parameters.AddWithValue("@username", email);
+                            cmd.Parameters.AddWithValue("@username", username);
+                            cmd.Parameters.AddWithValue("@email", email);
                             cmd.Parameters.AddWithValue("@password", password);
                             cmd.Parameters.AddWithValue("@userLevel", 1);
                             cmd.ExecuteNonQuery();
                             guna2TextBox1.Clear();
                             guna2TextBox2.Clear();
                             guna2TextBox3.Clear();
-                            if (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email))
+                            if (string.IsNullOrWhiteSpace(username) || !IsValidEmail(username))
                             {
-                                MessageBox.Show("Invalid or empty recipient email address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Invalid or empty recipient username address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                             else
@@ -215,9 +217,9 @@ namespace LoginRegister
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             finally { conn.Close(); }
             otp = GenerateOTP();
-            SendOTPToEmail(email,otp);
+            SendOTPToEmail(username,otp);
 
-            //MessageBox.Show("Account created successfully. Check your email for the OTP.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Account created successfully. Check your username for the OTP.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private string GenerateOTP()
         {

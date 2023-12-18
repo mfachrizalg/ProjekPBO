@@ -13,6 +13,14 @@
       "type": "mssql.azure",
       "connectionId": "UserDb",
       "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/southeastasia/connectors/ConnectionStringsUserTable_0EA13DD5B0",
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/pboapps/databases/User",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:UserTable",
+      "dynamicId": null
     }
   }
 }

@@ -8,6 +8,11 @@
       "type": "mssql",
       "connectionId": "UserDb",
       "dynamicId": null
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:UserTable",
+      "dynamicId": null
     }
   }
 }

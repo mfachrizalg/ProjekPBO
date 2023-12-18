@@ -92,7 +92,7 @@ namespace LoginRegister
 
             try
             {
-                String querry = "SELECT * FROM Login WHERE username = '" + guna2TextBox1.Text + "' AND password = '" + guna2TextBox2.Text + "'";
+                String querry = "SELECT * FROM UserData WHERE username = '" + guna2TextBox1.Text + "' AND password = '" + guna2TextBox2.Text + "'";
 
                 SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
@@ -113,7 +113,7 @@ namespace LoginRegister
                             var level1 = new lvl1();
                             var row = dt.Rows[0];
                             level1.Username = row["username"].ToString();
-                            level1.userLevel = row["userLevel"].ToString();
+                            level1.userLevel = (int)row["userLevel"];
                             guna2TextBox1.Clear();
                             guna2TextBox2.Clear();
                             this.Hide();
