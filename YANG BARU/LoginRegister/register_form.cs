@@ -289,7 +289,7 @@ namespace LoginRegister
                 return false;
             }
         }
-        /*private void ShowOTPInputPopup()
+       /* private void ShowOTPInputPopup()
         {
             using (Guna2TextBox txtOTPInput = new Guna2TextBox())
             using (Guna2Button btnVerify = new Guna2Button())
