@@ -113,6 +113,7 @@ namespace LoginRegister
                             var level1 = new lvl1();
                             var row = dt.Rows[0];
                             level1.Username = row["username"].ToString();
+                            level1.userLevel = row["userLevel"].ToString();
                             guna2TextBox1.Clear();
                             guna2TextBox2.Clear();
                             this.Hide();

@@ -249,7 +249,7 @@ namespace LoginRegister
                         smtp.EnableSsl = true;
                         smtp.Send(mail);
                     }
-                    ShowOTPInputPopup();
+                    //ShowOTPInputPopup();
                     MessageBox.Show("OTP sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 /*using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
@@ -289,7 +289,7 @@ namespace LoginRegister
                 return false;
             }
         }
-        private void ShowOTPInputPopup()
+        /*private void ShowOTPInputPopup()
         {
             using (Guna2TextBox txtOTPInput = new Guna2TextBox())
             using (Guna2Button btnVerify = new Guna2Button())
@@ -324,9 +324,9 @@ namespace LoginRegister
                     MessageBox.Show("OTP Verification Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
+        }*/
 
-        private void VerifyOTP(string enteredOTP)
+       /* private void VerifyOTP(string enteredOTP)
         {
             // Perform OTP verification logic here
             // For simplicity, compare the entered OTP with a static OTP "123456"
@@ -340,7 +340,7 @@ namespace LoginRegister
             {
                 MessageBox.Show("Invalid OTP. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {

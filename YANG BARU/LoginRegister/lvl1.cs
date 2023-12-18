@@ -16,6 +16,7 @@ namespace LoginRegister
     public partial class lvl1 : Form
     {
         public string Username { get; set; }
+        public int userLevel { get; set; }
         public lvl1()
         {
             InitializeComponent();
@@ -41,23 +42,36 @@ namespace LoginRegister
             {
                 MessageBox.Show("Benar!");
                 conn.Open();
+                MessageBox.Show(userLevel.ToString());
                 string query = "UPDATE Login SET userLevel = 2 WHERE username = '" + username  + "'";
-                using (SqlCommand command = new SqlCommand(query, conn))
+                if (userLevel < 2)
                 {
-                    command.Parameters.AddWithValue("@userLevel", (int)2);
 
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
+                    using (SqlCommand command = new SqlCommand(query, conn))
                     {
-                        MessageBox.Show("Level 2 Unlocked!");
+                        command.Parameters.AddWithValue("@userLevel", (int)2);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Level 2 Unlocked!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ga ke update bro");
+                        }
                     }
-                    else 
-                    {
-                        MessageBox.Show("Ga ke update bro");
-                    }
-                }   
+                }
+                else
+                {
+                    MessageBox.Show("Kamu pernah menyelesaikan level ini");
+                }
                 conn.Close();
-
+            }
+            else 
+            {
+                MessageBox.Show("Salah!");
+                box_answer.Clear();
             }
         }
     }
