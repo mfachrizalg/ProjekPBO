@@ -26,8 +26,6 @@ namespace LoginRegister
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -201,9 +199,7 @@ namespace LoginRegister
                             this.Hide();    
                             login_form f1 = new login_form();
                             f1.Show();
-
                         }
-
                     }
                     else
                     {
