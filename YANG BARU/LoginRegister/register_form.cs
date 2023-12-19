@@ -21,8 +21,8 @@ namespace LoginRegister
         {
             InitializeComponent();
         }
+        string conn_string = @"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True";
         SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
-
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -155,9 +155,6 @@ namespace LoginRegister
             confirm = guna2TextBox3.Text;
             email = guna2TextBox4.Text;
 
-            SqlDataReader dr;
-            SqlCommand cmd;
-
             conn.Open();
 
             try
@@ -165,37 +162,42 @@ namespace LoginRegister
                 if (username != string.Empty && password != string.Empty && confirm != string.Empty && email != string.Empty)
                 {
                     if (password == confirm)
-                    {
-                        cmd = new SqlCommand("SELECT * FROM UserData WHERE username = '" + username + "'", conn);
-                        dr = cmd.ExecuteReader();
-
-                        if (dr.Read())
+                    {      
+                        if (IsUsernameExist(conn_string, username))
                         {
-                            dr.Close();
                             MessageBox.Show("Username already exists", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        if (IsEmailExist(conn_string, email))
+                        {
+                            MessageBox.Show("Email already exists", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            dr.Close();
-                            cmd = new SqlCommand("INSERT INTO Login values(@username,@password, @userLevel)", conn);
-                            cmd.Parameters.AddWithValue("@username", username);
-                            cmd.Parameters.AddWithValue("@email", email);
-                            cmd.Parameters.AddWithValue("@password", password);
-                            cmd.Parameters.AddWithValue("@userLevel", 1);
-                            cmd.ExecuteNonQuery();
-                            guna2TextBox1.Clear();
-                            guna2TextBox2.Clear();
-                            guna2TextBox3.Clear();
-                            if (string.IsNullOrWhiteSpace(username) || !IsValidEmail(username))
+                            otp = GenerateOTP();
+                            SendOTPToEmail(email, otp);
+                            string userInput = ShowInputBox("Enter OTP", "OTP Verification");
+                            if (userInput == otp)
                             {
-                                MessageBox.Show("Invalid or empty recipient username address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
+                                MessageBox.Show("OTP Verified Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                InsertNewUser(conn_string, username, email, password);
+
+                                if (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email))
+                                {
+                                    MessageBox.Show("Invalid or empty recipient username address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Account created successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Account created successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("OTP Verification Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-
+                            guna2TextBox1.Clear();
+                            guna2TextBox2.Clear();
+                            guna2TextBox3.Clear();
                             this.Hide();    
                             login_form f1 = new login_form();
                             f1.Show();
@@ -216,16 +218,86 @@ namespace LoginRegister
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             finally { conn.Close(); }
-            otp = GenerateOTP();
-            SendOTPToEmail(username,otp);
+         
 
             //MessageBox.Show("Account created successfully. Check your username for the OTP.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        static bool IsUsernameExist(string conn, string username) 
+        {
+            using (SqlConnection connection = new SqlConnection(conn)) 
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM UserData WHERE username='" + username + "'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+                    return count > 0;
+                }
+            
+            }
+        }
+        static bool IsEmailExist(string conn, string email)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM UserData WHERE email='" + email + "'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", email);
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+                    return count > 0;
+                }
+
+            }
+        }
+        static void InsertNewUser(string conn, string username, string email, string password) 
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                connection.Open();
+                string query = "INSERT INTO UserData VALUES(@email, @username, @password, @userLevel)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@userLevel", 1);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
         private string GenerateOTP()
         {
             // Implement your OTP generation logic here
             // For example, you can use a random number or a time-based algorithm
             return new Random().Next(100000, 999999).ToString();
+        }
+        static string ShowInputBox(string prompt, string title)
+        {
+            Form promptForm = new Form()
+            {
+                Width = 400,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = title,
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = prompt };
+            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 300 };
+            Button confirmation = new Button() { Text = "OK", Left = 250, Width = 100, Top = 70, DialogResult = DialogResult.OK };
+
+            confirmation.Click += (sender, e) => { promptForm.Close(); };
+
+            promptForm.Controls.Add(textBox);
+            promptForm.Controls.Add(confirmation);
+            promptForm.Controls.Add(textLabel);
+
+            return promptForm.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
 
         private void SendOTPToEmail(string recipientEmail, string otp)
@@ -239,8 +311,8 @@ namespace LoginRegister
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
                     mail.Subject = "OTP Code";
-                    mail.Body = "<h1>Hello</h1>" +
-                        "\"Your OTP Code\", $\"Your OTP code is: {otp}\"";
+                    mail.Body = "<h1>Hello</h1>\n" +
+                        "Your OTP Code is " + otp ;
                     mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
 
