@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using Guna.UI2.WinForms;
+//using Google.Apis.Services;
+//using Google.Apis.YouTube.v3;
 
 namespace LoginRegister
 {
@@ -268,7 +270,6 @@ namespace LoginRegister
         }
         private string GenerateOTP()
         {
-            // Implement your OTP generation logic here
             // For example, you can use a random number or a time-based algorithm
             return new Random().Next(100000, 999999).ToString();
         }
@@ -306,10 +307,8 @@ namespace LoginRegister
                 {
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
-                    mail.Subject = "OTP Code";
-                    mail.Body = "<h1>Hello</h1>\n" +
-                        "Your OTP Code is " + otp ;
-                    mail.IsBodyHtml = true;
+                    mail.Subject = "Your Sign-in OTP";
+                    mail.Body = "This is your One-Time Passcode (OTP) : " + "<b>" + otp + "<b>";
                     mail.Priority = MailPriority.High;
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
@@ -359,6 +358,7 @@ namespace LoginRegister
                 return false;
             }
         }
+
        /* private void ShowOTPInputPopup()
         {
             using (Guna2TextBox txtOTPInput = new Guna2TextBox())

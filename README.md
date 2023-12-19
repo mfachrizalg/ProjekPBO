@@ -1,6 +1,6 @@
 # Aplikasi Modul Pemrograman Dasar
+### Kelompok SEPUHHH
 
-## Kelompok SEPUHHH
 
 NIM & Nama Anggota:
 | NIM                    | Nama                                  |
@@ -11,5 +11,7 @@ NIM & Nama Anggota:
 
 
 
+
+
 # SDGS
-## No. 4 : Quality Education
+### No. 4 : Quality Education

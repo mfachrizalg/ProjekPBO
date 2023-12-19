@@ -187,5 +187,10 @@ namespace LoginRegister
             register_form f1 = new register_form();
             f1.Show();
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
