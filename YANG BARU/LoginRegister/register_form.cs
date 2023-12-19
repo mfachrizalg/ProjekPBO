@@ -23,8 +23,8 @@ namespace LoginRegister
         {
             InitializeComponent();
         }
+        string conn_string = @"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True";
         SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
-
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -157,9 +157,6 @@ namespace LoginRegister
             confirm = guna2TextBox3.Text;
             email = guna2TextBox4.Text;
 
-            SqlDataReader dr;
-            SqlCommand cmd;
-
             conn.Open();
 
             try
@@ -167,30 +164,24 @@ namespace LoginRegister
                 if (username != string.Empty && password != string.Empty && confirm != string.Empty && email != string.Empty)
                 {
                     if (password == confirm)
-                    {
-                        cmd = new SqlCommand("SELECT * FROM UserData WHERE username = '" + username + "'", conn);
-                        dr = cmd.ExecuteReader();
-
-                        if (dr.Read())
+                    {      
+                        if (IsUsernameExist(conn_string, username))
                         {
-                            dr.Close();
                             MessageBox.Show("Username already exists", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        if (IsEmailExist(conn_string, email))
+                        {
+                            MessageBox.Show("Email already exists", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                            dr.Close();
                             otp = GenerateOTP();
                             SendOTPToEmail(email, otp);
                             string userInput = ShowInputBox("Enter OTP", "OTP Verification");
                             if (userInput == otp)
                             {
                                 MessageBox.Show("OTP Verified Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                cmd = new SqlCommand("INSERT INTO UserData values(@email,@username,@password,@userLevel)", conn);
-                                cmd.Parameters.AddWithValue("@email", email);
-                                cmd.Parameters.AddWithValue("@username", username);
-                                cmd.Parameters.AddWithValue("@password", password);
-                                cmd.Parameters.AddWithValue("@userLevel", 1);
-                                cmd.ExecuteNonQuery();
+                                InsertNewUser(conn_string, username, email, password);
 
                                 if (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email))
                                 {
@@ -232,6 +223,54 @@ namespace LoginRegister
          
 
             //MessageBox.Show("Account created successfully. Check your username for the OTP.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        static bool IsUsernameExist(string conn, string username) 
+        {
+            using (SqlConnection connection = new SqlConnection(conn)) 
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM UserData WHERE username='" + username + "'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+                    return count > 0;
+                }
+            
+            }
+        }
+        static bool IsEmailExist(string conn, string email)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM UserData WHERE email='" + email + "'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", email);
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+                    return count > 0;
+                }
+
+            }
+        }
+        static void InsertNewUser(string conn, string username, string email, string password) 
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                connection.Open();
+                string query = "INSERT INTO UserData VALUES(@email, @username, @password, @userLevel)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@userLevel", 1);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
         private string GenerateOTP()
         {
