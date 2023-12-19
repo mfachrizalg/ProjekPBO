@@ -113,6 +113,16 @@ namespace LoginRegister.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dot {
+            get {
+                object obj = ResourceManager.GetObject("dot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gray_dash {
             get {
                 object obj = ResourceManager.GetObject("gray dash", resourceCulture);
@@ -126,6 +136,26 @@ namespace LoginRegister.Properties {
         internal static System.Drawing.Bitmap gray_dash1 {
             get {
                 object obj = ResourceManager.GetObject("gray dash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_dot {
+            get {
+                object obj = ResourceManager.GetObject("gray dot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_playlist {
+            get {
+                object obj = ResourceManager.GetObject("gray playlist", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +246,16 @@ namespace LoginRegister.Properties {
         internal static System.Drawing.Bitmap icons8_username_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-username-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playlist {
+            get {
+                object obj = ResourceManager.GetObject("playlist", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

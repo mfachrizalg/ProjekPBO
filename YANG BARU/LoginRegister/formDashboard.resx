@@ -117,7 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="SidebarTrans.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Minimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAEBJREFUaEPtzrEJAEAIBEH7b9Ui/hPBxAbEGdjsggsAAAAATsrMt7G636bRhup+
+        m0YbqvttGm2o7gMAAABwScQHHXeyH/UbsS0AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -131,6 +141,14 @@
         M9RTbcxlt5KB2tr3fYUk5IlQCPjZxm4VA7DZp18AbzVJeaINAXrx+4OeP9yS8eDHTqHID20uffI+/p0A
         jxv4ettdZQJDwFRh4zWEsXTT0YA9QX+vbY9leeOmFUVRFEVRlN0sFn9PfBk9db1xZwAAAABJRU5ErkJg
         gg==
+</value>
+  </data>
+  <data name="Sidebar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHNJREFUeF7t2rENACAMA8HMkf33hCYlNVjiTvoJXKRJAQAAAAAAAD/r7qWcDBKW
+        QcIySFhzSQAAAAAAAAAAAABuOL0z6l0GCcsgYRkkrLkkAAAAAAAAAAAAADec3hn1LoOEZZCwDBLWXBIA
+        AAAAAADgQ1Uba+kZSwRtIzwAAAAASUVORK5CYII=
 </value>
   </data>
 </root>
