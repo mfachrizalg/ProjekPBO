@@ -43,7 +43,7 @@ namespace LoginRegister
                 MessageBox.Show("Benar!");
                 conn.Open();
                 MessageBox.Show(userLevel.ToString());
-                string query = "UPDATE Login SET userLevel = 2 WHERE username = '" + username  + "'";
+                string query = "UPDATE UserData SET userLevel = 2 WHERE username = '" + username  + "'";
                 if (userLevel < 2)
                 {
 

@@ -177,25 +177,36 @@ namespace LoginRegister
                         else
                         {
                             dr.Close();
-                            cmd = new SqlCommand("INSERT INTO Login values(@username,@password, @userLevel)", conn);
-                            cmd.Parameters.AddWithValue("@username", username);
-                            cmd.Parameters.AddWithValue("@email", email);
-                            cmd.Parameters.AddWithValue("@password", password);
-                            cmd.Parameters.AddWithValue("@userLevel", 1);
-                            cmd.ExecuteNonQuery();
-                            guna2TextBox1.Clear();
-                            guna2TextBox2.Clear();
-                            guna2TextBox3.Clear();
-                            if (string.IsNullOrWhiteSpace(username) || !IsValidEmail(username))
+                            otp = GenerateOTP();
+                            SendOTPToEmail(email, otp);
+                            string userInput = ShowInputBox("Enter OTP", "OTP Verification");
+                            if (userInput == otp)
                             {
-                                MessageBox.Show("Invalid or empty recipient username address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
+                                MessageBox.Show("OTP Verified Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                cmd = new SqlCommand("INSERT INTO UserData values(@email,@username,@password,@userLevel)", conn);
+                                cmd.Parameters.AddWithValue("@email", email);
+                                cmd.Parameters.AddWithValue("@username", username);
+                                cmd.Parameters.AddWithValue("@password", password);
+                                cmd.Parameters.AddWithValue("@userLevel", 1);
+                                cmd.ExecuteNonQuery();
+
+                                if (string.IsNullOrWhiteSpace(username) || !IsValidEmail(username))
+                                {
+                                    MessageBox.Show("Invalid or empty recipient username address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Account created successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Account created successfully", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("OTP Verification Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-
+                            guna2TextBox1.Clear();
+                            guna2TextBox2.Clear();
+                            guna2TextBox3.Clear();
                             this.Hide();    
                             login_form f1 = new login_form();
                             f1.Show();
@@ -216,8 +227,7 @@ namespace LoginRegister
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             finally { conn.Close(); }
-            otp = GenerateOTP();
-            SendOTPToEmail(username,otp);
+         
 
             //MessageBox.Show("Account created successfully. Check your username for the OTP.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -226,6 +236,29 @@ namespace LoginRegister
             // Implement your OTP generation logic here
             // For example, you can use a random number or a time-based algorithm
             return new Random().Next(100000, 999999).ToString();
+        }
+        static string ShowInputBox(string prompt, string title)
+        {
+            Form promptForm = new Form()
+            {
+                Width = 400,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = title,
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = prompt };
+            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 300 };
+            Button confirmation = new Button() { Text = "OK", Left = 250, Width = 100, Top = 70, DialogResult = DialogResult.OK };
+
+            confirmation.Click += (sender, e) => { promptForm.Close(); };
+
+            promptForm.Controls.Add(textBox);
+            promptForm.Controls.Add(confirmation);
+            promptForm.Controls.Add(textLabel);
+
+            return promptForm.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
 
         private void SendOTPToEmail(string recipientEmail, string otp)
