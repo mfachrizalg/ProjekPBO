@@ -190,7 +190,7 @@ namespace LoginRegister
                                 cmd.Parameters.AddWithValue("@userLevel", 1);
                                 cmd.ExecuteNonQuery();
 
-                                if (string.IsNullOrWhiteSpace(username) || !IsValidEmail(username))
+                                if (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email))
                                 {
                                     MessageBox.Show("Invalid or empty recipient username address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
@@ -272,8 +272,8 @@ namespace LoginRegister
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
                     mail.Subject = "OTP Code";
-                    mail.Body = "<h1>Hello</h1>" +
-                        "\"Your OTP Code\", $\"Your OTP code is: {otp}\"";
+                    mail.Body = "<h1>Hello</h1>\n" +
+                        "Your OTP Code is " + otp ;
                     mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
 
