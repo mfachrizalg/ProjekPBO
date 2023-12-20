@@ -305,14 +305,15 @@ namespace LoginRegister
         {
             try
             {
-                string senderEmail = "mohammad.fachrizal123@gmail.com"; // Replace with your Gmail address
-                string senderPassword = "sdtk muas nmbq wobg"; // Replace with the App Password generated
+                string senderEmail = "pylearn709@gmail.com"; // Replace with your Gmail address
+                string senderPassword = "ukki zrvh spuc mvpc"; // Replace with the App Password generated
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
                     mail.Subject = "Your Sign-in OTP";
                     mail.Body = "This is your One-Time Passcode (OTP) : " + "<b>" + otp + "<b>";
+                    mail.IsBodyHtml = true;
                     mail.Priority = MailPriority.High;
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
