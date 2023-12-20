@@ -105,9 +105,9 @@ namespace LoginRegister
 
         }
 
-        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        private void Confirm_TextChanged(object sender, EventArgs e)
         {
-            guna2TextBox3.UseSystemPasswordChar = true;
+            Confirm.UseSystemPasswordChar = true;
 
         }
 
@@ -121,39 +121,39 @@ namespace LoginRegister
 
         }
 
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        private void Password_TextChanged(object sender, EventArgs e)
         {
-            guna2TextBox2.UseSystemPasswordChar = true;
+            Password.UseSystemPasswordChar = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
             {
-                guna2TextBox2.UseSystemPasswordChar = false;
-                guna2TextBox3.UseSystemPasswordChar = false;
+                Password.UseSystemPasswordChar = false;
+                Confirm.UseSystemPasswordChar = false;
             }
             else
             {
-                guna2TextBox2.UseSystemPasswordChar = true;
-                guna2TextBox3.UseSystemPasswordChar = true;
+                Password.UseSystemPasswordChar = true;
+                Confirm.UseSystemPasswordChar = true;
             }
         }
 
-        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        private void SignIn_Click(object sender, EventArgs e)
         {
             this.Hide();
             login_form f1 = new login_form();
             f1.Show();
         }
 
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        private void Create_Click(object sender, EventArgs e)
         {
             String username, password, confirm, email;
-            username = guna2TextBox1.Text;
-            password = guna2TextBox2.Text;
-            confirm = guna2TextBox3.Text;
-            email = guna2TextBox4.Text;
+            username = Username.Text;
+            password = Password.Text;
+            confirm = Confirm.Text;
+            email = Email.Text;
 
             conn.Open();
 
@@ -195,9 +195,9 @@ namespace LoginRegister
                             {
                                 MessageBox.Show("OTP Verification Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                            guna2TextBox1.Clear();
-                            guna2TextBox2.Clear();
-                            guna2TextBox3.Clear();
+                            Username.Clear();
+                            Password.Clear();
+                            Confirm.Clear();
                             this.Hide();    
                             login_form f1 = new login_form();
                             f1.Show();
@@ -412,9 +412,34 @@ namespace LoginRegister
             }
         }*/
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private void Username_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void welcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GetStarted_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Minimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
