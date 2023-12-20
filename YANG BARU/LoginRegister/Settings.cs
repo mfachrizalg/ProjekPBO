@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LoginRegister
 {
-    public partial class formSettings : Form
+    public partial class Settings : UserControl
     {
-        public formSettings()
+        public Settings()
         {
             InitializeComponent();
         }

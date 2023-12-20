@@ -28,7 +28,7 @@ namespace LoginRegister
 
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void pctBerdua_Click(object sender, EventArgs e)
         {
 
         }
@@ -73,26 +73,26 @@ namespace LoginRegister
 
         }
 
-        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Terms_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void Login_Click(object sender, EventArgs e)
         {
             String username, password;
-            username = guna2TextBox1.Text;
-            password = guna2TextBox2.Text;
+            username = boxUsername.Text;
+            password = boxPassword.Text;
             conn.Open();
 
             try
             {
-                String querry = "SELECT * FROM UserData WHERE username = '" + guna2TextBox1.Text + "' AND password = '" + guna2TextBox2.Text + "'";
+                String querry = "SELECT * FROM UserData WHERE username = '" + boxUsername.Text + "' AND password = '" + boxPassword.Text + "'";
 
                 SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
@@ -100,25 +100,28 @@ namespace LoginRegister
 
                 sda.Fill(dt);
 
-                if (guna2TextBox1.Text != string.Empty || guna2TextBox2.Text != string.Empty)
+                if (boxUsername.Text != string.Empty || boxPassword.Text != string.Empty)
                 {
-                    if (guna2CheckBox1.Checked == true)
+                    if (CheckBox.Checked == true)
                     {
                         if (dt.Rows.Count > 0)
                         {
-                            username = guna2TextBox1.Text;
-                            password = guna2TextBox2.Text;
+                            username = boxUsername.Text;
+                            password = boxPassword.Text;
 
                             MessageBox.Show("Login Successful");
-                            var level1 = new lvl1();
+ /*                           var level1 = new lvl1();
                             var row = dt.Rows[0];
                             level1.Username = row["username"].ToString();
                             level1.userLevel = (int)row["userLevel"];
-                            guna2TextBox1.Clear();
-                            guna2TextBox2.Clear();
+                            boxUsername.Clear();
+                            boxPassword.Clear();
                             this.Hide();
-                            level1.Show();
-
+                            level1.Show();*/
+                            Dashboard dash = new Dashboard();
+                            this.Hide();
+                            dash.Show();
+                        
                         }
                         else
                         {
@@ -149,7 +152,7 @@ namespace LoginRegister
 
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Privacy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }
@@ -161,7 +164,7 @@ namespace LoginRegister
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
-            guna2TextBox2.UseSystemPasswordChar = true;
+            boxPassword.UseSystemPasswordChar = true;
         }
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
@@ -173,11 +176,11 @@ namespace LoginRegister
         {
             if (check_show.Checked == true)
             {
-                guna2TextBox2.UseSystemPasswordChar = false;
+                boxPassword.UseSystemPasswordChar = false;
             }
             else
             {
-                guna2TextBox2.UseSystemPasswordChar = true;
+                boxPassword.UseSystemPasswordChar = true;
             }
         }
 
@@ -189,6 +192,46 @@ namespace LoginRegister
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void or_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Google_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void and_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Minimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void course_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnKiri_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }

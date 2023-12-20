@@ -1,5 +1,4 @@
-﻿using Microsoft.Identity.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,50 +7,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LoginRegister
 {
-    public partial class lvl1 : Form
+    public partial class level1 : UserControl
     {
         public string Username { get; set; }
         public int userLevel { get; set; }
-        public lvl1()
+        public level1()
         {
             InitializeComponent();
-        }   
+        }
+
         SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
-        private void label1_Click(object sender, EventArgs e)
+        private void Clue_button_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("A = D");
         }
-
-        private void copy_button_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText(lvl1_soal.Text);
-            MessageBox.Show("Copied!");
-        }
-
 
         private void box_answer_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void back1_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lvl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void box_answer_TextChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void submit_buttonn_Click(object sender, EventArgs e)
@@ -94,11 +71,6 @@ namespace LoginRegister
                 MessageBox.Show("Salah!");
                 box_answer.Clear();
             }
-        }
-
-        private void Clue_button_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("A = D");
         }
     }
 }
