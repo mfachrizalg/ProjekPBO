@@ -35,6 +35,7 @@
             this.pnKiri = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.course = new System.Windows.Forms.Label();
             this.freecod = new System.Windows.Forms.Label();
+            this.pctBerdua = new Guna.UI2.WinForms.Guna2PictureBox();
             this.SignUp = new System.Windows.Forms.LinkLabel();
             this.boxUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.boxPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,11 +58,10 @@
             this.Google = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pctBerdua = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnKiri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBerdua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBerdua)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -119,6 +119,21 @@
             this.freecod.Size = new System.Drawing.Size(188, 41);
             this.freecod.TabIndex = 21;
             this.freecod.Text = "Free Coding";
+            // 
+            // pctBerdua
+            // 
+            this.pctBerdua.BackColor = System.Drawing.Color.Transparent;
+            this.pctBerdua.FillColor = System.Drawing.Color.Transparent;
+            this.pctBerdua.Image = global::LoginRegister.Properties.Resources.business_3d_young_women_looking_at_smartphone;
+            this.pctBerdua.ImageRotate = 0F;
+            this.pctBerdua.Location = new System.Drawing.Point(60, 120);
+            this.pctBerdua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pctBerdua.Name = "pctBerdua";
+            this.pctBerdua.Size = new System.Drawing.Size(261, 559);
+            this.pctBerdua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBerdua.TabIndex = 0;
+            this.pctBerdua.TabStop = false;
+            this.pctBerdua.Click += new System.EventHandler(this.pctBerdua_Click);
             // 
             // SignUp
             // 
@@ -179,7 +194,7 @@
             this.boxPassword.Size = new System.Drawing.Size(417, 48);
             this.boxPassword.TabIndex = 10;
             this.boxPassword.TextOffset = new System.Drawing.Point(30, 0);
-            this.boxPassword.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
+            this.boxPassword.TextChanged += new System.EventHandler(this.boxPassword_TextChanged);
             // 
             // CheckBox
             // 
@@ -446,21 +461,6 @@
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
             // 
-            // pctBerdua
-            // 
-            this.pctBerdua.BackColor = System.Drawing.Color.Transparent;
-            this.pctBerdua.FillColor = System.Drawing.Color.Transparent;
-            this.pctBerdua.Image = global::LoginRegister.Properties.Resources.business_3d_young_women_looking_at_smartphone;
-            this.pctBerdua.ImageRotate = 0F;
-            this.pctBerdua.Location = new System.Drawing.Point(60, 120);
-            this.pctBerdua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pctBerdua.Name = "pctBerdua";
-            this.pctBerdua.Size = new System.Drawing.Size(261, 559);
-            this.pctBerdua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBerdua.TabIndex = 0;
-            this.pctBerdua.TabStop = false;
-            this.pctBerdua.Click += new System.EventHandler(this.pctBerdua_Click);
-            // 
             // login_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -498,9 +498,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnKiri.ResumeLayout(false);
             this.pnKiri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBerdua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBerdua)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

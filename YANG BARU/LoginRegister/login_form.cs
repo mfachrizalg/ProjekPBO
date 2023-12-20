@@ -161,15 +161,14 @@ namespace LoginRegister
         {
 
         }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-            boxPassword.UseSystemPasswordChar = true;
-        }
-
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void boxPassword_TextChanged(object sender, EventArgs e)
+        {
+            boxPassword.UseSystemPasswordChar = true;
         }
 
         private void check_show_CheckedChanged(object sender, EventArgs e)

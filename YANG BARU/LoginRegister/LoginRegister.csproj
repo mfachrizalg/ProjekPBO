@@ -188,11 +188,29 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data_Type.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data_Type.Designer.cs">
+      <DependentUpon>Data_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display_Settings.Designer.cs">
+      <DependentUpon>Display_Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
     </Compile>
     <Compile Include="Learningg.cs">
       <SubType>UserControl</SubType>
@@ -238,11 +256,26 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="userProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userProfile.Designer.cs">
+      <DependentUpon>userProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data_Type.resx">
+      <DependentUpon>Data_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display_Settings.resx">
+      <DependentUpon>Display_Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Learningg.resx">
       <DependentUpon>Learningg.cs</DependentUpon>
@@ -274,6 +307,9 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userProfile.resx">
+      <DependentUpon>userProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Login_Form_TemporaryKey.pfx" />
     <None Include="packages.config" />

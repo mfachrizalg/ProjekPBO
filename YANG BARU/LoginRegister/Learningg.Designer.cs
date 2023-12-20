@@ -30,41 +30,158 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Learningg));
-            this.pnRight = new Guna.UI2.WinForms.Guna2Panel();
-            this.introContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.MenuTransition = new System.Windows.Forms.Timer(this.components);
-            this.back = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnList = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.GlobalSettings = new System.Windows.Forms.Label();
+            this.introContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.DataType = new Guna.UI2.WinForms.Guna2Button();
             this.Intro = new Guna.UI2.WinForms.Guna2Button();
-            this.pnRight.SuspendLayout();
+            this.back = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pnList.SuspendLayout();
             this.introContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnRight
+            // MenuTransition
             // 
-            this.pnRight.BackColor = System.Drawing.Color.White;
-            this.pnRight.BorderThickness = 1;
-            this.pnRight.Controls.Add(this.introContainer);
-            this.pnRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnRight.Location = new System.Drawing.Point(614, 0);
-            this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(203, 482);
-            this.pnRight.TabIndex = 3;
+            this.MenuTransition.Tick += new System.EventHandler(this.MenuTransition_Tick_1);
+            // 
+            // pnLearning
+            // 
+            this.pnLearning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnLearning.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.pnLearning.BorderColor = System.Drawing.Color.Transparent;
+            this.pnLearning.BorderRadius = 20;
+            this.pnLearning.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.pnLearning.BorderThickness = 1;
+            this.pnLearning.FillColor = System.Drawing.Color.White;
+            this.pnLearning.ForeColor = System.Drawing.Color.Coral;
+            this.pnLearning.Location = new System.Drawing.Point(83, 24);
+            this.pnLearning.Margin = new System.Windows.Forms.Padding(0);
+            this.pnLearning.Name = "pnLearning";
+            this.pnLearning.ShadowDecoration.BorderRadius = 20;
+            this.pnLearning.Size = new System.Drawing.Size(496, 437);
+            this.pnLearning.TabIndex = 38;
+            this.pnLearning.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLearning_Paint);
+            // 
+            // pnList
+            // 
+            this.pnList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.pnList.BorderColor = System.Drawing.Color.Transparent;
+            this.pnList.BorderRadius = 20;
+            this.pnList.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.pnList.BorderThickness = 1;
+            this.pnList.Controls.Add(this.introContainer);
+            this.pnList.Controls.Add(this.guna2Separator2);
+            this.pnList.Controls.Add(this.GlobalSettings);
+            this.pnList.FillColor = System.Drawing.Color.White;
+            this.pnList.ForeColor = System.Drawing.Color.Coral;
+            this.pnList.Location = new System.Drawing.Point(597, 24);
+            this.pnList.Margin = new System.Windows.Forms.Padding(0);
+            this.pnList.Name = "pnList";
+            this.pnList.ShadowDecoration.BorderRadius = 20;
+            this.pnList.Size = new System.Drawing.Size(208, 437);
+            this.pnList.TabIndex = 14;
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.BackColor = System.Drawing.Color.White;
+            this.guna2Separator2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Separator2.FillThickness = 3;
+            this.guna2Separator2.Location = new System.Drawing.Point(0, 54);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(242, 10);
+            this.guna2Separator2.TabIndex = 17;
+            // 
+            // GlobalSettings
+            // 
+            this.GlobalSettings.AutoSize = true;
+            this.GlobalSettings.BackColor = System.Drawing.Color.White;
+            this.GlobalSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GlobalSettings.ForeColor = System.Drawing.Color.Black;
+            this.GlobalSettings.Location = new System.Drawing.Point(19, 24);
+            this.GlobalSettings.Name = "GlobalSettings";
+            this.GlobalSettings.Size = new System.Drawing.Size(156, 23);
+            this.GlobalSettings.TabIndex = 13;
+            this.GlobalSettings.Text = "Global Settings";
             // 
             // introContainer
             // 
             this.introContainer.BackColor = System.Drawing.Color.White;
             this.introContainer.Controls.Add(this.DataType);
             this.introContainer.Controls.Add(this.Intro);
-            this.introContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.introContainer.Location = new System.Drawing.Point(0, 0);
+            this.introContainer.Location = new System.Drawing.Point(2, 70);
             this.introContainer.Name = "introContainer";
             this.introContainer.Size = new System.Drawing.Size(203, 53);
             this.introContainer.TabIndex = 2;
             // 
-            // MenuTransition
+            // DataType
             // 
-            this.MenuTransition.Tick += new System.EventHandler(this.MenuTransition_Tick_1);
+            this.DataType.Animated = true;
+            this.DataType.AnimatedGIF = true;
+            this.DataType.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.DataType.Checked = true;
+            this.DataType.CheckedState.FillColor = System.Drawing.Color.White;
+            this.DataType.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.DataType.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
+            this.DataType.CheckedState.Image = global::LoginRegister.Properties.Resources.dot;
+            this.DataType.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DataType.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DataType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DataType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DataType.FillColor = System.Drawing.Color.White;
+            this.DataType.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.DataType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
+            this.DataType.HoverState.FillColor = System.Drawing.Color.White;
+            this.DataType.Image = global::LoginRegister.Properties.Resources.gray_dot;
+            this.DataType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DataType.ImageOffset = new System.Drawing.Point(20, 0);
+            this.DataType.ImageSize = new System.Drawing.Size(10, 10);
+            this.DataType.Location = new System.Drawing.Point(0, 53);
+            this.DataType.Margin = new System.Windows.Forms.Padding(0);
+            this.DataType.Name = "DataType";
+            this.DataType.Size = new System.Drawing.Size(203, 53);
+            this.DataType.TabIndex = 0;
+            this.DataType.Text = "Data Type";
+            this.DataType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DataType.TextOffset = new System.Drawing.Point(40, 0);
+            this.DataType.Click += new System.EventHandler(this.DataType_Click);
+            // 
+            // Intro
+            // 
+            this.Intro.Animated = true;
+            this.Intro.AnimatedGIF = true;
+            this.Intro.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.Intro.Checked = true;
+            this.Intro.CheckedState.FillColor = System.Drawing.Color.White;
+            this.Intro.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.Intro.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
+            this.Intro.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.Intro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Intro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Intro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Intro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Intro.FillColor = System.Drawing.Color.White;
+            this.Intro.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.Intro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
+            this.Intro.HoverState.FillColor = System.Drawing.Color.White;
+            this.Intro.Image = ((System.Drawing.Image)(resources.GetObject("Intro.Image")));
+            this.Intro.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Intro.ImageOffset = new System.Drawing.Point(15, 0);
+            this.Intro.Location = new System.Drawing.Point(0, 0);
+            this.Intro.Margin = new System.Windows.Forms.Padding(0);
+            this.Intro.Name = "Intro";
+            this.Intro.Size = new System.Drawing.Size(203, 53);
+            this.Intro.TabIndex = 1;
+            this.Intro.Text = "Intro";
+            this.Intro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Intro.TextOffset = new System.Drawing.Point(40, 0);
+            this.Intro.Click += new System.EventHandler(this.Intro_Click);
             // 
             // back
             // 
@@ -86,92 +203,33 @@
             this.back.TabIndex = 37;
             this.back.UseTransparentBackground = true;
             // 
-            // DataType
-            // 
-            this.DataType.Animated = true;
-            this.DataType.AnimatedGIF = true;
-            this.DataType.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.DataType.Checked = true;
-            this.DataType.CheckedState.FillColor = System.Drawing.Color.White;
-            this.DataType.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.DataType.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.DataType.CheckedState.Image = global::LoginRegister.Properties.Resources.dot;
-            this.DataType.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DataType.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DataType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DataType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DataType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DataType.FillColor = System.Drawing.Color.White;
-            this.DataType.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.DataType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.DataType.HoverState.FillColor = System.Drawing.Color.White;
-            this.DataType.Image = global::LoginRegister.Properties.Resources.gray_dot;
-            this.DataType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.DataType.ImageOffset = new System.Drawing.Point(20, 0);
-            this.DataType.ImageSize = new System.Drawing.Size(10, 10);
-            this.DataType.Location = new System.Drawing.Point(0, 53);
-            this.DataType.Margin = new System.Windows.Forms.Padding(0);
-            this.DataType.Name = "DataType";
-            this.DataType.Size = new System.Drawing.Size(203, 53);
-            this.DataType.TabIndex = 0;
-            this.DataType.Text = "Data Type";
-            this.DataType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.DataType.TextOffset = new System.Drawing.Point(40, 0);
-            // 
-            // Intro
-            // 
-            this.Intro.Animated = true;
-            this.Intro.AnimatedGIF = true;
-            this.Intro.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.Intro.Checked = true;
-            this.Intro.CheckedState.FillColor = System.Drawing.Color.White;
-            this.Intro.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.Intro.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Intro.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.Intro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Intro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Intro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Intro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Intro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Intro.FillColor = System.Drawing.Color.White;
-            this.Intro.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.Intro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.Intro.HoverState.FillColor = System.Drawing.Color.White;
-            this.Intro.Image = ((System.Drawing.Image)(resources.GetObject("Intro.Image")));
-            this.Intro.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Intro.ImageOffset = new System.Drawing.Point(15, 0);
-            this.Intro.Location = new System.Drawing.Point(0, 0);
-            this.Intro.Margin = new System.Windows.Forms.Padding(0);
-            this.Intro.Name = "Intro";
-            this.Intro.Size = new System.Drawing.Size(203, 53);
-            this.Intro.TabIndex = 1;
-            this.Intro.Text = "Intro";
-            this.Intro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Intro.TextOffset = new System.Drawing.Point(40, 0);
-            this.Intro.Click += new System.EventHandler(this.Intro_Click);
-            // 
             // Learningg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.Controls.Add(this.pnList);
+            this.Controls.Add(this.pnLearning);
             this.Controls.Add(this.back);
-            this.Controls.Add(this.pnRight);
             this.Name = "Learningg";
             this.Size = new System.Drawing.Size(817, 482);
-            this.pnRight.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Learningg_Load);
+            this.pnList.ResumeLayout(false);
+            this.pnList.PerformLayout();
             this.introContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel pnRight;
-        private Guna.UI2.WinForms.Guna2Panel introContainer;
         private Guna.UI2.WinForms.Guna2Button DataType;
         private Guna.UI2.WinForms.Guna2Button Intro;
         private System.Windows.Forms.Timer MenuTransition;
         private Guna.UI2.WinForms.Guna2CircleButton back;
+        private Guna.UI2.WinForms.Guna2Panel pnLearning;
+        private Guna.UI2.WinForms.Guna2Panel pnList;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private System.Windows.Forms.Label GlobalSettings;
+        private Guna.UI2.WinForms.Guna2Panel introContainer;
     }
 }
