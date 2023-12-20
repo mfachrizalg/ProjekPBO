@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnExercise = new Guna.UI2.WinForms.Guna2Panel();
             this.Exercise = new Guna.UI2.WinForms.Guna2Button();
             this.ProgressPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -37,13 +38,14 @@
             this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
             this.Learning = new Guna.UI2.WinForms.Guna2Button();
             this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.search_box = new Guna.UI2.WinForms.Guna2TextBox();
             this.Welcome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnKata = new Guna.UI2.WinForms.Guna2Panel();
             this.HiText = new System.Windows.Forms.Label();
             this.Katakata = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.search_box = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.profile_pict = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.notif_button = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -227,19 +229,43 @@
             this.MainPanel.Controls.Add(this.ProgressPanel);
             this.MainPanel.Controls.Add(this.pnExercise);
             this.MainPanel.Controls.Add(this.pnLearning);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(817, 482);
             this.MainPanel.TabIndex = 11;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
+            // search_box
+            // 
+            this.search_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.search_box.Animated = true;
+            this.search_box.BorderRadius = 20;
+            this.search_box.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.search_box.DefaultText = "";
+            this.search_box.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.search_box.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.search_box.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.search_box.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.search_box.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.search_box.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.search_box.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.search_box.Location = new System.Drawing.Point(603, 16);
+            this.search_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.search_box.Name = "search_box";
+            this.search_box.PasswordChar = '\0';
+            this.search_box.PlaceholderText = "Search";
+            this.search_box.SelectedText = "";
+            this.search_box.Size = new System.Drawing.Size(194, 38);
+            this.search_box.TabIndex = 16;
+            this.search_box.TextOffset = new System.Drawing.Point(30, 0);
+            // 
             // Welcome
             // 
             this.Welcome.AutoSize = true;
             this.Welcome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Welcome.ForeColor = System.Drawing.Color.Black;
-            this.Welcome.Location = new System.Drawing.Point(44, 52);
+            this.Welcome.Location = new System.Drawing.Point(44, 45);
             this.Welcome.Name = "Welcome";
             this.Welcome.Size = new System.Drawing.Size(209, 23);
             this.Welcome.TabIndex = 12;
@@ -251,7 +277,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
-            this.label2.Location = new System.Drawing.Point(44, 25);
+            this.label2.Location = new System.Drawing.Point(44, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 19);
             this.label2.TabIndex = 13;
@@ -331,35 +357,18 @@
             this.label1.Text = "Words of the day";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // search_box
+            // guna2DragControl1
             // 
-            this.search_box.Animated = true;
-            this.search_box.BorderRadius = 20;
-            this.search_box.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.search_box.DefaultText = "";
-            this.search_box.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.search_box.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.search_box.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.search_box.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.search_box.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.search_box.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.search_box.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.search_box.Location = new System.Drawing.Point(615, 25);
-            this.search_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.search_box.Name = "search_box";
-            this.search_box.PasswordChar = '\0';
-            this.search_box.PlaceholderText = "Search";
-            this.search_box.SelectedText = "";
-            this.search_box.Size = new System.Drawing.Size(182, 38);
-            this.search_box.TabIndex = 16;
-            this.search_box.TextOffset = new System.Drawing.Point(30, 0);
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.MainPanel;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::LoginRegister.Properties.Resources.search;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(628, 34);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(616, 24);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(22, 21);
@@ -370,14 +379,15 @@
             // 
             // profile_pict
             // 
+            this.profile_pict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.profile_pict.BackColor = System.Drawing.Color.Transparent;
             this.profile_pict.FillColor = System.Drawing.Color.Transparent;
             this.profile_pict.Image = global::LoginRegister.Properties.Resources.memoji;
             this.profile_pict.ImageRotate = 0F;
-            this.profile_pict.Location = new System.Drawing.Point(568, 25);
+            this.profile_pict.Location = new System.Drawing.Point(568, 18);
             this.profile_pict.Name = "profile_pict";
             this.profile_pict.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profile_pict.Size = new System.Drawing.Size(41, 38);
+            this.profile_pict.Size = new System.Drawing.Size(29, 30);
             this.profile_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.profile_pict.TabIndex = 15;
             this.profile_pict.TabStop = false;
@@ -395,10 +405,10 @@
             this.notif_button.ForeColor = System.Drawing.Color.White;
             this.notif_button.Image = global::LoginRegister.Properties.Resources.notif;
             this.notif_button.ImageSize = new System.Drawing.Size(30, 30);
-            this.notif_button.Location = new System.Drawing.Point(521, 25);
+            this.notif_button.Location = new System.Drawing.Point(535, 22);
             this.notif_button.Name = "notif_button";
             this.notif_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.notif_button.Size = new System.Drawing.Size(41, 38);
+            this.notif_button.Size = new System.Drawing.Size(27, 26);
             this.notif_button.TabIndex = 14;
             this.notif_button.UseTransparentBackground = true;
             this.notif_button.Click += new System.EventHandler(this.guna2CircleButton1_Click);
@@ -451,16 +461,17 @@
         private Guna.UI2.WinForms.Guna2Panel pnLearning;
         private Guna.UI2.WinForms.Guna2Button Learning;
         private Guna.UI2.WinForms.Guna2Panel MainPanel;
-        private Guna.UI2.WinForms.Guna2Panel pnKata;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox Photo;
-        private Guna.UI2.WinForms.Guna2TextBox Katakata;
-        private System.Windows.Forms.Label HiText;
-        private System.Windows.Forms.Label Welcome;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CircleButton notif_button;
         private Guna.UI2.WinForms.Guna2CirclePictureBox profile_pict;
         private Guna.UI2.WinForms.Guna2TextBox search_box;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private System.Windows.Forms.Label Welcome;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel pnKata;
+        private System.Windows.Forms.Label HiText;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox Photo;
+        private Guna.UI2.WinForms.Guna2TextBox Katakata;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

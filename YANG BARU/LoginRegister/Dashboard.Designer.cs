@@ -197,7 +197,7 @@
             this.Settings.FillColor = System.Drawing.Color.White;
             this.Settings.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.Settings.HoverState.FillColor = System.Drawing.Color.White;
+            this.Settings.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
             this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
             this.Settings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Settings.ImageOffset = new System.Drawing.Point(15, 0);
@@ -228,7 +228,7 @@
             this.Profile.FillColor = System.Drawing.Color.White;
             this.Profile.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Profile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.Profile.HoverState.FillColor = System.Drawing.Color.White;
+            this.Profile.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
             this.Profile.Image = ((System.Drawing.Image)(resources.GetObject("Profile.Image")));
             this.Profile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Profile.ImageOffset = new System.Drawing.Point(15, 0);
@@ -259,7 +259,7 @@
             this.Dash.FillColor = System.Drawing.Color.White;
             this.Dash.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Dash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.Dash.HoverState.FillColor = System.Drawing.Color.White;
+            this.Dash.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
             this.Dash.Image = ((System.Drawing.Image)(resources.GetObject("Dash.Image")));
             this.Dash.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Dash.ImageOffset = new System.Drawing.Point(15, 0);

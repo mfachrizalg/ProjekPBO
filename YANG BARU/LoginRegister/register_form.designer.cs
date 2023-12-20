@@ -33,6 +33,8 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.exit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.GetStarted = new System.Windows.Forms.Label();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -48,8 +50,6 @@
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.welcome = new System.Windows.Forms.Label();
-            this.Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.exit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
@@ -84,6 +84,46 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(347, 526);
             this.guna2GradientPanel1.TabIndex = 1;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint_1);
+            // 
+            // Minimize
+            // 
+            this.Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Minimize.AnimatedGIF = true;
+            this.Minimize.BackColor = System.Drawing.Color.Transparent;
+            this.Minimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Minimize.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
+            this.Minimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Minimize.ImageRotate = 0F;
+            this.Minimize.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Location = new System.Drawing.Point(257, 0);
+            this.Minimize.Margin = new System.Windows.Forms.Padding(4);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Size = new System.Drawing.Size(45, 44);
+            this.Minimize.TabIndex = 30;
+            this.Minimize.UseTransparentBackground = true;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
+            // 
+            // exit
+            // 
+            this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exit.AnimatedGIF = true;
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.exit.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
+            this.exit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.exit.ImageRotate = 0F;
+            this.exit.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Location = new System.Drawing.Point(302, 0);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
+            this.exit.Name = "exit";
+            this.exit.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Size = new System.Drawing.Size(45, 44);
+            this.exit.TabIndex = 29;
+            this.exit.UseTransparentBackground = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // GetStarted
             // 
@@ -346,46 +386,6 @@
             this.welcome.TabIndex = 33;
             this.welcome.Text = "Welcome!";
             this.welcome.Click += new System.EventHandler(this.welcome_Click);
-            // 
-            // Minimize
-            // 
-            this.Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Minimize.AnimatedGIF = true;
-            this.Minimize.BackColor = System.Drawing.Color.Transparent;
-            this.Minimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Minimize.HoverState.ImageSize = new System.Drawing.Size(16, 16);
-            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
-            this.Minimize.ImageOffset = new System.Drawing.Point(0, 0);
-            this.Minimize.ImageRotate = 0F;
-            this.Minimize.ImageSize = new System.Drawing.Size(16, 16);
-            this.Minimize.Location = new System.Drawing.Point(257, 0);
-            this.Minimize.Margin = new System.Windows.Forms.Padding(4);
-            this.Minimize.Name = "Minimize";
-            this.Minimize.PressedState.ImageSize = new System.Drawing.Size(16, 16);
-            this.Minimize.Size = new System.Drawing.Size(45, 44);
-            this.Minimize.TabIndex = 30;
-            this.Minimize.UseTransparentBackground = true;
-            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
-            // 
-            // exit
-            // 
-            this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exit.AnimatedGIF = true;
-            this.exit.BackColor = System.Drawing.Color.Transparent;
-            this.exit.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.exit.HoverState.ImageSize = new System.Drawing.Size(16, 16);
-            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
-            this.exit.ImageOffset = new System.Drawing.Point(0, 0);
-            this.exit.ImageRotate = 0F;
-            this.exit.ImageSize = new System.Drawing.Size(16, 16);
-            this.exit.Location = new System.Drawing.Point(302, 0);
-            this.exit.Margin = new System.Windows.Forms.Padding(4);
-            this.exit.Name = "exit";
-            this.exit.PressedState.ImageSize = new System.Drawing.Size(16, 16);
-            this.exit.Size = new System.Drawing.Size(45, 44);
-            this.exit.TabIndex = 29;
-            this.exit.UseTransparentBackground = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // register_form
             // 

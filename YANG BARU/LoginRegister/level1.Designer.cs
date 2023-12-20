@@ -34,9 +34,9 @@
             this.Clue_button = new Guna.UI2.WinForms.Guna2GradientButton();
             this.submit_buttonn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.box_answer = new Guna.UI2.WinForms.Guna2TextBox();
+            this.indicatorlvl = new System.Windows.Forms.Label();
             this.level_pict = new Guna.UI2.WinForms.Guna2PictureBox();
             this.back = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.indicatorlvl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.level_pict)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@
             this.Clue_button.FillColor2 = System.Drawing.Color.White;
             this.Clue_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Clue_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Clue_button.Location = new System.Drawing.Point(582, 100);
+            this.Clue_button.Location = new System.Drawing.Point(582, 93);
             this.Clue_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clue_button.Name = "Clue_button";
             this.Clue_button.Size = new System.Drawing.Size(104, 28);
@@ -149,11 +149,22 @@
             this.box_answer.TabIndex = 38;
             this.box_answer.TextChanged += new System.EventHandler(this.box_answer_TextChanged);
             // 
+            // indicatorlvl
+            // 
+            this.indicatorlvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.indicatorlvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
+            this.indicatorlvl.Location = new System.Drawing.Point(87, 93);
+            this.indicatorlvl.Name = "indicatorlvl";
+            this.indicatorlvl.Size = new System.Drawing.Size(79, 28);
+            this.indicatorlvl.TabIndex = 0;
+            this.indicatorlvl.Text = "Level 1";
+            this.indicatorlvl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // level_pict
             // 
             this.level_pict.Image = global::LoginRegister.Properties.Resources.level4;
             this.level_pict.ImageRotate = 0F;
-            this.level_pict.Location = new System.Drawing.Point(56, 100);
+            this.level_pict.Location = new System.Drawing.Point(56, 93);
             this.level_pict.Name = "level_pict";
             this.level_pict.Size = new System.Drawing.Size(25, 28);
             this.level_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,24 +184,12 @@
             this.back.ForeColor = System.Drawing.Color.White;
             this.back.Image = global::LoginRegister.Properties.Resources.back1;
             this.back.ImageSize = new System.Drawing.Size(25, 25);
-            this.back.Location = new System.Drawing.Point(25, 24);
+            this.back.Location = new System.Drawing.Point(25, 17);
             this.back.Name = "back";
             this.back.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.back.Size = new System.Drawing.Size(34, 39);
             this.back.TabIndex = 36;
             this.back.UseTransparentBackground = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
-            // indicatorlvl
-            // 
-            this.indicatorlvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.indicatorlvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.indicatorlvl.Location = new System.Drawing.Point(87, 100);
-            this.indicatorlvl.Name = "indicatorlvl";
-            this.indicatorlvl.Size = new System.Drawing.Size(79, 28);
-            this.indicatorlvl.TabIndex = 0;
-            this.indicatorlvl.Text = "Level 1";
-            this.indicatorlvl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // level1
             // 

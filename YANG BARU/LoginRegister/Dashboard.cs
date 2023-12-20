@@ -210,7 +210,6 @@ namespace LoginRegister
         }
 
         static Dashboard _obj;
-        
         public static Dashboard Instance
         { 
             get
