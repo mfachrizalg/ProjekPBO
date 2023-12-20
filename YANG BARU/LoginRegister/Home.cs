@@ -43,13 +43,13 @@ namespace LoginRegister
 /*            lvl1 level1 = new lvl1();
             this.Hide();
             level1.Show();*/
-            if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("level"))
+            if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("level1"))
             {
                 level1 lv = new level1();
                 lv.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(lv);
             }
-            Dashboard.Instance.PanelUtama.Controls["level"].BringToFront();
+            Dashboard.Instance.PanelUtama.Controls["level1"].BringToFront();
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)

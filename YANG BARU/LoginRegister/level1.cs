@@ -72,5 +72,16 @@ namespace LoginRegister
                 box_answer.Clear();
             }
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Home"))
+            {
+                Home home = new Home();
+                home.Dock = DockStyle.Fill;
+                Dashboard.Instance.PanelUtama.Controls.Add(home);
+            }
+            Dashboard.Instance.PanelUtama.Controls["Home"].BringToFront();
+        }
     }
 }

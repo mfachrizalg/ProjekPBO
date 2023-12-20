@@ -179,6 +179,7 @@
             this.back.Size = new System.Drawing.Size(34, 39);
             this.back.TabIndex = 36;
             this.back.UseTransparentBackground = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // indicatorlvl
             // 
@@ -191,7 +192,7 @@
             this.indicatorlvl.Text = "Level 1";
             this.indicatorlvl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // level
+            // level1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,7 +205,7 @@
             this.Controls.Add(this.level_pict);
             this.Controls.Add(this.back);
             this.Controls.Add(this.indicatorlvl);
-            this.Name = "level";
+            this.Name = "level1";
             this.Size = new System.Drawing.Size(817, 482);
             ((System.ComponentModel.ISupportInitialize)(this.level_pict)).EndInit();
             this.ResumeLayout(false);
