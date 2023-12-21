@@ -22,6 +22,7 @@ using System.Security.Cryptography;
 using Google.Apis.Auth;
 using Google.Apis.Auth.OAuth2;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 
 namespace LoginRegister
 {
@@ -33,6 +34,13 @@ namespace LoginRegister
         const string authorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
         const string tokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+        public class UserInfo
+        {
+            public string Sub { get; set; } // User ID
+            public string Name { get; set; } // User's full name
+            public string Email { get; set; } // User's email address
+                                              // Add more properties as needed based on the UserInfo response
+        }
         public int userLVL { get; set; }
         public login_form()
         {
@@ -96,7 +104,20 @@ namespace LoginRegister
         {
 
         }
+        private async Task<UserInfo> ExchangeCodeForUserInfo(string authorizationCode)
+        {
+            // Exchange authorization code for access token
+            string accessToken = await ExchangeCodeForAccessToken(authorizationCode);
 
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                // Handle the case where access token is not obtained
+                return null;
+            }
+
+            // Call the UserInfo endpoint to get user details
+            return await GetUserInfo(accessToken);
+        }
         private void Login_Click(object sender, EventArgs e)
         {
             String username, password;
@@ -241,9 +262,6 @@ namespace LoginRegister
 
                 // TODO: Process the ID token as needed
                 MessageBox.Show("Google Sign-In Success");
-                this.Hide();
-                register_form f1 = new register_form();
-                f1.Show();
             }
             catch (Exception ex)
             {
@@ -308,10 +326,61 @@ namespace LoginRegister
                 var tokenResponse = await client.PostAsync(tokenEndpoint, new FormUrlEncodedContent(tokenRequest));
                 var tokenContent = await tokenResponse.Content.ReadAsStringAsync();
                 var tokenData = JsonConvert.DeserializeObject<Dictionary<string, string>>(tokenContent);
+
                 return tokenData["id_token"];
             }
         }
+        private async Task<string> ExchangeCodeForAccessToken(string authorizationCode)
+        {
+            using (var client = new HttpClient())
+            {
+                var tokenEndpoint = "https://oauth2.googleapis.com/token";
+                var tokenRequest = new Dictionary<string, string>
+                {
+                    { "code", authorizationCode },
+                    { "client_id", clientId },
+                    { "client_secret", clientSecret }, // Replace with your client secret
+                    { "redirect_uri", redirectUri },
+                    { "grant_type", "authorization_code" }
+                };
 
+                var tokenResponse = await client.PostAsync(tokenEndpoint, new FormUrlEncodedContent(tokenRequest));
+                var tokenContent = await tokenResponse.Content.ReadAsStringAsync();
+                var tokenData = JsonConvert.DeserializeObject<Dictionary<string, string>>(tokenContent);
+                // Parse the response to extract the access token
+                if (tokenData.TryGetValue("access_token", out var accessToken))
+                {
+                    return accessToken;
+                }
+                else
+                {
+                    // Handle the case where "access_token" is not present in the response
+                    MessageBox.Show("Access token not found in the token response", "Error");
+                    return null;
+                }
+            }
+        }
+        private async Task<UserInfo> GetUserInfo(string accessToken)
+        {
+            using (var client = new HttpClient())
+            {
+                var userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+                var userInfoResponse = await client.GetAsync(userInfoEndpoint);
+
+                if (!userInfoResponse.IsSuccessStatusCode)
+                {
+                    // Handle the error here, e.g., log the response content
+                    var errorContent = await userInfoResponse.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Error retrieving user info: {errorContent}", "Error");
+                    return null;
+                }
+
+                var userInfoContent = await userInfoResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<UserInfo>(userInfoContent);
+            }
+        }
         private void and_Click(object sender, EventArgs e)
         {
 
