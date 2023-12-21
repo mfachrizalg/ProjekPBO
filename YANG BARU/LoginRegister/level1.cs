@@ -14,7 +14,6 @@ namespace LoginRegister
 {
     public partial class level1 : UserControl
     {
-        public Dashboard dash {  get; set; }
         public string Username { get; set; }
         public int userLevel { get; set; }
         public level1()
@@ -35,15 +34,35 @@ namespace LoginRegister
         private void submit_buttonn_Click(object sender, EventArgs e)
         {
             string username = Username;
-            MessageBox.Show(username);
+            int userLevel = this.userLevel;
+            //MessageBox.Show(username);
+            //MessageBox.Show(userLevel.ToString());
+
+            String querry = "SELECT * FROM UserData WHERE username = '" + username + "'";
+
+            SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+            string searchColumn = "username";
+            string searchVal = username;
+            string resultColumn = "userLevel";
+
+            DataRow[] selectedRows = dt.Select($"{searchColumn} = '{searchVal}'");
+
+            int level = (int)selectedRows[0][resultColumn];
+            userLevel = level;
+
             string answer = box_answer.Text;
             if (answer == "selamat, kamu telah menyelesaikan latihan python pertamamu!")
             {
                 MessageBox.Show("Benar!");
-                conn.Open();
-                MessageBox.Show(userLevel.ToString());
+                //MessageBox.Show(level.ToString());
                 string query = "UPDATE UserData SET userLevel = 2 WHERE username = '" + username + "'";
-                if (userLevel < 2)
+                conn.Open();
+                if (userLevel <= 1)
                 {
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
@@ -56,7 +75,7 @@ namespace LoginRegister
                         }
                         else
                         {
-                            MessageBox.Show("Ga ke update bro");
+                            MessageBox.Show("Error to access database");
                         }
                     }
                 }
@@ -76,6 +95,13 @@ namespace LoginRegister
         private void back_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            string soal = lvl1_soal.Text + label1.Text;
+            Clipboard.SetText(soal);
+            MessageBox.Show("Copied");
         }
     }
 }

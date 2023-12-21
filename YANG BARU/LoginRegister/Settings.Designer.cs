@@ -61,6 +61,7 @@
             this.pnKata.ShadowDecoration.BorderRadius = 20;
             this.pnKata.Size = new System.Drawing.Size(242, 455);
             this.pnKata.TabIndex = 13;
+            this.pnKata.Paint += new System.Windows.Forms.PaintEventHandler(this.pnKata_Paint);
             // 
             // guna2Separator2
             // 
@@ -83,6 +84,7 @@
             this.GlobalSettings.Size = new System.Drawing.Size(156, 23);
             this.GlobalSettings.TabIndex = 13;
             this.GlobalSettings.Text = "Global Settings";
+            this.GlobalSettings.Click += new System.EventHandler(this.GlobalSettings_Click);
             // 
             // pnSettings
             // 
@@ -162,6 +164,7 @@
             this.Notifications_btn.Text = "Notifications";
             this.Notifications_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Notifications_btn.TextOffset = new System.Drawing.Point(10, 0);
+            this.Notifications_btn.Click += new System.EventHandler(this.Notifications_btn_Click);
             // 
             // UserProfile_btn
             // 
