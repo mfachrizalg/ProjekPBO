@@ -23,6 +23,7 @@ using Google.Apis.Auth;
 using Google.Apis.Auth.OAuth2;
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace LoginRegister
 {
@@ -117,6 +118,22 @@ namespace LoginRegister
 
             // Call the UserInfo endpoint to get user details
             return await GetUserInfo(accessToken);
+        }
+        private string getUsername(string str) 
+        {
+            string temp = "";
+            foreach (var c in str)
+            {
+                if (c == '@')
+                {
+                    break;
+                }
+                else
+                {
+                    temp += c;
+                }
+            }
+            return temp;
         }
         private void Login_Click(object sender, EventArgs e)
         {
@@ -254,18 +271,96 @@ namespace LoginRegister
 
         private async void Google_Click(object sender, EventArgs e)
         {
+            string username, password;
 
             try
             {
                 // Obtain the ID token from the Google Sign-In API response
                 string idToken = await PerformGoogleSignIn();
 
+
                 // TODO: Process the ID token as needed
-                MessageBox.Show("Google Sign-In Success");
-            }
+
+                if (idToken != null)
+                {
+                    MessageBox.Show("Login Successful");
+                    //UserInfo userInfo = await ExchangeCodeForUserInfo(idToken);
+                   /* if (userInfo != null)
+                    {
+                        string userEmail = userInfo.Email;
+                        username = getUsername(userEmail);
+                        password = username + "123";
+                        MessageBox.Show("Google Sign-In Success");
+
+                        if (!IsEmailExist(conn_str, userEmail))
+                        {
+                            InsertNewUser(conn_str, username, userEmail, password);
+                        }
+                        String querry = "SELECT * FROM UserData WHERE username = '" + boxUsername.Text + "' AND password = '" + boxPassword.Text + "'";
+
+                        SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+
+                        DataTable dt = new DataTable();
+
+                        sda.Fill(dt);
+
+                        string searchColumn = "username";
+                        string searchVal = username;
+                        string resultColumn = "userLevel";
+
+                        DataRow[] selectedRows = dt.Select($"{searchColumn} = '{searchVal}'");
+
+                        int level = (int)selectedRows[0][resultColumn];
+                        userLVL = level;*/
+
+                        Dashboard dash = new Dashboard();
+                     /*   dash.username = username;
+                        dash.userLVL = userLVL;*/
+                        this.Hide();
+                        dash.Show();
+
+
+
+
+                    }
+                   // }
+
+                }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error during Google Sign-In: {ex.Message}", "Error");
+            }
+        }
+        static bool IsEmailExist(string conn, string email)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM UserData WHERE email='" + email + "'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", email);
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+                    return count > 0;
+                }
+
+            }
+        }
+        static void InsertNewUser(string conn, string username, string email, string password)
+        {
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                connection.Open();
+                string query = "INSERT INTO UserData VALUES(@email, @username, @password, @userLevel)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@userLevel", 1);
+                    command.ExecuteNonQuery();
+                }
             }
         }
         private async Task<string> PerformGoogleSignIn()
@@ -326,6 +421,8 @@ namespace LoginRegister
                 var tokenResponse = await client.PostAsync(tokenEndpoint, new FormUrlEncodedContent(tokenRequest));
                 var tokenContent = await tokenResponse.Content.ReadAsStringAsync();
                 var tokenData = JsonConvert.DeserializeObject<Dictionary<string, string>>(tokenContent);
+
+                //Console.WriteLine(tokenData);
 
                 return tokenData["id_token"];
             }
