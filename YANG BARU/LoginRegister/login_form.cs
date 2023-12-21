@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace LoginRegister
@@ -19,7 +20,7 @@ namespace LoginRegister
         {
             InitializeComponent();
         }
-
+        string conn_str = @"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True";
         SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,9 +87,12 @@ namespace LoginRegister
         private void Login_Click(object sender, EventArgs e)
         {
             String username, password;
+            //int level;
             username = boxUsername.Text;
             password = boxPassword.Text;
             conn.Open();
+            string level_querry = "SELECT userLevel FROM UserData WHERE username = '" + username + "'";
+
 
             try
             {
@@ -100,6 +104,14 @@ namespace LoginRegister
 
                 sda.Fill(dt);
 
+                string searchColumn = "username";
+                string searchVal = username;
+                string resultColumn = "userLevel";
+
+                DataRow[] selectedRows = dt.Select($"{searchColumn} = '{searchVal}'");
+
+                int level = (int)selectedRows[0][resultColumn];
+
                 if (boxUsername.Text != string.Empty || boxPassword.Text != string.Empty)
                 {
                     if (CheckBox.Checked == true)
@@ -108,6 +120,8 @@ namespace LoginRegister
                         {
                             username = boxUsername.Text;
                             password = boxPassword.Text;
+
+                            MessageBox.Show(level.ToString());
 
                             MessageBox.Show("Login Successful");
  /*                           var level1 = new lvl1();
@@ -119,6 +133,9 @@ namespace LoginRegister
                             this.Hide();
                             level1.Show();*/
                             Dashboard dash = new Dashboard();
+                            dash.username = username;
+                            dash.userLVL = level;
+
                             this.Hide();
                             dash.Show();
                         

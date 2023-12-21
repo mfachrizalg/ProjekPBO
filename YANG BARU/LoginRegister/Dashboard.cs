@@ -14,7 +14,8 @@ namespace LoginRegister
 {
     public partial class Dashboard : Form
     {
-
+        public int userLVL {  get; set; }
+        public string username { get; set; }
         public float Progress{ get; set; }
         public Dashboard()
         {
@@ -168,6 +169,7 @@ namespace LoginRegister
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Home"))
             {
                 Home home = new Home();
+                
                 home.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(home);
             }
@@ -231,6 +233,7 @@ namespace LoginRegister
             _obj = this;
 
             Home home = new Home();
+            home.username = username;
             home.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(home);
         }

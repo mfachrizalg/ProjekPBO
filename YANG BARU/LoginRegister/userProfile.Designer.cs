@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProfileInfo = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.Profile_Info = new System.Windows.Forms.Label();
             this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.submit_buttonn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Nama = new System.Windows.Forms.Label();
+            this.Photo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Username = new System.Windows.Forms.Label();
             this.Username_box = new Guna.UI2.WinForms.Guna2TextBox();
             this.Email_box = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,21 +44,21 @@
             this.Password_box = new Guna.UI2.WinForms.Guna2TextBox();
             this.Password = new System.Windows.Forms.Label();
             this.check_show = new System.Windows.Forms.CheckBox();
-            this.Photo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnLearning.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).BeginInit();
             this.SuspendLayout();
             // 
-            // ProfileInfo
+            // Profile_Info
             // 
-            this.ProfileInfo.AutoSize = true;
-            this.ProfileInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileInfo.ForeColor = System.Drawing.Color.Gray;
-            this.ProfileInfo.Location = new System.Drawing.Point(21, 28);
-            this.ProfileInfo.Name = "ProfileInfo";
-            this.ProfileInfo.Size = new System.Drawing.Size(186, 23);
-            this.ProfileInfo.TabIndex = 14;
-            this.ProfileInfo.Text = "Profile Information";
+            this.Profile_Info.AutoSize = true;
+            this.Profile_Info.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Profile_Info.ForeColor = System.Drawing.Color.Gray;
+            this.Profile_Info.Location = new System.Drawing.Point(21, 28);
+            this.Profile_Info.Name = "Profile_Info";
+            this.Profile_Info.Size = new System.Drawing.Size(186, 23);
+            this.Profile_Info.TabIndex = 14;
+            this.Profile_Info.Text = "Profile Information";
             // 
             // pnLearning
             // 
@@ -132,6 +134,20 @@
             this.Nama.Size = new System.Drawing.Size(109, 19);
             this.Nama.TabIndex = 13;
             this.Nama.Text = "Ijal Ganteng";
+            // 
+            // Photo
+            // 
+            this.Photo.BackColor = System.Drawing.Color.Transparent;
+            this.Photo.Image = global::LoginRegister.Properties.Resources.J__Robert_Oppenheimer;
+            this.Photo.ImageRotate = 0F;
+            this.Photo.Location = new System.Drawing.Point(20, 20);
+            this.Photo.Name = "Photo";
+            this.Photo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Photo.Size = new System.Drawing.Size(64, 66);
+            this.Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Photo.TabIndex = 4;
+            this.Photo.TabStop = false;
+            this.Photo.UseTransparentBackground = true;
             // 
             // Username
             // 
@@ -303,19 +319,10 @@
             this.check_show.UseVisualStyleBackColor = false;
             this.check_show.CheckedChanged += new System.EventHandler(this.check_show_CheckedChanged_1);
             // 
-            // Photo
+            // guna2Elipse1
             // 
-            this.Photo.BackColor = System.Drawing.Color.Transparent;
-            this.Photo.Image = global::LoginRegister.Properties.Resources.J__Robert_Oppenheimer;
-            this.Photo.ImageRotate = 0F;
-            this.Photo.Location = new System.Drawing.Point(20, 20);
-            this.Photo.Name = "Photo";
-            this.Photo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Photo.Size = new System.Drawing.Size(64, 66);
-            this.Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Photo.TabIndex = 4;
-            this.Photo.TabStop = false;
-            this.Photo.UseTransparentBackground = true;
+            this.guna2Elipse1.BorderRadius = 40;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // userProfile
             // 
@@ -332,9 +339,9 @@
             this.Controls.Add(this.Username_box);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.pnLearning);
-            this.Controls.Add(this.ProfileInfo);
+            this.Controls.Add(this.Profile_Info);
             this.Name = "userProfile";
-            this.Size = new System.Drawing.Size(446, 392);
+            this.Size = new System.Drawing.Size(383, 329);
             this.pnLearning.ResumeLayout(false);
             this.pnLearning.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).EndInit();
@@ -345,7 +352,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label ProfileInfo;
+        private System.Windows.Forms.Label Profile_Info;
         private Guna.UI2.WinForms.Guna2Panel pnLearning;
         private Guna.UI2.WinForms.Guna2CirclePictureBox Photo;
         private Guna.UI2.WinForms.Guna2GradientButton submit_buttonn;
@@ -360,5 +367,6 @@
         private Guna.UI2.WinForms.Guna2TextBox Password_box;
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.CheckBox check_show;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

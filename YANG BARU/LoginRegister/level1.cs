@@ -14,6 +14,7 @@ namespace LoginRegister
 {
     public partial class level1 : UserControl
     {
+        public Dashboard dash {  get; set; }
         public string Username { get; set; }
         public int userLevel { get; set; }
         public level1()
@@ -44,7 +45,6 @@ namespace LoginRegister
                 string query = "UPDATE UserData SET userLevel = 2 WHERE username = '" + username + "'";
                 if (userLevel < 2)
                 {
-
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
                         command.Parameters.AddWithValue("@userLevel", (int)2);
@@ -71,6 +71,11 @@ namespace LoginRegister
                 MessageBox.Show("Salah!");
                 box_answer.Clear();
             }
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
