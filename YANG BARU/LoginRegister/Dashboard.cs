@@ -166,9 +166,13 @@ namespace LoginRegister
 
         private void Dash_Click(object sender, EventArgs e)
         {
+            int userLevel = userLVL;
+            string username = this.username;
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Home"))
             {
                 Home home = new Home();
+                home.username = username;
+                home.userLevel = userLevel;
                 
                 home.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(home);

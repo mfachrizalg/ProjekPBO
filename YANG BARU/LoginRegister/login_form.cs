@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,6 +18,7 @@ namespace LoginRegister
 {
     public partial class login_form : Form
     {
+        public int userLVL { get; set; }
         public login_form()
         {
             InitializeComponent();
@@ -111,6 +114,7 @@ namespace LoginRegister
                 DataRow[] selectedRows = dt.Select($"{searchColumn} = '{searchVal}'");
 
                 int level = (int)selectedRows[0][resultColumn];
+                userLVL = level;
 
                 if (boxUsername.Text != string.Empty || boxPassword.Text != string.Empty)
                 {

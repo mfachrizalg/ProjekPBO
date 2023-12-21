@@ -14,6 +14,7 @@ namespace LoginRegister
     public partial class Home : UserControl
     {
         public string username {  get; set; }
+        public int userLevel { get; set; }
         public Home()
         {
             InitializeComponent();
@@ -42,10 +43,13 @@ namespace LoginRegister
 
         private void Exercise_Click(object sender, EventArgs e)
         {
+            int userLevel = this.userLevel;
+            string username = this.username;
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("level1"))
             {
                 level1 lv = new level1();
                 lv.Username = username;
+                lv.userLevel = userLevel;
                 lv.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(lv);
             }
