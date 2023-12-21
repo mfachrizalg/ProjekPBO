@@ -31,23 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.Left = new Guna.UI2.WinForms.Guna2Panel();
-            this.SidebarTrans = new System.Windows.Forms.Timer(this.components);
-            this.Topp = new Guna.UI2.WinForms.Guna2Panel();
-            this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.learn = new System.Windows.Forms.Label();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.p_logo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.exit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Sidebar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Settings = new Guna.UI2.WinForms.Guna2Button();
             this.Profile = new Guna.UI2.WinForms.Guna2Button();
             this.Dash = new Guna.UI2.WinForms.Guna2Button();
+            this.SidebarTrans = new System.Windows.Forms.Timer(this.components);
+            this.Topp = new Guna.UI2.WinForms.Guna2Panel();
+            this.p_logo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.exit = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.learn = new System.Windows.Forms.Label();
+            this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Left.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Sidebar)).BeginInit();
             this.Topp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sidebar)).BeginInit();
             this.SuspendLayout();
             // 
             // Left
@@ -66,107 +66,6 @@
             this.Left.Size = new System.Drawing.Size(179, 526);
             this.Left.TabIndex = 1;
             this.Left.Paint += new System.Windows.Forms.PaintEventHandler(this.Left_Paint);
-            // 
-            // SidebarTrans
-            // 
-            this.SidebarTrans.Interval = 10;
-            this.SidebarTrans.Tick += new System.EventHandler(this.SidebarTrans_Tick);
-            // 
-            // Topp
-            // 
-            this.Topp.BackColor = System.Drawing.Color.White;
-            this.Topp.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.Topp.BorderThickness = 1;
-            this.Topp.Controls.Add(this.p_logo);
-            this.Topp.Controls.Add(this.Minimize);
-            this.Topp.Controls.Add(this.exit);
-            this.Topp.Controls.Add(this.learn);
-            this.Topp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Topp.Location = new System.Drawing.Point(179, 0);
-            this.Topp.Name = "Topp";
-            this.Topp.Size = new System.Drawing.Size(817, 44);
-            this.Topp.TabIndex = 4;
-            this.Topp.Paint += new System.Windows.Forms.PaintEventHandler(this.Topp_Paint);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(179, 44);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(817, 482);
-            this.MainPanel.TabIndex = 5;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
-            // 
-            // learn
-            // 
-            this.learn.AutoSize = true;
-            this.learn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.learn.Location = new System.Drawing.Point(60, 11);
-            this.learn.Name = "learn";
-            this.learn.Size = new System.Drawing.Size(71, 23);
-            this.learn.TabIndex = 5;
-            this.learn.Text = "ylearn";
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockForm = true;
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.MainPanel;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // p_logo
-            // 
-            this.p_logo.BackColor = System.Drawing.Color.Transparent;
-            this.p_logo.Image = global::LoginRegister.Properties.Resources.p;
-            this.p_logo.ImageRotate = 0F;
-            this.p_logo.Location = new System.Drawing.Point(38, 7);
-            this.p_logo.Name = "p_logo";
-            this.p_logo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.p_logo.Size = new System.Drawing.Size(31, 31);
-            this.p_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.p_logo.TabIndex = 4;
-            this.p_logo.TabStop = false;
-            this.p_logo.UseTransparentBackground = true;
-            // 
-            // Minimize
-            // 
-            this.Minimize.AnimatedGIF = true;
-            this.Minimize.BackColor = System.Drawing.Color.Transparent;
-            this.Minimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Minimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Minimize.HoverState.ImageSize = new System.Drawing.Size(16, 16);
-            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
-            this.Minimize.ImageOffset = new System.Drawing.Point(0, 0);
-            this.Minimize.ImageRotate = 0F;
-            this.Minimize.ImageSize = new System.Drawing.Size(16, 16);
-            this.Minimize.Location = new System.Drawing.Point(727, 0);
-            this.Minimize.Margin = new System.Windows.Forms.Padding(4);
-            this.Minimize.Name = "Minimize";
-            this.Minimize.PressedState.ImageSize = new System.Drawing.Size(16, 16);
-            this.Minimize.Size = new System.Drawing.Size(45, 44);
-            this.Minimize.TabIndex = 3;
-            this.Minimize.UseTransparentBackground = true;
-            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
-            // 
-            // exit
-            // 
-            this.exit.AnimatedGIF = true;
-            this.exit.BackColor = System.Drawing.Color.Transparent;
-            this.exit.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exit.HoverState.ImageSize = new System.Drawing.Size(16, 16);
-            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
-            this.exit.ImageOffset = new System.Drawing.Point(0, 0);
-            this.exit.ImageRotate = 0F;
-            this.exit.ImageSize = new System.Drawing.Size(16, 16);
-            this.exit.Location = new System.Drawing.Point(772, 0);
-            this.exit.Margin = new System.Windows.Forms.Padding(4);
-            this.exit.Name = "exit";
-            this.exit.PressedState.ImageSize = new System.Drawing.Size(16, 16);
-            this.exit.Size = new System.Drawing.Size(45, 44);
-            this.exit.TabIndex = 2;
-            this.exit.UseTransparentBackground = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // Sidebar
             // 
@@ -273,6 +172,107 @@
             this.Dash.CheckedChanged += new System.EventHandler(this.guna2Button2_CheckedChanged);
             this.Dash.Click += new System.EventHandler(this.Dash_Click);
             // 
+            // SidebarTrans
+            // 
+            this.SidebarTrans.Interval = 10;
+            this.SidebarTrans.Tick += new System.EventHandler(this.SidebarTrans_Tick);
+            // 
+            // Topp
+            // 
+            this.Topp.BackColor = System.Drawing.Color.White;
+            this.Topp.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.Topp.BorderThickness = 1;
+            this.Topp.Controls.Add(this.p_logo);
+            this.Topp.Controls.Add(this.Minimize);
+            this.Topp.Controls.Add(this.exit);
+            this.Topp.Controls.Add(this.learn);
+            this.Topp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Topp.Location = new System.Drawing.Point(179, 0);
+            this.Topp.Name = "Topp";
+            this.Topp.Size = new System.Drawing.Size(817, 44);
+            this.Topp.TabIndex = 4;
+            this.Topp.Paint += new System.Windows.Forms.PaintEventHandler(this.Topp_Paint);
+            // 
+            // p_logo
+            // 
+            this.p_logo.BackColor = System.Drawing.Color.Transparent;
+            this.p_logo.Image = ((System.Drawing.Image)(resources.GetObject("p_logo.Image")));
+            this.p_logo.ImageRotate = 0F;
+            this.p_logo.Location = new System.Drawing.Point(38, 7);
+            this.p_logo.Name = "p_logo";
+            this.p_logo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.p_logo.Size = new System.Drawing.Size(31, 31);
+            this.p_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.p_logo.TabIndex = 4;
+            this.p_logo.TabStop = false;
+            this.p_logo.UseTransparentBackground = true;
+            // 
+            // Minimize
+            // 
+            this.Minimize.AnimatedGIF = true;
+            this.Minimize.BackColor = System.Drawing.Color.Transparent;
+            this.Minimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Minimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Minimize.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
+            this.Minimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Minimize.ImageRotate = 0F;
+            this.Minimize.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Location = new System.Drawing.Point(727, 0);
+            this.Minimize.Margin = new System.Windows.Forms.Padding(4);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Size = new System.Drawing.Size(45, 44);
+            this.Minimize.TabIndex = 3;
+            this.Minimize.UseTransparentBackground = true;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
+            // 
+            // exit
+            // 
+            this.exit.AnimatedGIF = true;
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exit.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
+            this.exit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.exit.ImageRotate = 0F;
+            this.exit.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Location = new System.Drawing.Point(772, 0);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
+            this.exit.Name = "exit";
+            this.exit.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Size = new System.Drawing.Size(45, 44);
+            this.exit.TabIndex = 2;
+            this.exit.UseTransparentBackground = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // learn
+            // 
+            this.learn.AutoSize = true;
+            this.learn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.learn.Location = new System.Drawing.Point(60, 11);
+            this.learn.Name = "learn";
+            this.learn.Size = new System.Drawing.Size(71, 23);
+            this.learn.TabIndex = 5;
+            this.learn.Text = "ylearn";
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(179, 44);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(817, 482);
+            this.MainPanel.TabIndex = 5;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockForm = true;
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.MainPanel;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -287,10 +287,10 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.Left.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Sidebar)).EndInit();
             this.Topp.ResumeLayout(false);
             this.Topp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sidebar)).EndInit();
             this.ResumeLayout(false);
 
         }

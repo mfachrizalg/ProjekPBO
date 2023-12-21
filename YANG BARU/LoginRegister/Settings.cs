@@ -95,5 +95,9 @@ namespace LoginRegister
         {
 
         }
+        public void ChangePnKataColor(Color newColor)
+        {
+            pnKata.BackColor = newColor;
+        }
     }
 }

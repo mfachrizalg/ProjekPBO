@@ -231,6 +231,7 @@
             this.Controls.Add(this.indicatorlvl);
             this.Name = "level1";
             this.Size = new System.Drawing.Size(817, 482);
+            this.Load += new System.EventHandler(this.level1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.level_pict)).EndInit();
             this.ResumeLayout(false);
 

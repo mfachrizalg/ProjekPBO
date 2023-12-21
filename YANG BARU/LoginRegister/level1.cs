@@ -103,5 +103,10 @@ namespace LoginRegister
             Clipboard.SetText(soal);
             MessageBox.Show("Copied");
         }
+
+        private void level1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

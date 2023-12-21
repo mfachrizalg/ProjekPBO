@@ -17,13 +17,12 @@ namespace LoginRegister
         {
             InitializeComponent();
         }
-
-/*        private void DarkLight_btn_Click(object sender, EventArgs e)
+        private void DarkLight_btn_Click(object sender, EventArgs e)
         {
             Guna2Button btn = (Guna2Button)sender;
             btn.BackColor = Color.White;
-            BackColor = pnDisplay.BackColor = Light_btn.BackColor =  (btn.Name == "Dark_btn")?Color.FromArgb(35, 36, 41): Color.White;
-        }*/
+            BackColor = pnDisplay.BackColor = Light_btn.BackColor = (btn.Name == "Dark_btn")?Color.FromArgb(35, 36, 41): Color.White;
+        }
 
     }
 }

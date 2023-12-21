@@ -84,6 +84,7 @@
             this.Dark_btn.TabIndex = 25;
             this.Dark_btn.Text = "Dark Mode";
             this.Dark_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Dark_btn.Click += new System.EventHandler(this.DarkLight_btn_Click);
             // 
             // Light_btn
             // 
@@ -113,6 +114,7 @@
             this.Light_btn.TabIndex = 24;
             this.Light_btn.Text = "Light Mode";
             this.Light_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Light_btn.Click += new System.EventHandler(this.DarkLight_btn_Click);
             // 
             // Theme_Style
             // 

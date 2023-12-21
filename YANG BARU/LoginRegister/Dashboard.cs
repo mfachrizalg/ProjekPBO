@@ -14,12 +14,16 @@ namespace LoginRegister
 {
     public partial class Dashboard : Form
     {
+        private Settings mySettingsUserControl;
         public int userLVL {  get; set; }
         public string username { get; set; }
         public float Progress{ get; set; }
         public Dashboard()
         {
             InitializeComponent();
+            mySettingsUserControl = new Settings();
+            Controls.Add(mySettingsUserControl);
+            mySettingsUserControl.Visible = true;
         }
 
 
@@ -243,3 +247,5 @@ namespace LoginRegister
         }
     }
 }
+
+/*BackColor =*/
