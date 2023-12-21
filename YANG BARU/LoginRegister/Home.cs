@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Azure.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace LoginRegister
 {
     public partial class Home : UserControl
     {
+        public string username {  get; set; }
         public Home()
         {
             InitializeComponent();
@@ -40,12 +42,10 @@ namespace LoginRegister
 
         private void Exercise_Click(object sender, EventArgs e)
         {
-/*            lvl1 level1 = new lvl1();
-            this.Hide();
-            level1.Show();*/
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("level1"))
             {
                 level1 lv = new level1();
+                lv.Username = username;
                 lv.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(lv);
             }

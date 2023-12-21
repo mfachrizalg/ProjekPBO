@@ -41,6 +41,7 @@
             this.web1.Name = "web1";
             this.web1.Size = new System.Drawing.Size(432, 367);
             this.web1.TabIndex = 0;
+            this.web1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.web1_DocumentCompleted);
             // 
             // Data_Type
             // 

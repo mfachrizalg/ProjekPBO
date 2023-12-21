@@ -33,11 +33,11 @@
             this.MenuTransition = new System.Windows.Forms.Timer(this.components);
             this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
             this.pnList = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.GlobalSettings = new System.Windows.Forms.Label();
             this.introContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.DataType = new Guna.UI2.WinForms.Guna2Button();
             this.Intro = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.GlobalSettings = new System.Windows.Forms.Label();
             this.back = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pnList.SuspendLayout();
             this.introContainer.SuspendLayout();
@@ -59,11 +59,11 @@
             this.pnLearning.BorderThickness = 1;
             this.pnLearning.FillColor = System.Drawing.Color.White;
             this.pnLearning.ForeColor = System.Drawing.Color.Coral;
-            this.pnLearning.Location = new System.Drawing.Point(83, 24);
+            this.pnLearning.Location = new System.Drawing.Point(62, 20);
             this.pnLearning.Margin = new System.Windows.Forms.Padding(0);
             this.pnLearning.Name = "pnLearning";
             this.pnLearning.ShadowDecoration.BorderRadius = 20;
-            this.pnLearning.Size = new System.Drawing.Size(496, 437);
+            this.pnLearning.Size = new System.Drawing.Size(372, 355);
             this.pnLearning.TabIndex = 38;
             this.pnLearning.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLearning_Paint);
             // 
@@ -81,43 +81,23 @@
             this.pnList.Controls.Add(this.GlobalSettings);
             this.pnList.FillColor = System.Drawing.Color.White;
             this.pnList.ForeColor = System.Drawing.Color.Coral;
-            this.pnList.Location = new System.Drawing.Point(597, 24);
+            this.pnList.Location = new System.Drawing.Point(448, 20);
             this.pnList.Margin = new System.Windows.Forms.Padding(0);
             this.pnList.Name = "pnList";
             this.pnList.ShadowDecoration.BorderRadius = 20;
-            this.pnList.Size = new System.Drawing.Size(208, 437);
+            this.pnList.Size = new System.Drawing.Size(156, 355);
             this.pnList.TabIndex = 14;
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.BackColor = System.Drawing.Color.White;
-            this.guna2Separator2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Separator2.FillThickness = 3;
-            this.guna2Separator2.Location = new System.Drawing.Point(0, 54);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(242, 10);
-            this.guna2Separator2.TabIndex = 17;
-            // 
-            // GlobalSettings
-            // 
-            this.GlobalSettings.AutoSize = true;
-            this.GlobalSettings.BackColor = System.Drawing.Color.White;
-            this.GlobalSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GlobalSettings.ForeColor = System.Drawing.Color.Black;
-            this.GlobalSettings.Location = new System.Drawing.Point(19, 24);
-            this.GlobalSettings.Name = "GlobalSettings";
-            this.GlobalSettings.Size = new System.Drawing.Size(156, 23);
-            this.GlobalSettings.TabIndex = 13;
-            this.GlobalSettings.Text = "Global Settings";
+            this.pnList.Paint += new System.Windows.Forms.PaintEventHandler(this.pnList_Paint);
             // 
             // introContainer
             // 
             this.introContainer.BackColor = System.Drawing.Color.White;
             this.introContainer.Controls.Add(this.DataType);
             this.introContainer.Controls.Add(this.Intro);
-            this.introContainer.Location = new System.Drawing.Point(2, 70);
+            this.introContainer.Location = new System.Drawing.Point(2, 57);
+            this.introContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.introContainer.Name = "introContainer";
-            this.introContainer.Size = new System.Drawing.Size(203, 53);
+            this.introContainer.Size = new System.Drawing.Size(152, 106);
             this.introContainer.TabIndex = 2;
             // 
             // DataType
@@ -142,10 +122,10 @@
             this.DataType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.DataType.ImageOffset = new System.Drawing.Point(20, 0);
             this.DataType.ImageSize = new System.Drawing.Size(10, 10);
-            this.DataType.Location = new System.Drawing.Point(0, 53);
+            this.DataType.Location = new System.Drawing.Point(0, 43);
             this.DataType.Margin = new System.Windows.Forms.Padding(0);
             this.DataType.Name = "DataType";
-            this.DataType.Size = new System.Drawing.Size(203, 53);
+            this.DataType.Size = new System.Drawing.Size(152, 43);
             this.DataType.TabIndex = 0;
             this.DataType.Text = "Data Type";
             this.DataType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -176,12 +156,36 @@
             this.Intro.Location = new System.Drawing.Point(0, 0);
             this.Intro.Margin = new System.Windows.Forms.Padding(0);
             this.Intro.Name = "Intro";
-            this.Intro.Size = new System.Drawing.Size(203, 53);
+            this.Intro.Size = new System.Drawing.Size(152, 43);
             this.Intro.TabIndex = 1;
             this.Intro.Text = "Intro";
             this.Intro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Intro.TextOffset = new System.Drawing.Point(40, 0);
             this.Intro.Click += new System.EventHandler(this.Intro_Click);
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.BackColor = System.Drawing.Color.White;
+            this.guna2Separator2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Separator2.FillThickness = 3;
+            this.guna2Separator2.Location = new System.Drawing.Point(0, 44);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(182, 8);
+            this.guna2Separator2.TabIndex = 17;
+            // 
+            // GlobalSettings
+            // 
+            this.GlobalSettings.AutoSize = true;
+            this.GlobalSettings.BackColor = System.Drawing.Color.White;
+            this.GlobalSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GlobalSettings.ForeColor = System.Drawing.Color.Black;
+            this.GlobalSettings.Location = new System.Drawing.Point(14, 20);
+            this.GlobalSettings.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.GlobalSettings.Name = "GlobalSettings";
+            this.GlobalSettings.Size = new System.Drawing.Size(123, 19);
+            this.GlobalSettings.TabIndex = 13;
+            this.GlobalSettings.Text = "Global Settings";
             // 
             // back
             // 
@@ -196,23 +200,25 @@
             this.back.ForeColor = System.Drawing.Color.White;
             this.back.Image = global::LoginRegister.Properties.Resources.back1;
             this.back.ImageSize = new System.Drawing.Size(25, 25);
-            this.back.Location = new System.Drawing.Point(25, 24);
+            this.back.Location = new System.Drawing.Point(19, 20);
+            this.back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.back.Name = "back";
             this.back.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.back.Size = new System.Drawing.Size(34, 39);
+            this.back.Size = new System.Drawing.Size(26, 32);
             this.back.TabIndex = 37;
             this.back.UseTransparentBackground = true;
             // 
             // Learningg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
             this.Controls.Add(this.pnList);
             this.Controls.Add(this.pnLearning);
             this.Controls.Add(this.back);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Learningg";
-            this.Size = new System.Drawing.Size(817, 482);
+            this.Size = new System.Drawing.Size(613, 392);
             this.Load += new System.EventHandler(this.Learningg_Load);
             this.pnList.ResumeLayout(false);
             this.pnList.PerformLayout();

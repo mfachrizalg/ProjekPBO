@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using Google.Apis.YouTube.v3.Data;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,8 +92,14 @@ namespace LoginRegister
                 Data_Type data = new Data_Type();
                 data.Dock = DockStyle.Fill;
                 Learningg.Instance.pnLearning.Controls.Add(data);
+
             }
             Learningg.Instance.pnLearning.Controls["Data_Type"].BringToFront();
+        }
+
+        private void pnList_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

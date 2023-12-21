@@ -322,25 +322,6 @@ namespace LoginRegister
                     //ShowOTPInputPopup();
                     MessageBox.Show("OTP sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                /*using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
-                 {
-                     MailMessage msg = new MailMessage();
-
-                     msg.From = new MailAddress("mymailid");
-                     msg.To.Add("receipientid");
-                     msg.Subject = "test";
-                     msg.Body = "Test Content";
-
-
-                     client.Port = 587;
-
-                     client.Credentials = new NetworkCredential(senderEmail,senderPassword);
-                     client.EnableSsl = true;
-
-                     MailMessage message = new MailMessage("mohammad.fachrizal123@gmail.com", recipientEmail, "Your OTP Code", $"Your OTP code is: {otp}");
-                     client.Send(message);
-                 }*/
-
             }
             catch (Exception ex)
             {
@@ -359,60 +340,6 @@ namespace LoginRegister
                 return false;
             }
         }
-
-       /* private void ShowOTPInputPopup()
-        {
-            using (Guna2TextBox txtOTPInput = new Guna2TextBox())
-            using (Guna2Button btnVerify = new Guna2Button())
-            using (Guna2Form otpInputForm = new Guna2Form())
-            {
-                // OTP Input Textbox
-                txtOTPInput.PlaceholderText = "Enter OTP";
-                txtOTPInput.PasswordChar = '\0'; // Set to '*' for password-style input
-                txtOTPInput.Dock = DockStyle.Top;
-
-                // Verify Button
-                btnVerify.Text = "Verify OTP";
-                btnVerify.Dock = DockStyle.Bottom;
-                btnVerify.Click += (s, e) => VerifyOTP(txtOTPInput.Text);
-
-                // OTP Input Form
-                otpInputForm.Controls.Add(txtOTPInput);
-                otpInputForm.Controls.Add(btnVerify);
-                otpInputForm.Size = new System.Drawing.Size(250, 150);
-                otpInputForm.StartPosition = FormStartPosition.CenterParent;
-
-                // Show the OTP input pop-up
-                DialogResult result = otpInputForm.ShowDialog(this);
-
-                // Handle the result if needed
-                if (result == DialogResult.OK)
-                {
-                    MessageBox.Show("OTP Verified Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("OTP Verification Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }*/
-
-       /* private void VerifyOTP(string enteredOTP)
-        {
-            // Perform OTP verification logic here
-            // For simplicity, compare the entered OTP with a static OTP "123456"
-            string actualOTP = "123456";
-            if (enteredOTP == actualOTP)
-            {
-                // Set the result and close the OTP input form
-                ((Guna2Form)((Guna2Button)btnVerify).TopLevelControl).DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                MessageBox.Show("Invalid OTP. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }*/
-
         private void Username_TextChanged(object sender, EventArgs e)
         {
 
