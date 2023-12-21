@@ -15,6 +15,7 @@ namespace LoginRegister
         public Intro()
         {
             InitializeComponent();
+
         }
     }
 }
