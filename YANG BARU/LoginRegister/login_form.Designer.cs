@@ -29,29 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login_form));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.pnKiri = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.course = new System.Windows.Forms.Label();
+            this.freecod = new System.Windows.Forms.Label();
+            this.pctBerdua = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.SignUp = new System.Windows.Forms.LinkLabel();
+            this.boxUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.boxPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.Terms = new System.Windows.Forms.LinkLabel();
+            this.Login = new Guna.UI2.WinForms.Guna2Button();
+            this.Privacy = new System.Windows.Forms.LinkLabel();
             this.check_show = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Username = new System.Windows.Forms.Label();
+            this.Password = new System.Windows.Forms.Label();
+            this.donthave = new System.Windows.Forms.Label();
+            this.GetStarted = new System.Windows.Forms.Label();
+            this.and = new System.Windows.Forms.Label();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.or = new System.Windows.Forms.Label();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.exit = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.Google = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.pnKiri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBerdua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -66,248 +74,206 @@
             this.guna2DragControl1.TargetControl = this;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // guna2GradientPanel1
+            // pnKiri
             // 
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.DodgerBlue;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(-15, -14);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(317, 466);
-            this.guna2GradientPanel1.TabIndex = 1;
+            this.pnKiri.Controls.Add(this.course);
+            this.pnKiri.Controls.Add(this.freecod);
+            this.pnKiri.Controls.Add(this.pctBerdua);
+            this.pnKiri.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnKiri.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.pnKiri.FillColor2 = System.Drawing.Color.DodgerBlue;
+            this.pnKiri.Location = new System.Drawing.Point(0, 0);
+            this.pnKiri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnKiri.Name = "pnKiri";
+            this.pnKiri.Size = new System.Drawing.Size(347, 526);
+            this.pnKiri.TabIndex = 1;
+            this.pnKiri.Paint += new System.Windows.Forms.PaintEventHandler(this.pnKiri_Paint);
             // 
-            // guna2HtmlLabel1
+            // course
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(29, 62);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(258, 30);
-            this.guna2HtmlLabel1.TabIndex = 1;
-            this.guna2HtmlLabel1.Text = "FREE CODING COURSE APP";
-            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
+            this.course.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.course.AutoSize = true;
+            this.course.BackColor = System.Drawing.Color.Transparent;
+            this.course.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.course.ForeColor = System.Drawing.Color.White;
+            this.course.Location = new System.Drawing.Point(85, 94);
+            this.course.Name = "course";
+            this.course.Size = new System.Drawing.Size(181, 41);
+            this.course.TabIndex = 22;
+            this.course.Text = "Course App";
+            this.course.Click += new System.EventHandler(this.course_Click);
             // 
-            // guna2PictureBox1
+            // freecod
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::LoginRegister.Properties.Resources.business_3d_young_women_looking_at_smartphone;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(55, 126);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(261, 559);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            this.freecod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.freecod.AutoSize = true;
+            this.freecod.BackColor = System.Drawing.Color.Transparent;
+            this.freecod.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.freecod.ForeColor = System.Drawing.Color.White;
+            this.freecod.Location = new System.Drawing.Point(85, 53);
+            this.freecod.Name = "freecod";
+            this.freecod.Size = new System.Drawing.Size(188, 41);
+            this.freecod.TabIndex = 21;
+            this.freecod.Text = "Free Coding";
             // 
-            // guna2HtmlLabel3
+            // pctBerdua
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(352, 48);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(130, 33);
-            this.guna2HtmlLabel3.TabIndex = 2;
-            this.guna2HtmlLabel3.Text = "Get Started.";
-            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
+            this.pctBerdua.BackColor = System.Drawing.Color.Transparent;
+            this.pctBerdua.FillColor = System.Drawing.Color.Transparent;
+            this.pctBerdua.Image = global::LoginRegister.Properties.Resources.business_3d_young_women_looking_at_smartphone;
+            this.pctBerdua.ImageRotate = 0F;
+            this.pctBerdua.Location = new System.Drawing.Point(60, 120);
+            this.pctBerdua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pctBerdua.Name = "pctBerdua";
+            this.pctBerdua.Size = new System.Drawing.Size(261, 559);
+            this.pctBerdua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBerdua.TabIndex = 0;
+            this.pctBerdua.TabStop = false;
+            this.pctBerdua.Click += new System.EventHandler(this.pctBerdua_Click);
             // 
-            // guna2HtmlLabel4
+            // SignUp
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(352, 84);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(157, 22);
-            this.guna2HtmlLabel4.TabIndex = 3;
-            this.guna2HtmlLabel4.Text = "Don\'t have an account?";
-            this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
+            this.SignUp.AutoSize = true;
+            this.SignUp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUp.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.SignUp.Location = new System.Drawing.Point(633, 80);
+            this.SignUp.Name = "SignUp";
+            this.SignUp.Size = new System.Drawing.Size(61, 20);
+            this.SignUp.TabIndex = 4;
+            this.SignUp.TabStop = true;
+            this.SignUp.Text = "Sign Up";
+            this.SignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // linkLabel1
+            // boxUsername
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(527, 86);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(61, 20);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Sign Up";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.boxUsername.Animated = true;
+            this.boxUsername.BorderRadius = 5;
+            this.boxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.boxUsername.DefaultText = "";
+            this.boxUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.boxUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.boxUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.boxUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.boxUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.boxUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.boxUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.boxUsername.Location = new System.Drawing.Point(471, 227);
+            this.boxUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.boxUsername.Name = "boxUsername";
+            this.boxUsername.PasswordChar = '\0';
+            this.boxUsername.PlaceholderText = "";
+            this.boxUsername.SelectedText = "";
+            this.boxUsername.Size = new System.Drawing.Size(417, 48);
+            this.boxUsername.TabIndex = 7;
+            this.boxUsername.TextOffset = new System.Drawing.Point(30, 0);
+            this.boxUsername.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
-            // guna2HtmlLabel5
+            // boxPassword
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(352, 126);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(69, 22);
-            this.guna2HtmlLabel5.TabIndex = 6;
-            this.guna2HtmlLabel5.Text = "Username";
-            this.guna2HtmlLabel5.Click += new System.EventHandler(this.guna2HtmlLabel5_Click);
+            this.boxPassword.Animated = true;
+            this.boxPassword.BorderRadius = 5;
+            this.boxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.boxPassword.DefaultText = "";
+            this.boxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.boxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.boxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.boxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.boxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.boxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.boxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.boxPassword.Location = new System.Drawing.Point(471, 317);
+            this.boxPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.boxPassword.Name = "boxPassword";
+            this.boxPassword.PasswordChar = '\0';
+            this.boxPassword.PlaceholderText = "";
+            this.boxPassword.SelectedText = "";
+            this.boxPassword.Size = new System.Drawing.Size(417, 48);
+            this.boxPassword.TabIndex = 10;
+            this.boxPassword.TextOffset = new System.Drawing.Point(30, 0);
+            this.boxPassword.TextChanged += new System.EventHandler(this.boxPassword_TextChanged);
             // 
-            // guna2TextBox1
+            // CheckBox
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(352, 155);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(417, 48);
-            this.guna2TextBox1.TabIndex = 7;
-            this.guna2TextBox1.TextOffset = new System.Drawing.Point(30, 0);
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.CheckBox.AutoSize = true;
+            this.CheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckBox.CheckedState.BorderRadius = 2;
+            this.CheckBox.CheckedState.BorderThickness = 1;
+            this.CheckBox.CheckedState.FillColor = System.Drawing.Color.White;
+            this.CheckBox.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CheckBox.Location = new System.Drawing.Point(471, 381);
+            this.CheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CheckBox.Name = "CheckBox";
+            this.CheckBox.Size = new System.Drawing.Size(165, 24);
+            this.CheckBox.TabIndex = 12;
+            this.CheckBox.Text = "I agree to Platform\'s";
+            this.CheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckBox.UncheckedState.BorderRadius = 2;
+            this.CheckBox.UncheckedState.BorderThickness = 1;
+            this.CheckBox.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.CheckBox.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
-            // guna2TextBox2
+            // Terms
             // 
-            this.guna2TextBox2.Animated = true;
-            this.guna2TextBox2.BorderRadius = 5;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(352, 245);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(417, 48);
-            this.guna2TextBox2.TabIndex = 10;
-            this.guna2TextBox2.TextOffset = new System.Drawing.Point(30, 0);
-            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
+            this.Terms.AutoSize = true;
+            this.Terms.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Terms.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.Terms.Location = new System.Drawing.Point(643, 382);
+            this.Terms.Name = "Terms";
+            this.Terms.Size = new System.Drawing.Size(121, 20);
+            this.Terms.TabIndex = 13;
+            this.Terms.TabStop = true;
+            this.Terms.Text = "Terms of Service";
+            this.Terms.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Terms.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Terms_LinkClicked);
             // 
-            // guna2HtmlLabel6
+            // Login
             // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(352, 217);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(65, 22);
-            this.guna2HtmlLabel6.TabIndex = 9;
-            this.guna2HtmlLabel6.Text = "Password";
-            this.guna2HtmlLabel6.Click += new System.EventHandler(this.guna2HtmlLabel6_Click);
+            this.Login.Animated = true;
+            this.Login.BorderColor = System.Drawing.Color.Gray;
+            this.Login.BorderRadius = 5;
+            this.Login.BorderThickness = 1;
+            this.Login.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Login.FillColor = System.Drawing.Color.DodgerBlue;
+            this.Login.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Login.ForeColor = System.Drawing.Color.White;
+            this.Login.Location = new System.Drawing.Point(476, 423);
+            this.Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(417, 46);
+            this.Login.TabIndex = 14;
+            this.Login.Text = "Login";
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
-            // guna2CheckBox1
+            // Privacy
             // 
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 1;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CheckBox1.Location = new System.Drawing.Point(352, 314);
-            this.guna2CheckBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(165, 24);
-            this.guna2CheckBox1.TabIndex = 12;
-            this.guna2CheckBox1.Text = "I agree to Platform\'s";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 1;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.Location = new System.Drawing.Point(524, 315);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(121, 20);
-            this.linkLabel2.TabIndex = 13;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Terms of Service";
-            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(352, 357);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(417, 46);
-            this.guna2Button2.TabIndex = 14;
-            this.guna2Button2.Text = "Login";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // guna2HtmlLabel7
-            // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(655, 314);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(28, 22);
-            this.guna2HtmlLabel7.TabIndex = 15;
-            this.guna2HtmlLabel7.Text = "and";
-            this.guna2HtmlLabel7.Click += new System.EventHandler(this.guna2HtmlLabel7_Click);
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel3.Location = new System.Drawing.Point(691, 315);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(103, 20);
-            this.linkLabel3.TabIndex = 16;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Privacy Policy";
-            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            this.Privacy.AutoSize = true;
+            this.Privacy.BackColor = System.Drawing.Color.Transparent;
+            this.Privacy.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Privacy.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.Privacy.Location = new System.Drawing.Point(807, 382);
+            this.Privacy.Margin = new System.Windows.Forms.Padding(0);
+            this.Privacy.Name = "Privacy";
+            this.Privacy.Size = new System.Drawing.Size(103, 20);
+            this.Privacy.TabIndex = 0;
+            this.Privacy.TabStop = true;
+            this.Privacy.Text = "Privacy Policy";
+            this.Privacy.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Privacy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Privacy_LinkClicked);
             // 
             // check_show
             // 
             this.check_show.AutoSize = true;
             this.check_show.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.check_show.Location = new System.Drawing.Point(695, 261);
+            this.check_show.Location = new System.Drawing.Point(814, 333);
             this.check_show.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.check_show.Name = "check_show";
             this.check_show.Size = new System.Drawing.Size(58, 19);
@@ -316,12 +282,162 @@
             this.check_show.UseVisualStyleBackColor = true;
             this.check_show.CheckedChanged += new System.EventHandler(this.check_show_CheckedChanged);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Username.Location = new System.Drawing.Point(467, 198);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(75, 20);
+            this.Username.TabIndex = 18;
+            this.Username.Text = "Username";
+            // 
+            // Password
+            // 
+            this.Password.AutoSize = true;
+            this.Password.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Password.Location = new System.Drawing.Point(472, 293);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(70, 20);
+            this.Password.TabIndex = 19;
+            this.Password.Text = "Password";
+            // 
+            // donthave
+            // 
+            this.donthave.AutoSize = true;
+            this.donthave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.donthave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.donthave.Location = new System.Drawing.Point(464, 80);
+            this.donthave.Name = "donthave";
+            this.donthave.Size = new System.Drawing.Size(163, 20);
+            this.donthave.TabIndex = 20;
+            this.donthave.Text = "Don\'t have an account?";
+            // 
+            // GetStarted
+            // 
+            this.GetStarted.AutoSize = true;
+            this.GetStarted.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.GetStarted.ForeColor = System.Drawing.Color.Black;
+            this.GetStarted.Location = new System.Drawing.Point(462, 37);
+            this.GetStarted.Name = "GetStarted";
+            this.GetStarted.Size = new System.Drawing.Size(141, 31);
+            this.GetStarted.TabIndex = 21;
+            this.GetStarted.Text = "Get Started.";
+            // 
+            // and
+            // 
+            this.and.AutoSize = true;
+            this.and.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.and.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.and.Location = new System.Drawing.Point(770, 382);
+            this.and.Name = "and";
+            this.and.Size = new System.Drawing.Size(34, 20);
+            this.and.TabIndex = 22;
+            this.and.Text = "and";
+            this.and.Click += new System.EventHandler(this.and_Click);
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(468, 174);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(187, 10);
+            this.guna2Separator1.TabIndex = 24;
+            // 
+            // or
+            // 
+            this.or.AutoSize = true;
+            this.or.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.or.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.or.Location = new System.Drawing.Point(669, 168);
+            this.or.Name = "or";
+            this.or.Size = new System.Drawing.Size(23, 20);
+            this.or.TabIndex = 25;
+            this.or.Text = "or";
+            this.or.Click += new System.EventHandler(this.or_Click);
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.Location = new System.Drawing.Point(706, 174);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(187, 10);
+            this.guna2Separator2.TabIndex = 26;
+            // 
+            // Minimize
+            // 
+            this.Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Minimize.AnimatedGIF = true;
+            this.Minimize.BackColor = System.Drawing.Color.Transparent;
+            this.Minimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Minimize.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
+            this.Minimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Minimize.ImageRotate = 0F;
+            this.Minimize.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Location = new System.Drawing.Point(906, 0);
+            this.Minimize.Margin = new System.Windows.Forms.Padding(4);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.Minimize.Size = new System.Drawing.Size(45, 44);
+            this.Minimize.TabIndex = 28;
+            this.Minimize.UseTransparentBackground = true;
+            this.Minimize.Click += new System.EventHandler(this.Minimize_Click);
+            // 
+            // exit
+            // 
+            this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exit.AnimatedGIF = true;
+            this.exit.BackColor = System.Drawing.Color.Transparent;
+            this.exit.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.exit.HoverState.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
+            this.exit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.exit.ImageRotate = 0F;
+            this.exit.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Location = new System.Drawing.Point(951, 0);
+            this.exit.Margin = new System.Windows.Forms.Padding(4);
+            this.exit.Name = "exit";
+            this.exit.PressedState.ImageSize = new System.Drawing.Size(16, 16);
+            this.exit.Size = new System.Drawing.Size(45, 44);
+            this.exit.TabIndex = 27;
+            this.exit.UseTransparentBackground = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // Google
+            // 
+            this.Google.Animated = true;
+            this.Google.BorderColor = System.Drawing.Color.Gray;
+            this.Google.BorderRadius = 5;
+            this.Google.BorderThickness = 1;
+            this.Google.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Google.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Google.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Google.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Google.FillColor = System.Drawing.Color.White;
+            this.Google.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Google.ForeColor = System.Drawing.Color.Black;
+            this.Google.Image = global::LoginRegister.Properties.Resources.google;
+            this.Google.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.Google.Location = new System.Drawing.Point(468, 111);
+            this.Google.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Google.Name = "Google";
+            this.Google.Size = new System.Drawing.Size(425, 46);
+            this.Google.TabIndex = 23;
+            this.Google.Text = "Sign in with Google";
+            this.Google.TextOffset = new System.Drawing.Point(2, 0);
+            this.Google.Click += new System.EventHandler(this.Google_Click);
+            // 
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = global::LoginRegister.Properties.Resources.icons8_password_32;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(363, 258);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(482, 330);
             this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(24, 22);
@@ -336,7 +452,7 @@
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::LoginRegister.Properties.Resources.icons8_username_64;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(363, 167);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(482, 239);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(24, 22);
@@ -350,23 +466,29 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.guna2CheckBox1);
-            this.Controls.Add(this.guna2HtmlLabel7);
-            this.Controls.Add(this.guna2HtmlLabel4);
+            this.ClientSize = new System.Drawing.Size(996, 526);
+            this.Controls.Add(this.Minimize);
+            this.Controls.Add(this.exit);
+            this.Controls.Add(this.guna2Separator2);
+            this.Controls.Add(this.or);
+            this.Controls.Add(this.guna2Separator1);
+            this.Controls.Add(this.Google);
+            this.Controls.Add(this.and);
+            this.Controls.Add(this.GetStarted);
+            this.Controls.Add(this.donthave);
+            this.Controls.Add(this.Password);
+            this.Controls.Add(this.Username);
+            this.Controls.Add(this.CheckBox);
             this.Controls.Add(this.check_show);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.Privacy);
+            this.Controls.Add(this.Login);
             this.Controls.Add(this.guna2PictureBox3);
-            this.Controls.Add(this.guna2TextBox2);
-            this.Controls.Add(this.guna2HtmlLabel6);
+            this.Controls.Add(this.boxPassword);
             this.Controls.Add(this.guna2PictureBox2);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.guna2HtmlLabel5);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.boxUsername);
+            this.Controls.Add(this.SignUp);
+            this.Controls.Add(this.pnKiri);
+            this.Controls.Add(this.Terms);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -374,9 +496,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.pnKiri.ResumeLayout(false);
+            this.pnKiri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBerdua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -388,25 +510,32 @@
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnKiri;
+        private Guna.UI2.WinForms.Guna2PictureBox pctBerdua;
+        private System.Windows.Forms.LinkLabel SignUp;
+        private Guna.UI2.WinForms.Guna2TextBox boxUsername;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private System.Windows.Forms.LinkLabel linkLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox boxPassword;
+        private Guna.UI2.WinForms.Guna2CheckBox CheckBox;
+        private System.Windows.Forms.LinkLabel Terms;
+        private Guna.UI2.WinForms.Guna2Button Login;
+        private System.Windows.Forms.LinkLabel Privacy;
         private System.Windows.Forms.CheckBox check_show;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label Username;
+        private System.Windows.Forms.Label donthave;
+        private System.Windows.Forms.Label Password;
+        private System.Windows.Forms.Label freecod;
+        private System.Windows.Forms.Label GetStarted;
+        private System.Windows.Forms.Label and;
+        private System.Windows.Forms.Label course;
+        private Guna.UI2.WinForms.Guna2Button Google;
+        private System.Windows.Forms.Label or;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private Guna.UI2.WinForms.Guna2ImageButton Minimize;
+        private Guna.UI2.WinForms.Guna2ImageButton exit;
     }
 }
 
