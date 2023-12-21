@@ -308,8 +308,9 @@ namespace LoginRegister
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add(recipientEmail);
                     mail.Subject = "Your Sign-in OTP";
-                    mail.Body = "This is your One-Time Passcode (OTP) : " + "<b>" + otp + "<b>";
+                    mail.Body = "This is your One-Time Passcode (OTP) : " + "<b>" + otp + "</b>";
                     mail.Priority = MailPriority.High;
+                    mail.IsBodyHtml = true;
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                     {
