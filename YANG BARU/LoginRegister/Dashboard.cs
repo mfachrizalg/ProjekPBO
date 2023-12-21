@@ -110,7 +110,7 @@ namespace LoginRegister
             WindowState = FormWindowState.Minimized;
         }
 
-        private void Left_Paint(object sender, PaintEventArgs e)
+        public void Left_Paint(object sender, PaintEventArgs e)
         {
 
         }

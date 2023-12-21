@@ -39,8 +39,6 @@ namespace LoginRegister
             Settings.Instance.pnSettings.Controls["userProfile"].BringToFront();
         }
 
-
-
         static Settings _obj;
         public static Settings Instance
         {
@@ -79,6 +77,21 @@ namespace LoginRegister
         }
 
         private void pnSettings_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GlobalSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void pnKata_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Notifications_btn_Click(object sender, EventArgs e)
         {
 
         }
