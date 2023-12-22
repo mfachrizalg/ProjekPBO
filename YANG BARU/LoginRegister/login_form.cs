@@ -13,11 +13,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net;
+using System.Net.Sockets;
+using System.IO;
+using System.Security.Cryptography;
+using Google.Apis.Auth;
+using Google.Apis.Auth.OAuth2;
+using System.Diagnostics;
+using System.Net.Http.Headers;
 
 namespace LoginRegister
 {
     public partial class login_form : Form
     {
+        private const string clientId = "900338522363-ov9l41gueonfl0o54r3eto3j4hdhsec1.apps.googleusercontent.com";
+        private const string redirectUri = "http://localhost:5000";
+        private const string clientSecret = "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";
+        const string authorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
+        const string tokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
+        const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+        public class UserInfo
+        {
+            public string Sub { get; set; } // User ID
+            public string Name { get; set; } // User's full name
+            public string Email { get; set; } // User's email address
+                                              // Add more properties as needed based on the UserInfo response
+        }
         public int userLVL { get; set; }
         public login_form()
         {
@@ -25,28 +48,23 @@ namespace LoginRegister
         }
         string conn_str = @"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True";
         SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
 
         }
-
         private void pctBerdua_Click(object sender, EventArgs e)
         {
 
         }
-
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
@@ -86,7 +104,20 @@ namespace LoginRegister
         {
 
         }
+        private async Task<UserInfo> ExchangeCodeForUserInfo(string authorizationCode)
+        {
+            // Exchange authorization code for access token
+            string accessToken = await ExchangeCodeForAccessToken(authorizationCode);
 
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                // Handle the case where access token is not obtained
+                return null;
+            }
+
+            // Call the UserInfo endpoint to get user details
+            return await GetUserInfo(accessToken);
+        }
         private void Login_Click(object sender, EventArgs e)
         {
             String username, password;
@@ -221,11 +252,135 @@ namespace LoginRegister
 
         }
 
-        private void Google_Click(object sender, EventArgs e)
+        private async void Google_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                // Obtain the ID token from the Google Sign-In API response
+                string idToken = await PerformGoogleSignIn();
+
+                // TODO: Process the ID token as needed
+                MessageBox.Show("Google Sign-In Success");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during Google Sign-In: {ex.Message}", "Error");
+            }
+        }
+        private async Task<string> PerformGoogleSignIn()
+        {
+            // Generate a unique state parameter to prevent CSRF attacks
+            string state = Guid.NewGuid().ToString("N");
+
+            // Create the OAuth 2.0 authorization request URL
+            string authorizationRequestUrl = $"https://accounts.google.com/o/oauth2/auth" +
+                $"?client_id={clientId}" +
+                $"&redirect_uri={redirectUri}" +
+                $"&response_type=code" +
+                $"&scope=openid%20profile" +
+                $"&state={state}";
+
+            // Open the default web browser for the user to sign in
+            Process.Start(new ProcessStartInfo(authorizationRequestUrl) { UseShellExecute = true });
+
+            // Start a simple HTTP server to receive the callback
+            var listener = new HttpListener();
+            listener.Prefixes.Add(redirectUri + "/");
+            listener.Start();
+
+            // Wait for the OAuth authorization response
+            var context = await listener.GetContextAsync();
+            var response = context.Response;
+            string responseString = "<html><head></head><body>Authorization successful. You can close this window now.</body></html>";
+            var buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+            response.ContentLength64 = buffer.Length;
+            var responseOutput = response.OutputStream;
+            await responseOutput.WriteAsync(buffer, 0, buffer.Length);
+            responseOutput.Close();
+
+            // Parse the response to extract the authorization code
+            var queryParams = System.Web.HttpUtility.ParseQueryString(context.Request.Url.Query);
+            string authorizationCode = queryParams["code"];
+
+            listener.Stop();
+
+            // Exchange authorization code for ID token
+            return await ExchangeCodeForIdToken(authorizationCode);
         }
 
+        private async Task<string> ExchangeCodeForIdToken(string authorizationCode)
+        {
+            using (var client = new HttpClient())
+            {
+                var tokenEndpoint = "https://oauth2.googleapis.com/token";
+                var tokenRequest = new Dictionary<string, string>
+                {
+                    { "code", authorizationCode },
+                    { "client_id", clientId },
+                    { "client_secret", clientSecret }, // Replace with your client secret
+                    { "redirect_uri", redirectUri },
+                    { "grant_type", "authorization_code" }
+                };
+
+                var tokenResponse = await client.PostAsync(tokenEndpoint, new FormUrlEncodedContent(tokenRequest));
+                var tokenContent = await tokenResponse.Content.ReadAsStringAsync();
+                var tokenData = JsonConvert.DeserializeObject<Dictionary<string, string>>(tokenContent);
+
+                return tokenData["id_token"];
+            }
+        }
+        private async Task<string> ExchangeCodeForAccessToken(string authorizationCode)
+        {
+            using (var client = new HttpClient())
+            {
+                var tokenEndpoint = "https://oauth2.googleapis.com/token";
+                var tokenRequest = new Dictionary<string, string>
+                {
+                    { "code", authorizationCode },
+                    { "client_id", clientId },
+                    { "client_secret", clientSecret }, // Replace with your client secret
+                    { "redirect_uri", redirectUri },
+                    { "grant_type", "authorization_code" }
+                };
+
+                var tokenResponse = await client.PostAsync(tokenEndpoint, new FormUrlEncodedContent(tokenRequest));
+                var tokenContent = await tokenResponse.Content.ReadAsStringAsync();
+                var tokenData = JsonConvert.DeserializeObject<Dictionary<string, string>>(tokenContent);
+                // Parse the response to extract the access token
+                if (tokenData.TryGetValue("access_token", out var accessToken))
+                {
+                    return accessToken;
+                }
+                else
+                {
+                    // Handle the case where "access_token" is not present in the response
+                    MessageBox.Show("Access token not found in the token response", "Error");
+                    return null;
+                }
+            }
+        }
+        private async Task<UserInfo> GetUserInfo(string accessToken)
+        {
+            using (var client = new HttpClient())
+            {
+                var userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+                var userInfoResponse = await client.GetAsync(userInfoEndpoint);
+
+                if (!userInfoResponse.IsSuccessStatusCode)
+                {
+                    // Handle the error here, e.g., log the response content
+                    var errorContent = await userInfoResponse.Content.ReadAsStringAsync();
+                    MessageBox.Show($"Error retrieving user info: {errorContent}", "Error");
+                    return null;
+                }
+
+                var userInfoContent = await userInfoResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<UserInfo>(userInfoContent);
+            }
+        }
         private void and_Click(object sender, EventArgs e)
         {
 

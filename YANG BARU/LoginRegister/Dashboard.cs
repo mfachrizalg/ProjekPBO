@@ -247,5 +247,3 @@ namespace LoginRegister
         }
     }
 }
-
-/*BackColor =*/
