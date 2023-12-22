@@ -30,6 +30,12 @@ namespace LoginRegister
             }
             Dashboard.Instance.PanelUtama.Controls["Learningg"].BringToFront();
         }
+        public void getUserData(string username, int userLvl)
+        {
+            this.username = username;
+            this.userLevel = userLvl;
+            //MessageBox.Show($"HOME\nUsername: {this.username}\n UserLevel: {this.userLevel}");
+        }
 
         private void Photo_Click(object sender, EventArgs e)
         {
@@ -43,13 +49,16 @@ namespace LoginRegister
 
         private void Exercise_Click(object sender, EventArgs e)
         {
-            int userLevel = this.userLevel;
-            string username = this.username;
+            User user = new User();
+            user.userLevel = this.userLevel;
+            user.username = this.username;
+            level1 lv = new level1();
+            lv.Username = user.username;
+            lv.userLevel = user.userLevel;
+            lv.getUserData(user.username, user.userLevel);
+            //MessageBox.Show($"LEVEL1\nUsername: {lv.Username}\n UserLevel: {lv.userLevel}");
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("level1"))
             {
-                level1 lv = new level1();
-                lv.Username = username;
-                lv.userLevel = userLevel;
                 lv.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(lv);
             }
@@ -98,6 +107,7 @@ namespace LoginRegister
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
         {
+            label2.Text = "Hai, " + username;
 
         }
 

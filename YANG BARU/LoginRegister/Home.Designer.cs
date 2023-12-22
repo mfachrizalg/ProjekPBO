@@ -38,25 +38,25 @@
             this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
             this.Learning = new Guna.UI2.WinForms.Guna2Button();
             this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.search_box = new Guna.UI2.WinForms.Guna2TextBox();
+            this.profile_pict = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.notif_button = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Welcome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnKata = new Guna.UI2.WinForms.Guna2Panel();
             this.HiText = new System.Windows.Forms.Label();
+            this.Photo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.Katakata = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.profile_pict = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.notif_button = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.Photo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnExercise.SuspendLayout();
             this.ProgressPanel.SuspendLayout();
             this.pnLearning.SuspendLayout();
             this.MainPanel.SuspendLayout();
-            this.pnKata.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_pict)).BeginInit();
+            this.pnKata.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,7 +176,7 @@
             this.ProgressBar.Size = new System.Drawing.Size(77, 77);
             this.ProgressBar.TabIndex = 0;
             this.ProgressBar.Text = "ProgressBar";
-            this.ProgressBar.Value = 69;
+            this.ProgressBar.Value = 50;
             this.ProgressBar.ValueChanged += new System.EventHandler(this.ProgressBar_ValueChanged);
             // 
             // pnLearning
@@ -235,6 +235,20 @@
             this.MainPanel.TabIndex = 11;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::LoginRegister.Properties.Resources.search;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(616, 24);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(22, 21);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 17;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
             // search_box
             // 
             this.search_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -259,6 +273,42 @@
             this.search_box.Size = new System.Drawing.Size(194, 38);
             this.search_box.TabIndex = 16;
             this.search_box.TextOffset = new System.Drawing.Point(30, 0);
+            // 
+            // profile_pict
+            // 
+            this.profile_pict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.profile_pict.BackColor = System.Drawing.Color.Transparent;
+            this.profile_pict.FillColor = System.Drawing.Color.Transparent;
+            this.profile_pict.Image = global::LoginRegister.Properties.Resources.memoji;
+            this.profile_pict.ImageRotate = 0F;
+            this.profile_pict.Location = new System.Drawing.Point(568, 18);
+            this.profile_pict.Name = "profile_pict";
+            this.profile_pict.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profile_pict.Size = new System.Drawing.Size(29, 30);
+            this.profile_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profile_pict.TabIndex = 15;
+            this.profile_pict.TabStop = false;
+            this.profile_pict.UseTransparentBackground = true;
+            // 
+            // notif_button
+            // 
+            this.notif_button.BackColor = System.Drawing.Color.Transparent;
+            this.notif_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.notif_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.notif_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.notif_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.notif_button.FillColor = System.Drawing.Color.Transparent;
+            this.notif_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.notif_button.ForeColor = System.Drawing.Color.White;
+            this.notif_button.Image = global::LoginRegister.Properties.Resources.notif;
+            this.notif_button.ImageSize = new System.Drawing.Size(30, 30);
+            this.notif_button.Location = new System.Drawing.Point(535, 22);
+            this.notif_button.Name = "notif_button";
+            this.notif_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.notif_button.Size = new System.Drawing.Size(27, 26);
+            this.notif_button.TabIndex = 14;
+            this.notif_button.UseTransparentBackground = true;
+            this.notif_button.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // Welcome
             // 
@@ -318,6 +368,21 @@
             this.HiText.Text = "J. Robert Oppenheimer";
             this.HiText.Click += new System.EventHandler(this.HiText_Click);
             // 
+            // Photo
+            // 
+            this.Photo.BackColor = System.Drawing.Color.Transparent;
+            this.Photo.Image = global::LoginRegister.Properties.Resources.J__Robert_Oppenheimer;
+            this.Photo.ImageRotate = 0F;
+            this.Photo.Location = new System.Drawing.Point(285, 57);
+            this.Photo.Name = "Photo";
+            this.Photo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Photo.Size = new System.Drawing.Size(100, 100);
+            this.Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Photo.TabIndex = 3;
+            this.Photo.TabStop = false;
+            this.Photo.UseTransparentBackground = true;
+            this.Photo.Click += new System.EventHandler(this.Photo_Click);
+            // 
             // Katakata
             // 
             this.Katakata.BackColor = System.Drawing.Color.Transparent;
@@ -363,71 +428,6 @@
             this.guna2DragControl1.TargetControl = this.MainPanel;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::LoginRegister.Properties.Resources.search;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(616, 24);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(22, 21);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 17;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
-            // profile_pict
-            // 
-            this.profile_pict.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.profile_pict.BackColor = System.Drawing.Color.Transparent;
-            this.profile_pict.FillColor = System.Drawing.Color.Transparent;
-            this.profile_pict.Image = global::LoginRegister.Properties.Resources.memoji;
-            this.profile_pict.ImageRotate = 0F;
-            this.profile_pict.Location = new System.Drawing.Point(568, 18);
-            this.profile_pict.Name = "profile_pict";
-            this.profile_pict.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profile_pict.Size = new System.Drawing.Size(29, 30);
-            this.profile_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.profile_pict.TabIndex = 15;
-            this.profile_pict.TabStop = false;
-            this.profile_pict.UseTransparentBackground = true;
-            // 
-            // notif_button
-            // 
-            this.notif_button.BackColor = System.Drawing.Color.Transparent;
-            this.notif_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.notif_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.notif_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.notif_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.notif_button.FillColor = System.Drawing.Color.Transparent;
-            this.notif_button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.notif_button.ForeColor = System.Drawing.Color.White;
-            this.notif_button.Image = global::LoginRegister.Properties.Resources.notif;
-            this.notif_button.ImageSize = new System.Drawing.Size(30, 30);
-            this.notif_button.Location = new System.Drawing.Point(535, 22);
-            this.notif_button.Name = "notif_button";
-            this.notif_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.notif_button.Size = new System.Drawing.Size(27, 26);
-            this.notif_button.TabIndex = 14;
-            this.notif_button.UseTransparentBackground = true;
-            this.notif_button.Click += new System.EventHandler(this.guna2CircleButton1_Click);
-            // 
-            // Photo
-            // 
-            this.Photo.BackColor = System.Drawing.Color.Transparent;
-            this.Photo.Image = global::LoginRegister.Properties.Resources.J__Robert_Oppenheimer;
-            this.Photo.ImageRotate = 0F;
-            this.Photo.Location = new System.Drawing.Point(285, 57);
-            this.Photo.Name = "Photo";
-            this.Photo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Photo.Size = new System.Drawing.Size(100, 100);
-            this.Photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Photo.TabIndex = 3;
-            this.Photo.TabStop = false;
-            this.Photo.UseTransparentBackground = true;
-            this.Photo.Click += new System.EventHandler(this.Photo_Click);
-            // 
             // Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -441,10 +441,10 @@
             this.pnLearning.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            this.pnKata.ResumeLayout(false);
-            this.pnKata.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_pict)).EndInit();
+            this.pnKata.ResumeLayout(false);
+            this.pnKata.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).EndInit();
             this.ResumeLayout(false);
 

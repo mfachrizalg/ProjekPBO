@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
@@ -14,9 +15,6 @@ namespace LoginRegister
 {
     public partial class Settings : UserControl
     {
-        public event EventHandler<ColorChangedEventArgs> LightModeClicked;
-        public event EventHandler<ColorChangedEventArgs> DarkModeClicked;
-        public event EventHandler<EventArgs> GlobalSettingsAppearanceChanged;
         public Settings()
         {
             InitializeComponent();
@@ -24,16 +22,23 @@ namespace LoginRegister
             display.LightModeClicked += Display_LightModeClicked;
             display.DarkModeClicked += Display_DarkModeClicked;
         }
+        SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
+
+        private void Exercise_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnExercise_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void UserProfile_btn_Click(object sender, EventArgs e)
         {
             if (!Settings.Instance.pnSettings.Controls.ContainsKey("userProfile"))
             {
                 userProfile Profile = new userProfile();
-
-                Profile.LightModeClicked += Display_LightModeClicked;
-                Profile.DarkModeClicked += Display_DarkModeClicked;
-
                 Profile.Dock = DockStyle.Fill;
                 Settings.Instance.pnSettings.Controls.Add(Profile);
             }
@@ -62,6 +67,7 @@ namespace LoginRegister
             _obj = this;
 
             userProfile profile = new userProfile();
+            profile.getUserData(this.username, this.email);
             profile.Dock = DockStyle.Fill;
             pnSettings.Controls.Add(profile);
         }

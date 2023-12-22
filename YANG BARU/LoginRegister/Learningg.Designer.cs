@@ -121,7 +121,7 @@
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.ImageOffset = new System.Drawing.Point(20, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button5.Location = new System.Drawing.Point(5, 384);
+            this.guna2Button5.Location = new System.Drawing.Point(3, 384);
             this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(203, 53);
@@ -153,7 +153,7 @@
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.ImageOffset = new System.Drawing.Point(20, 0);
             this.guna2Button4.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button4.Location = new System.Drawing.Point(5, 335);
+            this.guna2Button4.Location = new System.Drawing.Point(3, 335);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(203, 53);
@@ -217,7 +217,7 @@
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(20, 0);
             this.guna2Button2.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button2.Location = new System.Drawing.Point(5, 229);
+            this.guna2Button2.Location = new System.Drawing.Point(3, 229);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(203, 53);
@@ -249,7 +249,7 @@
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(20, 0);
             this.guna2Button1.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button1.Location = new System.Drawing.Point(5, 176);
+            this.guna2Button1.Location = new System.Drawing.Point(3, 176);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(203, 53);
@@ -292,7 +292,7 @@
             this.DataType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.DataType.ImageOffset = new System.Drawing.Point(20, 0);
             this.DataType.ImageSize = new System.Drawing.Size(10, 10);
-            this.DataType.Location = new System.Drawing.Point(2, 53);
+            this.DataType.Location = new System.Drawing.Point(0, 53);
             this.DataType.Margin = new System.Windows.Forms.Padding(0);
             this.DataType.Name = "DataType";
             this.DataType.Size = new System.Drawing.Size(203, 53);
@@ -381,7 +381,8 @@
             // 
             // Learningg
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
             this.Controls.Add(this.pnList);
             this.Controls.Add(this.pnLearning);
