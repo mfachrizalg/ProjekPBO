@@ -13,15 +13,17 @@ namespace LoginRegister
 {
     public partial class userProfile : UserControl
     {
+        public event EventHandler<ColorChangedEventArgs> LightModeClicked;
+        public event EventHandler<ColorChangedEventArgs> DarkModeClicked;
+        public event EventHandler<EventArgs> GlobalSettingsAppearanceChanged;
         public string username { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public userProfile()
         {
             InitializeComponent();
-
-            //Settings.Instance.LightModeClicked += HandleLightModeClicked;
-            //Settings.Instance.DarkModeClicked += HandleDarkModeClicked;
+            Settings.Instance.LightModeClicked += HandleLightModeClicked;
+            Settings.Instance.DarkModeClicked += HandleDarkModeClicked;
         }
         SqlConnection conn = new SqlConnection(@"Data Source=pboapps.database.windows.net;Initial Catalog=User;User ID=arden;Password=2Matasaya_;Connect Timeout=30;Encrypt=True");
 
@@ -41,6 +43,7 @@ namespace LoginRegister
 
         public void getUserData(string username, string email) 
         {
+            //MessageBox.Show("userProfile Username: " + username);
             this.username = username;
             this.email = email;
 

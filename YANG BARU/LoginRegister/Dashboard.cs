@@ -15,13 +15,14 @@ namespace LoginRegister
 {
     public partial class Dashboard : Form
     {
+        private Settings mySettingsUserControl;
         public int userLVL {  get; set; }
         public string username { get; set; }
         public float Progress{ get; set; }
-
         public Dashboard()
         {
             InitializeComponent();
+         
         }
 
         public void getUserData(string username, int userLvl)
@@ -221,10 +222,41 @@ namespace LoginRegister
             {
                 Settings set = new Settings();
                 set.getUserData(this.username);
+                set.LightModeClicked += Settings_LightModeClicked;
+                set.DarkModeClicked += Settings_DarkModeClicked;
+
                 set.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(set);
             }
             Dashboard.Instance.PanelUtama.Controls["Settings"].BringToFront();
+        }
+        private void Settings_LightModeClicked(object sender, ColorChangedEventArgs e)
+        {
+            Left.BackColor = e.NewColor;
+            Topp.BackColor = e.NewColor;
+
+            UpdateLearnLabel(Color.White, Color.FromArgb(35, 36, 41));
+            UpdateDashButton(Color.White, Color.FromArgb(5, 38, 129));
+            UpdateProfileButton(Color.White, Color.FromArgb(5, 38, 129));
+            UpdateSettingsButton(Color.White, Color.FromArgb(5, 38, 129));
+        }
+        private void Settings_DarkModeClicked(object sender, ColorChangedEventArgs e)
+        {
+            ChangeTopPanel(Color.FromArgb(21, 22, 27));
+            ChangeLeftPanel(Color.FromArgb(21, 22, 27));
+
+            UpdateLearnLabel(Color.FromArgb(21, 22, 27), Color.White);
+            UpdateDashButton(Color.FromArgb(21, 22, 27), Color.White);
+            UpdateProfileButton(Color.FromArgb(21, 22, 27), Color.White);
+            UpdateSettingsButton(Color.FromArgb(21, 22, 27), Color.White);
+        }
+        public void ChangeLeftPanel(Color NewColor)
+        {
+            Left.BackColor = NewColor;
+        }
+        public void ChangeTopPanel(Color NewColor)
+        {
+            Topp.BackColor = NewColor;
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -260,6 +292,10 @@ namespace LoginRegister
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            mySettingsUserControl = new Settings();
+            mySettingsUserControl.getUserData(this.username);
+            Controls.Add(mySettingsUserControl);
+            mySettingsUserControl.Visible = true;
             _obj = this;
 
             Home home = new Home();
@@ -268,6 +304,32 @@ namespace LoginRegister
             home.getUserData(username, userLVL);
             home.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(home);
+        }
+        private void UpdateDashButton(Color fillColor, Color forecolor)
+        {
+            Dash.FillColor = fillColor;
+            Dash.CheckedState.FillColor = fillColor;
+            Dash.DisabledState.FillColor = fillColor;
+            Dash.CheckedState.ForeColor = forecolor;
+        }
+        private void UpdateProfileButton(Color fillColor, Color forecolor)
+        {
+            Profile.FillColor = fillColor;
+            Profile.CheckedState.FillColor = fillColor;
+            Profile.DisabledState.FillColor = fillColor;
+            Profile.CheckedState.ForeColor = forecolor;
+        }
+        private void UpdateSettingsButton(Color fillColor, Color forecolor)
+        {
+            Settings.FillColor = fillColor;
+            Settings.CheckedState.FillColor = fillColor;
+            Settings.DisabledState.FillColor = fillColor;
+            Settings.CheckedState.ForeColor = forecolor;
+        }
+        private void UpdateLearnLabel(Color backColor, Color foreColor)
+        {
+            learn.BackColor = backColor;
+            learn.ForeColor = foreColor;
         }
     }
 }
