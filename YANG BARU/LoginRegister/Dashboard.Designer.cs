@@ -254,7 +254,7 @@
             this.learn.Size = new System.Drawing.Size(71, 23);
             this.learn.TabIndex = 5;
             this.learn.Text = "ylearn";
-            this.learn.Click += new System.EventHandler(this.learn_Click);
+            //this.learn.Click += new System.EventHandler(this.learn_Click);
             // 
             // MainPanel
             // 
