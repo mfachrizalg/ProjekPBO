@@ -97,7 +97,7 @@ namespace LoginRegister
 
         private void ProgressBar_ValueChanged(object sender, EventArgs e)
         {
-
+            ProgressBar.Value = (this.userLevel-1)/2 * 100;
         }
 
         private void pnLearning_Paint(object sender, PaintEventArgs e)
