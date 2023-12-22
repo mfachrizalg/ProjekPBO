@@ -135,6 +135,7 @@
             this.Nama.Size = new System.Drawing.Size(109, 19);
             this.Nama.TabIndex = 13;
             this.Nama.Text = "Ijal Ganteng";
+            this.Nama.Click += new System.EventHandler(this.Nama_Click);
             // 
             // Photo
             // 
@@ -330,7 +331,7 @@
             this.pnUProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnUProfile.Location = new System.Drawing.Point(0, 0);
             this.pnUProfile.Name = "pnUProfile";
-            this.pnUProfile.Size = new System.Drawing.Size(492, 564);
+            this.pnUProfile.Size = new System.Drawing.Size(739, 652);
             this.pnUProfile.TabIndex = 47;
             this.pnUProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnUProfile_Paint);
             // 
@@ -352,8 +353,8 @@
             this.Controls.Add(this.Profile_Info);
             this.Controls.Add(this.pnUProfile);
             this.Name = "userProfile";
-            this.Size = new System.Drawing.Size(362, 308);
-            this.Load += new System.EventHandler(this.userProfile_Load);
+            this.Size = new System.Drawing.Size(739, 652);
+            this.Load += new System.EventHandler(this.userProfile_Load_1);
             this.pnLearning.ResumeLayout(false);
             this.pnLearning.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).EndInit();
