@@ -29,15 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
+            this.pnMainSettings = new Guna.UI2.WinForms.Guna2Panel();
             this.pnKata = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.GlobalSettings = new System.Windows.Forms.Label();
-            this.pnSettings = new Guna.UI2.WinForms.Guna2Panel();
             this.Display_btn = new Guna.UI2.WinForms.Guna2Button();
             this.Notifications_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.GlobalSettings = new System.Windows.Forms.Label();
             this.UserProfile_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.pnSettings = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnMainSettings.SuspendLayout();
             this.pnKata.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnMainSettings
+            // 
+            this.pnMainSettings.Controls.Add(this.pnKata);
+            this.pnMainSettings.Controls.Add(this.pnSettings);
+            this.pnMainSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMainSettings.Location = new System.Drawing.Point(0, 0);
+            this.pnMainSettings.Name = "pnMainSettings";
+            this.pnMainSettings.Size = new System.Drawing.Size(817, 482);
+            this.pnMainSettings.TabIndex = 0;
+            this.pnMainSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMainSettings_Paint);
             // 
             // pnKata
             // 
@@ -48,68 +60,25 @@
             this.pnKata.BorderRadius = 20;
             this.pnKata.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.pnKata.BorderThickness = 1;
-            this.pnKata.Controls.Add(this.guna2Separator2);
             this.pnKata.Controls.Add(this.Display_btn);
             this.pnKata.Controls.Add(this.Notifications_btn);
             this.pnKata.Controls.Add(this.GlobalSettings);
             this.pnKata.Controls.Add(this.UserProfile_btn);
             this.pnKata.FillColor = System.Drawing.Color.White;
             this.pnKata.ForeColor = System.Drawing.Color.Coral;
-            this.pnKata.Location = new System.Drawing.Point(15, 12);
+            this.pnKata.Location = new System.Drawing.Point(16, 14);
             this.pnKata.Margin = new System.Windows.Forms.Padding(0);
             this.pnKata.Name = "pnKata";
             this.pnKata.ShadowDecoration.BorderRadius = 20;
             this.pnKata.Size = new System.Drawing.Size(242, 455);
-            this.pnKata.TabIndex = 13;
+            this.pnKata.TabIndex = 15;
             this.pnKata.Paint += new System.Windows.Forms.PaintEventHandler(this.pnKata_Paint);
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.BackColor = System.Drawing.Color.White;
-            this.guna2Separator2.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Separator2.FillThickness = 3;
-            this.guna2Separator2.Location = new System.Drawing.Point(0, 54);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(242, 10);
-            this.guna2Separator2.TabIndex = 17;
-            // 
-            // GlobalSettings
-            // 
-            this.GlobalSettings.AutoSize = true;
-            this.GlobalSettings.BackColor = System.Drawing.Color.White;
-            this.GlobalSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GlobalSettings.ForeColor = System.Drawing.Color.Black;
-            this.GlobalSettings.Location = new System.Drawing.Point(19, 24);
-            this.GlobalSettings.Name = "GlobalSettings";
-            this.GlobalSettings.Size = new System.Drawing.Size(156, 23);
-            this.GlobalSettings.TabIndex = 13;
-            this.GlobalSettings.Text = "Global Settings";
-            this.GlobalSettings.Click += new System.EventHandler(this.GlobalSettings_Click);
-            // 
-            // pnSettings
-            // 
-            this.pnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
-            this.pnSettings.BorderColor = System.Drawing.Color.Transparent;
-            this.pnSettings.BorderRadius = 20;
-            this.pnSettings.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.pnSettings.BorderThickness = 1;
-            this.pnSettings.FillColor = System.Drawing.Color.White;
-            this.pnSettings.ForeColor = System.Drawing.Color.Coral;
-            this.pnSettings.Location = new System.Drawing.Point(270, 12);
-            this.pnSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.pnSettings.Name = "pnSettings";
-            this.pnSettings.ShadowDecoration.BorderRadius = 20;
-            this.pnSettings.Size = new System.Drawing.Size(530, 455);
-            this.pnSettings.TabIndex = 14;
-            this.pnSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.pnSettings_Paint);
             // 
             // Display_btn
             // 
             this.Display_btn.Animated = true;
             this.Display_btn.AnimatedGIF = true;
+            this.Display_btn.BackColor = System.Drawing.Color.White;
             this.Display_btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.Display_btn.CheckedState.FillColor = System.Drawing.Color.White;
             this.Display_btn.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
@@ -140,6 +109,7 @@
             // 
             this.Notifications_btn.Animated = true;
             this.Notifications_btn.AnimatedGIF = true;
+            this.Notifications_btn.BackColor = System.Drawing.Color.White;
             this.Notifications_btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.Notifications_btn.CheckedState.FillColor = System.Drawing.Color.White;
             this.Notifications_btn.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
@@ -166,10 +136,23 @@
             this.Notifications_btn.TextOffset = new System.Drawing.Point(10, 0);
             this.Notifications_btn.Click += new System.EventHandler(this.Notifications_btn_Click);
             // 
+            // GlobalSettings
+            // 
+            this.GlobalSettings.AutoSize = true;
+            this.GlobalSettings.BackColor = System.Drawing.Color.White;
+            this.GlobalSettings.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GlobalSettings.ForeColor = System.Drawing.Color.Black;
+            this.GlobalSettings.Location = new System.Drawing.Point(19, 24);
+            this.GlobalSettings.Name = "GlobalSettings";
+            this.GlobalSettings.Size = new System.Drawing.Size(156, 23);
+            this.GlobalSettings.TabIndex = 13;
+            this.GlobalSettings.Text = "Global Settings";
+            // 
             // UserProfile_btn
             // 
             this.UserProfile_btn.Animated = true;
             this.UserProfile_btn.AnimatedGIF = true;
+            this.UserProfile_btn.BackColor = System.Drawing.Color.White;
             this.UserProfile_btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.UserProfile_btn.Checked = true;
             this.UserProfile_btn.CheckedState.FillColor = System.Drawing.Color.White;
@@ -197,16 +180,35 @@
             this.UserProfile_btn.TextOffset = new System.Drawing.Point(10, 0);
             this.UserProfile_btn.Click += new System.EventHandler(this.UserProfile_btn_Click);
             // 
+            // pnSettings
+            // 
+            this.pnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.pnSettings.BorderColor = System.Drawing.Color.Transparent;
+            this.pnSettings.BorderRadius = 20;
+            this.pnSettings.BorderThickness = 1;
+            this.pnSettings.FillColor = System.Drawing.Color.White;
+            this.pnSettings.ForeColor = System.Drawing.Color.Coral;
+            this.pnSettings.Location = new System.Drawing.Point(271, 14);
+            this.pnSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.pnSettings.Name = "pnSettings";
+            this.pnSettings.ShadowDecoration.BorderRadius = 20;
+            this.pnSettings.Size = new System.Drawing.Size(530, 455);
+            this.pnSettings.TabIndex = 16;
+            this.pnSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.pnSettings_Paint);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
-            this.Controls.Add(this.pnSettings);
-            this.Controls.Add(this.pnKata);
+            this.Controls.Add(this.pnMainSettings);
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(817, 482);
             this.Load += new System.EventHandler(this.Settings_Load);
+            this.pnMainSettings.ResumeLayout(false);
             this.pnKata.ResumeLayout(false);
             this.pnKata.PerformLayout();
             this.ResumeLayout(false);
@@ -215,12 +217,12 @@
 
         #endregion
 
+        private Guna.UI2.WinForms.Guna2Panel pnMainSettings;
         private Guna.UI2.WinForms.Guna2Panel pnKata;
-        private Guna.UI2.WinForms.Guna2Panel pnSettings;
-        private Guna.UI2.WinForms.Guna2Button UserProfile_btn;
-        private System.Windows.Forms.Label GlobalSettings;
-        private Guna.UI2.WinForms.Guna2Button Notifications_btn;
         private Guna.UI2.WinForms.Guna2Button Display_btn;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private Guna.UI2.WinForms.Guna2Button Notifications_btn;
+        private System.Windows.Forms.Label GlobalSettings;
+        private Guna.UI2.WinForms.Guna2Button UserProfile_btn;
+        private Guna.UI2.WinForms.Guna2Panel pnSettings;
     }
 }

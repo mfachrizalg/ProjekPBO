@@ -45,6 +45,7 @@
             this.Password = new System.Windows.Forms.Label();
             this.check_show = new System.Windows.Forms.CheckBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pnUProfile = new Guna.UI2.WinForms.Guna2Panel();
             this.pnLearning.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).BeginInit();
             this.SuspendLayout();
@@ -324,6 +325,15 @@
             this.guna2Elipse1.BorderRadius = 40;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // pnUProfile
+            // 
+            this.pnUProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnUProfile.Location = new System.Drawing.Point(0, 0);
+            this.pnUProfile.Name = "pnUProfile";
+            this.pnUProfile.Size = new System.Drawing.Size(492, 564);
+            this.pnUProfile.TabIndex = 47;
+            this.pnUProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnUProfile_Paint);
+            // 
             // userProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -340,8 +350,10 @@
             this.Controls.Add(this.Username);
             this.Controls.Add(this.pnLearning);
             this.Controls.Add(this.Profile_Info);
+            this.Controls.Add(this.pnUProfile);
             this.Name = "userProfile";
-            this.Size = new System.Drawing.Size(383, 329);
+            this.Size = new System.Drawing.Size(362, 308);
+            this.Load += new System.EventHandler(this.userProfile_Load);
             this.pnLearning.ResumeLayout(false);
             this.pnLearning.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).EndInit();
@@ -368,5 +380,6 @@
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.CheckBox check_show;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Panel pnUProfile;
     }
 }

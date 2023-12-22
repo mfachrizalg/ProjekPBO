@@ -54,7 +54,6 @@
             // 
             this.Left.BackColor = System.Drawing.Color.White;
             this.Left.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.Left.BorderThickness = 1;
             this.Left.Controls.Add(this.Sidebar);
             this.Left.Controls.Add(this.Settings);
             this.Left.Controls.Add(this.Profile);
@@ -181,7 +180,6 @@
             // 
             this.Topp.BackColor = System.Drawing.Color.White;
             this.Topp.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.Topp.BorderThickness = 1;
             this.Topp.Controls.Add(this.p_logo);
             this.Topp.Controls.Add(this.Minimize);
             this.Topp.Controls.Add(this.exit);
@@ -256,6 +254,7 @@
             this.learn.Size = new System.Drawing.Size(71, 23);
             this.learn.TabIndex = 5;
             this.learn.Text = "ylearn";
+            this.learn.Click += new System.EventHandler(this.learn_Click);
             // 
             // MainPanel
             // 
@@ -296,7 +295,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Panel Left;
         private Guna.UI2.WinForms.Guna2Button Dash;
         private Guna.UI2.WinForms.Guna2Button Profile;
         private Guna.UI2.WinForms.Guna2Button Settings;
@@ -310,5 +308,6 @@
         private System.Windows.Forms.Label learn;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        public Guna.UI2.WinForms.Guna2Panel Left;
     }
 }

@@ -159,5 +159,10 @@ namespace LoginRegister
             Learningg.Instance.pnLearning.Controls.Add(data);
             Learningg.Instance.pnLearning.Controls["Data_Type"].BringToFront();
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

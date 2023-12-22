@@ -56,6 +56,7 @@
             this.pnDisplay.Name = "pnDisplay";
             this.pnDisplay.Size = new System.Drawing.Size(467, 413);
             this.pnDisplay.TabIndex = 0;
+            this.pnDisplay.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDisplay_Paint_1);
             // 
             // Dark_btn
             // 
@@ -63,7 +64,7 @@
             this.Dark_btn.AnimatedGIF = true;
             this.Dark_btn.BackColor = System.Drawing.Color.Transparent;
             this.Dark_btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.Dark_btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(41)))));
+            this.Dark_btn.CheckedState.FillColor = System.Drawing.Color.Transparent;
             this.Dark_btn.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Dark_btn.CheckedState.ForeColor = System.Drawing.Color.White;
             this.Dark_btn.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
@@ -74,17 +75,18 @@
             this.Dark_btn.FillColor = System.Drawing.Color.Transparent;
             this.Dark_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Dark_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.Dark_btn.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.Dark_btn.HoverState.FillColor = System.Drawing.Color.Black;
             this.Dark_btn.Image = ((System.Drawing.Image)(resources.GetObject("Dark_btn.Image")));
             this.Dark_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Dark_btn.Location = new System.Drawing.Point(11, 135);
             this.Dark_btn.Margin = new System.Windows.Forms.Padding(0);
             this.Dark_btn.Name = "Dark_btn";
+            this.Dark_btn.PressedColor = System.Drawing.Color.Transparent;
             this.Dark_btn.Size = new System.Drawing.Size(130, 41);
             this.Dark_btn.TabIndex = 25;
             this.Dark_btn.Text = "Dark Mode";
             this.Dark_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Dark_btn.Click += new System.EventHandler(this.DarkLight_btn_Click);
+            this.Dark_btn.Click += new System.EventHandler(this.Dark_btn_Click);
             // 
             // Light_btn
             // 
@@ -114,7 +116,7 @@
             this.Light_btn.TabIndex = 24;
             this.Light_btn.Text = "Light Mode";
             this.Light_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Light_btn.Click += new System.EventHandler(this.DarkLight_btn_Click);
+            this.Light_btn.Click += new System.EventHandler(this.Light_btn_Click);
             // 
             // Theme_Style
             // 
@@ -127,17 +129,19 @@
             this.Theme_Style.Size = new System.Drawing.Size(107, 19);
             this.Theme_Style.TabIndex = 23;
             this.Theme_Style.Text = "Theme Style";
+            this.Theme_Style.Click += new System.EventHandler(this.Theme_Style_Click);
             // 
             // Display
             // 
-            this.Display.AutoSize = true;
             this.Display.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Display.ForeColor = System.Drawing.Color.Gray;
-            this.Display.Location = new System.Drawing.Point(17, 29);
+            this.Display.Location = new System.Drawing.Point(15, 29);
+            this.Display.Margin = new System.Windows.Forms.Padding(0);
             this.Display.Name = "Display";
             this.Display.Size = new System.Drawing.Size(161, 23);
             this.Display.TabIndex = 22;
             this.Display.Text = "Display Settings";
+            this.Display.Click += new System.EventHandler(this.Display_Click);
             // 
             // Display_Settings
             // 
