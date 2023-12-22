@@ -147,6 +147,7 @@
             this.GlobalSettings.Size = new System.Drawing.Size(156, 23);
             this.GlobalSettings.TabIndex = 13;
             this.GlobalSettings.Text = "Global Settings";
+            this.GlobalSettings.Click += new System.EventHandler(this.GlobalSettings_Click_1);
             // 
             // UserProfile_btn
             // 

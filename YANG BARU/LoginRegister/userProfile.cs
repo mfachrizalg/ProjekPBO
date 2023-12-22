@@ -27,7 +27,7 @@ namespace LoginRegister
         }
         private void HandleDarkModeClicked(object sender, ColorChangedEventArgs e)
         {
-            pnUProfile.BackColor = Color.Black;
+            pnUProfile.BackColor = Color.FromArgb(35, 36, 41);
         }
         private void label1_Click(object sender, EventArgs e)
         {

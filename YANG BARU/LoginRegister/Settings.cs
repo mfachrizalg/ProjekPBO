@@ -183,5 +183,10 @@ namespace LoginRegister
         {
 
         }
+
+        private void GlobalSettings_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
