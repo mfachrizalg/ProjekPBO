@@ -236,11 +236,11 @@
     <Compile Include="level1.Designer.cs">
       <DependentUpon>level1.cs</DependentUpon>
     </Compile>
-    <Compile Include="lvl1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="level2.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="lvl1.Designer.cs">
-      <DependentUpon>lvl1.cs</DependentUpon>
+    <Compile Include="level2.Designer.cs">
+      <DependentUpon>level2.cs</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
@@ -268,6 +268,7 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="userProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -295,8 +296,8 @@
     <EmbeddedResource Include="level1.resx">
       <DependentUpon>level1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="lvl1.resx">
-      <DependentUpon>lvl1.cs</DependentUpon>
+    <EmbeddedResource Include="level2.resx">
+      <DependentUpon>level2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -419,6 +420,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="level2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

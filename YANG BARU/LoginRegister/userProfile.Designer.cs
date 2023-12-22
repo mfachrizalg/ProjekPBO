@@ -134,6 +134,7 @@
             this.Nama.Size = new System.Drawing.Size(109, 19);
             this.Nama.TabIndex = 13;
             this.Nama.Text = "Ijal Ganteng";
+            this.Nama.Click += new System.EventHandler(this.Nama_Click);
             // 
             // Photo
             // 
@@ -341,7 +342,8 @@
             this.Controls.Add(this.pnLearning);
             this.Controls.Add(this.Profile_Info);
             this.Name = "userProfile";
-            this.Size = new System.Drawing.Size(383, 329);
+            this.Size = new System.Drawing.Size(776, 617);
+            this.Load += new System.EventHandler(this.userProfile_Load);
             this.pnLearning.ResumeLayout(false);
             this.pnLearning.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Photo)).EndInit();

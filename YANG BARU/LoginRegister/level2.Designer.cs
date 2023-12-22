@@ -1,6 +1,6 @@
 ﻿namespace LoginRegister
 {
-    partial class level1
+    partial class level2
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,15 +30,13 @@
         {
             this.lvl1_soal = new System.Windows.Forms.Label();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Clue_button = new Guna.UI2.WinForms.Guna2GradientButton();
             this.submit_buttonn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.box_answer = new Guna.UI2.WinForms.Guna2TextBox();
-            this.indicatorlvl = new System.Windows.Forms.Label();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.level_pict = new Guna.UI2.WinForms.Guna2PictureBox();
             this.back = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.indicatorlvl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.level_pict)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,12 +44,13 @@
             // 
             this.lvl1_soal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl1_soal.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvl1_soal.Location = new System.Drawing.Point(77, 129);
+            this.lvl1_soal.Location = new System.Drawing.Point(93, 180);
             this.lvl1_soal.Name = "lvl1_soal";
             this.lvl1_soal.Size = new System.Drawing.Size(658, 46);
-            this.lvl1_soal.TabIndex = 0;
-            this.lvl1_soal.Text = "vhodpdw, ndpx whodk phqbhohvdlndq ";
+            this.lvl1_soal.TabIndex = 43;
+            this.lvl1_soal.Text = "Click the copy Button and solve!";
             this.lvl1_soal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lvl1_soal.Click += new System.EventHandler(this.lvl1_soal_Click);
             // 
             // guna2ContextMenuStrip1
             // 
@@ -68,18 +67,28 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label1
+            // guna2GradientButton1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(155, 188);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(491, 46);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "odwlkdq sbwkrq shuwdpdpx!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2GradientButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientButton1.Animated = true;
+            this.guna2GradientButton1.BorderRadius = 20;
+            this.guna2GradientButton1.BorderThickness = 1;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(322, 242);
+            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(131, 37);
+            this.guna2GradientButton1.TabIndex = 51;
+            this.guna2GradientButton1.Text = "copy";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // Clue_button
             // 
@@ -95,11 +104,11 @@
             this.Clue_button.FillColor2 = System.Drawing.Color.White;
             this.Clue_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Clue_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Clue_button.Location = new System.Drawing.Point(596, 22);
+            this.Clue_button.Location = new System.Drawing.Point(624, 72);
             this.Clue_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Clue_button.Name = "Clue_button";
             this.Clue_button.Size = new System.Drawing.Size(104, 28);
-            this.Clue_button.TabIndex = 40;
+            this.Clue_button.TabIndex = 49;
             this.Clue_button.Text = "Clue";
             this.Clue_button.Click += new System.EventHandler(this.Clue_button_Click);
             // 
@@ -118,11 +127,11 @@
             this.submit_buttonn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
             this.submit_buttonn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.submit_buttonn.ForeColor = System.Drawing.Color.White;
-            this.submit_buttonn.Location = new System.Drawing.Point(538, 320);
+            this.submit_buttonn.Location = new System.Drawing.Point(566, 370);
             this.submit_buttonn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submit_buttonn.Name = "submit_buttonn";
             this.submit_buttonn.Size = new System.Drawing.Size(180, 46);
-            this.submit_buttonn.TabIndex = 39;
+            this.submit_buttonn.TabIndex = 48;
             this.submit_buttonn.Text = "Submit";
             this.submit_buttonn.Click += new System.EventHandler(this.submit_buttonn_Click);
             // 
@@ -141,59 +150,24 @@
             this.box_answer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.box_answer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.box_answer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.box_answer.Location = new System.Drawing.Point(115, 318);
+            this.box_answer.Location = new System.Drawing.Point(143, 368);
             this.box_answer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.box_answer.Name = "box_answer";
             this.box_answer.PasswordChar = '\0';
             this.box_answer.PlaceholderText = "Input your answer here!";
             this.box_answer.SelectedText = "";
             this.box_answer.Size = new System.Drawing.Size(417, 48);
-            this.box_answer.TabIndex = 38;
-            this.box_answer.TextChanged += new System.EventHandler(this.box_answer_TextChanged);
-            // 
-            // indicatorlvl
-            // 
-            this.indicatorlvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.indicatorlvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.indicatorlvl.Location = new System.Drawing.Point(104, 22);
-            this.indicatorlvl.Name = "indicatorlvl";
-            this.indicatorlvl.Size = new System.Drawing.Size(79, 28);
-            this.indicatorlvl.TabIndex = 0;
-            this.indicatorlvl.Text = "Level 1";
-            this.indicatorlvl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.BorderRadius = 20;
-            this.guna2GradientButton1.BorderThickness = 1;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(338, 246);
-            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(131, 37);
-            this.guna2GradientButton1.TabIndex = 42;
-            this.guna2GradientButton1.Text = "copy";
-            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.box_answer.TabIndex = 47;
             // 
             // level_pict
             // 
             this.level_pict.Image = global::LoginRegister.Properties.Resources.level4;
             this.level_pict.ImageRotate = 0F;
-            this.level_pict.Location = new System.Drawing.Point(73, 22);
+            this.level_pict.Location = new System.Drawing.Point(101, 72);
             this.level_pict.Name = "level_pict";
             this.level_pict.Size = new System.Drawing.Size(25, 28);
             this.level_pict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.level_pict.TabIndex = 37;
+            this.level_pict.TabIndex = 46;
             this.level_pict.TabStop = false;
             // 
             // back
@@ -209,52 +183,39 @@
             this.back.ForeColor = System.Drawing.Color.White;
             this.back.Image = global::LoginRegister.Properties.Resources.back1;
             this.back.ImageSize = new System.Drawing.Size(25, 25);
-            this.back.Location = new System.Drawing.Point(25, 17);
+            this.back.Location = new System.Drawing.Point(53, 67);
             this.back.Name = "back";
             this.back.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.back.Size = new System.Drawing.Size(34, 39);
-            this.back.TabIndex = 36;
+            this.back.TabIndex = 45;
             this.back.UseTransparentBackground = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // guna2GradientButton2
+            // indicatorlvl
             // 
-            this.guna2GradientButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.BorderRadius = 20;
-            this.guna2GradientButton2.BorderThickness = 1;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(596, 407);
-            this.guna2GradientButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(180, 46);
-            this.guna2GradientButton2.TabIndex = 43;
-            this.guna2GradientButton2.Text = "Next";
-            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            this.indicatorlvl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.indicatorlvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
+            this.indicatorlvl.Location = new System.Drawing.Point(132, 72);
+            this.indicatorlvl.Name = "indicatorlvl";
+            this.indicatorlvl.Size = new System.Drawing.Size(79, 28);
+            this.indicatorlvl.TabIndex = 44;
+            this.indicatorlvl.Text = "Level 2";
+            this.indicatorlvl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // level1
+            // level2
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
-            this.Controls.Add(this.guna2GradientButton2);
-            this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.lvl1_soal);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.Clue_button);
             this.Controls.Add(this.submit_buttonn);
             this.Controls.Add(this.box_answer);
             this.Controls.Add(this.level_pict);
             this.Controls.Add(this.back);
             this.Controls.Add(this.indicatorlvl);
-            this.Name = "level1";
+            this.Name = "level2";
             this.Size = new System.Drawing.Size(817, 482);
             ((System.ComponentModel.ISupportInitialize)(this.level_pict)).EndInit();
             this.ResumeLayout(false);
@@ -265,14 +226,12 @@
 
         private System.Windows.Forms.Label lvl1_soal;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2GradientButton Clue_button;
         private Guna.UI2.WinForms.Guna2GradientButton submit_buttonn;
         private Guna.UI2.WinForms.Guna2TextBox box_answer;
         private Guna.UI2.WinForms.Guna2PictureBox level_pict;
         private Guna.UI2.WinForms.Guna2CircleButton back;
         private System.Windows.Forms.Label indicatorlvl;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
     }
 }

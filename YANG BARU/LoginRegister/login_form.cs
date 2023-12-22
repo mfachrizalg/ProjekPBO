@@ -42,6 +42,7 @@ namespace LoginRegister
             public string Email { get; set; } // User's email address
                                               // Add more properties as needed based on the UserInfo response
         }
+        public string username { get; set; }
         public int userLVL { get; set; }
         public login_form()
         {
@@ -137,12 +138,12 @@ namespace LoginRegister
         }
         private void Login_Click(object sender, EventArgs e)
         {
-            String username, password;
+            User user = new User();
+            user.username = boxUsername.Text;
+            user.password = boxPassword.Text;
             //int level;
-            username = boxUsername.Text;
-            password = boxPassword.Text;
             conn.Open();
-            string level_querry = "SELECT userLevel FROM UserData WHERE username = '" + username + "'";
+            string level_querry = "SELECT userLevel FROM UserData WHERE username = '" + user.username + "'";
 
 
             try
@@ -156,13 +157,13 @@ namespace LoginRegister
                 sda.Fill(dt);
 
                 string searchColumn = "username";
-                string searchVal = username;
+                string searchVal = user.username;
                 string resultColumn = "userLevel";
 
                 DataRow[] selectedRows = dt.Select($"{searchColumn} = '{searchVal}'");
 
                 int level = (int)selectedRows[0][resultColumn];
-                userLVL = level;
+                user.userLevel = level;
 
                 if (boxUsername.Text != string.Empty || boxPassword.Text != string.Empty)
                 {
@@ -170,24 +171,14 @@ namespace LoginRegister
                     {
                         if (dt.Rows.Count > 0)
                         {
-                            username = boxUsername.Text;
-                            password = boxPassword.Text;
-
-                            MessageBox.Show(level.ToString());
+                            user.username = boxUsername.Text;
+                            user.password = boxPassword.Text;
 
                             MessageBox.Show("Login Successful");
- /*                           var level1 = new lvl1();
-                            var row = dt.Rows[0];
-                            level1.Username = row["username"].ToString();
-                            level1.userLevel = (int)row["userLevel"];
-                            boxUsername.Clear();
-                            boxPassword.Clear();
-                            this.Hide();
-                            level1.Show();*/
                             Dashboard dash = new Dashboard();
-                            dash.username = username;
-                            dash.userLVL = level;
-
+                            dash.username = user.username;
+                            dash.userLVL = user.userLevel;
+                            dash.getUserData(user.username, user.userLevel);
                             this.Hide();
                             dash.Show();
                         
@@ -284,8 +275,8 @@ namespace LoginRegister
                 if (idToken != null)
                 {
                     MessageBox.Show("Login Successful");
-                    //UserInfo userInfo = await ExchangeCodeForUserInfo(idToken);
-                   /* if (userInfo != null)
+                    UserInfo userInfo = await ExchangeCodeForUserInfo(idToken);
+                    if (userInfo != null)
                     {
                         string userEmail = userInfo.Email;
                         username = getUsername(userEmail);
@@ -311,11 +302,11 @@ namespace LoginRegister
                         DataRow[] selectedRows = dt.Select($"{searchColumn} = '{searchVal}'");
 
                         int level = (int)selectedRows[0][resultColumn];
-                        userLVL = level;*/
+                        userLVL = level;
 
                         Dashboard dash = new Dashboard();
-                     /*   dash.username = username;
-                        dash.userLVL = userLVL;*/
+                        dash.username = username;
+                        dash.userLVL = userLVL;
                         this.Hide();
                         dash.Show();
 
@@ -323,9 +314,9 @@ namespace LoginRegister
 
 
                     }
-                   // }
-
                 }
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error during Google Sign-In: {ex.Message}", "Error");

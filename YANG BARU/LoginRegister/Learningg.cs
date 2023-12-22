@@ -159,5 +159,13 @@ namespace LoginRegister
             Learningg.Instance.pnLearning.Controls.Add(data);
             Learningg.Instance.pnLearning.Controls["Data_Type"].BringToFront();
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Dock = DockStyle.Fill;
+            Dashboard.Instance.PanelUtama.Controls.Add(home);
+            Dashboard.Instance.PanelUtama.Controls["Home"].BringToFront();
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,18 @@ namespace LoginRegister
         public int userLVL {  get; set; }
         public string username { get; set; }
         public float Progress{ get; set; }
+
         public Dashboard()
         {
             InitializeComponent();
         }
 
-
+        public void getUserData(string username, int userLvl)
+        {
+            this.username = username;
+            this.userLVL = userLvl;
+            //MessageBox.Show($"DASHBOARD\nUsername: {this.username}\n UserLevel: {this.userLVL}");
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -158,21 +165,39 @@ namespace LoginRegister
         {
 
         }
-
         private void MainPanel_Paint(object sender, PaintEventArgs e)
         {
+            User user = new User();
+            user.username = this.username;
+            user.userLevel = this.userLVL;
+            Home home = new Home();
+            home.username = user.username;
+            home.userLevel = user.userLevel;
+
+            //MessageBox.Show($"HOME\nusername: {user.username} \n userLevel: {user.userLevel}");
+            if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Home"))
+            {
+
+                home.Dock = DockStyle.Fill;
+                Dashboard.Instance.PanelUtama.Controls.Add(home);
+            }
+            Dashboard.Instance.PanelUtama.Controls["Home"].BringToFront();
 
         }
 
         private void Dash_Click(object sender, EventArgs e)
         {
-            int userLevel = userLVL;
-            string username = this.username;
+            User user = new User();
+            user.username = this.username;
+            user.userLevel = this.userLVL;
+            Home home = new Home();
+            home.username = user.username;
+            home.userLevel = user.userLevel;
+            home.getUserData(user.username, user.userLevel);
+
+            //MessageBox.Show($"HOME\nusername: {user.username} \n userLevel: {user.userLevel}");
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Home"))
             {
-                Home home = new Home();
-                home.username = username;
-                home.userLevel = userLevel;
                 
                 home.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(home);
@@ -195,6 +220,7 @@ namespace LoginRegister
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Settings"))
             {
                 Settings set = new Settings();
+                set.getUserData(this.username);
                 set.Dock = DockStyle.Fill;
                 Dashboard.Instance.PanelUtama.Controls.Add(set);
             }
@@ -238,6 +264,8 @@ namespace LoginRegister
 
             Home home = new Home();
             home.username = username;
+            home.userLevel = userLVL;
+            home.getUserData(username, userLVL);
             home.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(home);
         }
