@@ -242,12 +242,6 @@
     <Compile Include="level2.Designer.cs">
       <DependentUpon>level2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
-    </Compile>
     <Compile Include="register_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="level2.resx">
       <DependentUpon>level2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="register_form.resx">
       <DependentUpon>register_form.cs</DependentUpon>
@@ -422,7 +413,9 @@
     <None Include="Resources\button1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="level2.txt" />
+    <AdditionalFiles Include="level2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

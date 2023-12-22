@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Learningg));
             this.MenuTransition = new System.Windows.Forms.Timer(this.components);
             this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
             this.pnList = new Guna.UI2.WinForms.Guna2Panel();
@@ -151,9 +150,8 @@
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button4.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.ImageOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button4.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button4.Location = new System.Drawing.Point(3, 335);
+            this.guna2Button4.ImageOffset = new System.Drawing.Point(15, 0);
+            this.guna2Button4.Location = new System.Drawing.Point(5, 335);
             this.guna2Button4.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(203, 53);
@@ -183,9 +181,8 @@
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button3.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.ImageOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button3.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button3.Location = new System.Drawing.Point(5, 282);
+            this.guna2Button3.ImageOffset = new System.Drawing.Point(15, 0);
+            this.guna2Button3.Location = new System.Drawing.Point(3, 282);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(203, 53);
@@ -215,8 +212,7 @@
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button2.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button2.ImageSize = new System.Drawing.Size(10, 10);
+            this.guna2Button2.ImageOffset = new System.Drawing.Point(15, 0);
             this.guna2Button2.Location = new System.Drawing.Point(3, 229);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button2.Name = "guna2Button2";
@@ -247,8 +243,7 @@
             this.guna2Button1.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button1.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button1.ImageSize = new System.Drawing.Size(10, 10);
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(15, 0);
             this.guna2Button1.Location = new System.Drawing.Point(3, 176);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button1.Name = "guna2Button1";
@@ -290,8 +285,7 @@
             this.DataType.HoverState.FillColor = System.Drawing.Color.White;
             this.DataType.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.DataType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.DataType.ImageOffset = new System.Drawing.Point(20, 0);
-            this.DataType.ImageSize = new System.Drawing.Size(10, 10);
+            this.DataType.ImageOffset = new System.Drawing.Point(15, 0);
             this.DataType.Location = new System.Drawing.Point(0, 53);
             this.DataType.Margin = new System.Windows.Forms.Padding(0);
             this.DataType.Name = "DataType";
@@ -311,7 +305,7 @@
             this.Intro.CheckedState.FillColor = System.Drawing.Color.White;
             this.Intro.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Intro.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Intro.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.Intro.CheckedState.Image = global::LoginRegister.Properties.Resources.dot;
             this.Intro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Intro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Intro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -320,7 +314,7 @@
             this.Intro.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Intro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
             this.Intro.HoverState.FillColor = System.Drawing.Color.White;
-            this.Intro.Image = ((System.Drawing.Image)(resources.GetObject("Intro.Image")));
+            this.Intro.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.Intro.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Intro.ImageOffset = new System.Drawing.Point(15, 0);
             this.Intro.Location = new System.Drawing.Point(0, 0);

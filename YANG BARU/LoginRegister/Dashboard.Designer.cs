@@ -33,7 +33,6 @@
             this.Left = new Guna.UI2.WinForms.Guna2Panel();
             this.Sidebar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Settings = new Guna.UI2.WinForms.Guna2Button();
-            this.Profile = new Guna.UI2.WinForms.Guna2Button();
             this.Dash = new Guna.UI2.WinForms.Guna2Button();
             this.SidebarTrans = new System.Windows.Forms.Timer(this.components);
             this.Topp = new Guna.UI2.WinForms.Guna2Panel();
@@ -56,7 +55,6 @@
             this.Left.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.Left.Controls.Add(this.Sidebar);
             this.Left.Controls.Add(this.Settings);
-            this.Left.Controls.Add(this.Profile);
             this.Left.Controls.Add(this.Dash);
             this.Left.Dock = System.Windows.Forms.DockStyle.Left;
             this.Left.Location = new System.Drawing.Point(0, 0);
@@ -100,7 +98,7 @@
             this.Settings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Settings.ImageOffset = new System.Drawing.Point(15, 0);
             this.Settings.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.Settings.Location = new System.Drawing.Point(0, 150);
+            this.Settings.Location = new System.Drawing.Point(0, 97);
             this.Settings.Margin = new System.Windows.Forms.Padding(0);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(176, 53);
@@ -109,36 +107,6 @@
             this.Settings.TextOffset = new System.Drawing.Point(10, 0);
             this.Settings.CheckedChanged += new System.EventHandler(this.guna2Button2_CheckedChanged);
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
-            // 
-            // Profile
-            // 
-            this.Profile.Animated = true;
-            this.Profile.AnimatedGIF = true;
-            this.Profile.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.Profile.CheckedState.FillColor = System.Drawing.Color.White;
-            this.Profile.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.Profile.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Profile.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.Profile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Profile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Profile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Profile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Profile.FillColor = System.Drawing.Color.White;
-            this.Profile.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.Profile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(175)))), ((int)(((byte)(203)))));
-            this.Profile.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Profile.Image = ((System.Drawing.Image)(resources.GetObject("Profile.Image")));
-            this.Profile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Profile.ImageOffset = new System.Drawing.Point(15, 0);
-            this.Profile.Location = new System.Drawing.Point(0, 97);
-            this.Profile.Margin = new System.Windows.Forms.Padding(0);
-            this.Profile.Name = "Profile";
-            this.Profile.Size = new System.Drawing.Size(176, 53);
-            this.Profile.TabIndex = 0;
-            this.Profile.Text = "Profile";
-            this.Profile.TextOffset = new System.Drawing.Point(10, 0);
-            this.Profile.CheckedChanged += new System.EventHandler(this.guna2Button2_CheckedChanged);
-            this.Profile.Click += new System.EventHandler(this.Profile_Click);
             // 
             // Dash
             // 
@@ -149,7 +117,7 @@
             this.Dash.CheckedState.FillColor = System.Drawing.Color.White;
             this.Dash.CheckedState.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.Dash.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(38)))), ((int)(((byte)(129)))));
-            this.Dash.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.Dash.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.Dash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Dash.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Dash.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -254,7 +222,6 @@
             this.learn.Size = new System.Drawing.Size(71, 23);
             this.learn.TabIndex = 5;
             this.learn.Text = "ylearn";
-            //this.learn.Click += new System.EventHandler(this.learn_Click);
             // 
             // MainPanel
             // 
@@ -296,7 +263,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button Dash;
-        private Guna.UI2.WinForms.Guna2Button Profile;
         private Guna.UI2.WinForms.Guna2Button Settings;
         private System.Windows.Forms.Timer SidebarTrans;
         private Guna.UI2.WinForms.Guna2Panel Topp;

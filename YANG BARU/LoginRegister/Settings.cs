@@ -19,6 +19,7 @@ namespace LoginRegister
         public event EventHandler<ColorChangedEventArgs> LightModeClicked;
         public event EventHandler<ColorChangedEventArgs> DarkModeClicked;
         public event EventHandler<EventArgs> GlobalSettingsAppearanceChanged;
+        public event EventHandler<EventArgs> ProfileInfoAppearanceChanged;
         public string username { get; set; }
         public string email { get; set; }
         public Settings()
@@ -119,11 +120,6 @@ namespace LoginRegister
             }
             Settings.Instance.pnSettings.Controls["Display_Settings"].BringToFront();
         }
-        private void Display_Settings_ColorModeChanged(object sender, ColorChangedEventArgs e)
-        {
-            // Forward the event to userProfile
-            LightModeClicked?.Invoke(this, e);
-        }
         private void Display_LightModeClicked(object sender, ColorChangedEventArgs e)
         {
             ChangePnKataColor(e.NewColor);
@@ -132,7 +128,6 @@ namespace LoginRegister
 
             UpdateGlobalSettingsLabel(Color.White, Color.FromArgb(35, 36, 41));
             UpdateUserProfileButton(Color.White, Color.FromArgb(5, 38, 129));
-            UpdateNotificationsButton(Color.White, Color.FromArgb(5, 38, 129));
             UpdateDisplayButton(Color.White, Color.FromArgb(5, 38, 129));
             LightModeClicked?.Invoke(this, e);
         }
@@ -145,7 +140,6 @@ namespace LoginRegister
 
             UpdateGlobalSettingsLabel(Color.FromArgb(28, 28, 36), Color.White);
             UpdateUserProfileButton(Color.FromArgb(28, 28, 36), Color.White);
-            UpdateNotificationsButton(Color.FromArgb(28, 28, 36), Color.White);
             UpdateDisplayButton(Color.FromArgb(28, 28, 36), Color.White);
             DarkModeClicked?.Invoke(this, e);
         }
@@ -160,13 +154,6 @@ namespace LoginRegister
             UserProfile_btn.CheckedState.FillColor = fillColor;
             UserProfile_btn.DisabledState.FillColor = fillColor;
             UserProfile_btn.CheckedState.ForeColor = forecolor;
-        }
-        private void UpdateNotificationsButton(Color fillColor, Color forecolor)
-        {
-            Notifications_btn.FillColor = fillColor;
-            Notifications_btn.CheckedState.FillColor = fillColor;
-            Notifications_btn.DisabledState.FillColor = fillColor;
-            Notifications_btn.CheckedState.ForeColor = forecolor;
         }
         private void UpdateDisplayButton(Color fillColor, Color forecolor)
         {

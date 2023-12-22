@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.Profile_Info = new System.Windows.Forms.Label();
             this.pnLearning = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Delete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.submit_buttonn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Nama = new System.Windows.Forms.Label();
             this.Photo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -60,6 +60,7 @@
             this.Profile_Info.Size = new System.Drawing.Size(186, 23);
             this.Profile_Info.TabIndex = 14;
             this.Profile_Info.Text = "Profile Information";
+            this.Profile_Info.Click += new System.EventHandler(this.Profile_Info_Click);
             // 
             // pnLearning
             // 
@@ -68,7 +69,7 @@
             this.pnLearning.BorderRadius = 15;
             this.pnLearning.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.pnLearning.BorderThickness = 1;
-            this.pnLearning.Controls.Add(this.guna2GradientButton1);
+            this.pnLearning.Controls.Add(this.Delete);
             this.pnLearning.Controls.Add(this.submit_buttonn);
             this.pnLearning.Controls.Add(this.Nama);
             this.pnLearning.Controls.Add(this.Photo);
@@ -80,32 +81,36 @@
             this.pnLearning.ShadowDecoration.BorderRadius = 20;
             this.pnLearning.Size = new System.Drawing.Size(467, 105);
             this.pnLearning.TabIndex = 15;
+            this.pnLearning.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLearning_Paint);
             // 
-            // guna2GradientButton1
+            // Delete
             // 
-            this.guna2GradientButton1.Animated = true;
-            this.guna2GradientButton1.BorderRadius = 13;
-            this.guna2GradientButton1.BorderThickness = 1;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(287, 51);
-            this.guna2GradientButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(158, 35);
-            this.guna2GradientButton1.TabIndex = 41;
-            this.guna2GradientButton1.Text = "Delete";
-            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.Delete.Animated = true;
+            this.Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.Delete.BorderRadius = 13;
+            this.Delete.BorderThickness = 1;
+            this.Delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Delete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Delete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.Delete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.Delete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Delete.ForeColor = System.Drawing.Color.Black;
+            this.Delete.Location = new System.Drawing.Point(287, 51);
+            this.Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(158, 35);
+            this.Delete.TabIndex = 41;
+            this.Delete.Text = "Delete";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // submit_buttonn
             // 
             this.submit_buttonn.Animated = true;
+            this.submit_buttonn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.submit_buttonn.BorderColor = System.Drawing.Color.Transparent;
             this.submit_buttonn.BorderRadius = 13;
             this.submit_buttonn.BorderThickness = 1;
             this.submit_buttonn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -268,6 +273,7 @@
             this.ChangePassword.Size = new System.Drawing.Size(147, 31);
             this.ChangePassword.TabIndex = 45;
             this.ChangePassword.Text = "Change Password";
+            this.ChangePassword.Click += new System.EventHandler(this.ChangePassword_Click);
             // 
             // Password_box
             // 
@@ -328,6 +334,7 @@
             // 
             // pnUProfile
             // 
+            this.pnUProfile.BackColor = System.Drawing.Color.White;
             this.pnUProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnUProfile.Location = new System.Drawing.Point(0, 0);
             this.pnUProfile.Name = "pnUProfile";
@@ -370,7 +377,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox Photo;
         private Guna.UI2.WinForms.Guna2GradientButton submit_buttonn;
         private System.Windows.Forms.Label Nama;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton Delete;
         private System.Windows.Forms.Label Username;
         private Guna.UI2.WinForms.Guna2TextBox Username_box;
         private Guna.UI2.WinForms.Guna2TextBox Email_box;

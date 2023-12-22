@@ -205,17 +205,7 @@ namespace LoginRegister
             }
             Dashboard.Instance.PanelUtama.Controls["Home"].BringToFront();
         }
-        private void Profile_Click(object sender, EventArgs e)
-        {
-            if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Profile"))
-            {
-                Profile prf = new Profile();
-                prf.Dock = DockStyle.Fill;
-                Dashboard.Instance.PanelUtama.Controls.Add(prf);
-            }
-            Dashboard.Instance.PanelUtama.Controls["Profile"].BringToFront();
 
-        }
         private void Settings_Click(object sender, EventArgs e)
         {
             if (!Dashboard.Instance.PanelUtama.Controls.ContainsKey("Settings"))
@@ -237,7 +227,6 @@ namespace LoginRegister
 
             UpdateLearnLabel(Color.White, Color.FromArgb(35, 36, 41));
             UpdateDashButton(Color.White, Color.FromArgb(5, 38, 129));
-            UpdateProfileButton(Color.White, Color.FromArgb(5, 38, 129));
             UpdateSettingsButton(Color.White, Color.FromArgb(5, 38, 129));
         }
         private void Settings_DarkModeClicked(object sender, ColorChangedEventArgs e)
@@ -247,7 +236,6 @@ namespace LoginRegister
 
             UpdateLearnLabel(Color.FromArgb(21, 22, 27), Color.White);
             UpdateDashButton(Color.FromArgb(21, 22, 27), Color.White);
-            UpdateProfileButton(Color.FromArgb(21, 22, 27), Color.White);
             UpdateSettingsButton(Color.FromArgb(21, 22, 27), Color.White);
         }
         public void ChangeLeftPanel(Color NewColor)
@@ -312,13 +300,7 @@ namespace LoginRegister
             Dash.DisabledState.FillColor = fillColor;
             Dash.CheckedState.ForeColor = forecolor;
         }
-        private void UpdateProfileButton(Color fillColor, Color forecolor)
-        {
-            Profile.FillColor = fillColor;
-            Profile.CheckedState.FillColor = fillColor;
-            Profile.DisabledState.FillColor = fillColor;
-            Profile.CheckedState.ForeColor = forecolor;
-        }
+
         private void UpdateSettingsButton(Color fillColor, Color forecolor)
         {
             Settings.FillColor = fillColor;

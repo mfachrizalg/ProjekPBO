@@ -31,7 +31,7 @@ namespace LoginRegister
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            string path = @"D:\Kuliah\Semester 3\PBO\App\ProjekPBO\YANG BARU\LoginRegister\level2.txt";
+            string path = @"level.txt";
 
             if (File.Exists(path)) 
             {

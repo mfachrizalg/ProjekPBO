@@ -20,7 +20,7 @@ namespace LoginRegister
         public event EventHandler<ColorChangedEventArgs> DarkModeClicked;
 
         public event EventHandler<EventArgs> GlobalSettingsAppearanceChanged;
-
+        public event EventHandler<EventArgs> ProfileInfoAppearanceChanged;
 
         public Display_Settings()
         {
@@ -39,6 +39,7 @@ namespace LoginRegister
 
             LightModeClicked?.Invoke(this, new ColorChangedEventArgs(Color.White));
             GlobalSettingsAppearanceChanged?.Invoke(this, EventArgs.Empty);
+            ProfileInfoAppearanceChanged?.Invoke(this, EventArgs.Empty);
             pnDisplay.FillColor = (btn.Name == "Light_btn")?Color.White:Color.White;
             Theme_Style.ForeColor = Color.Black;
             Display.BackColor = Color.White;
@@ -52,6 +53,7 @@ namespace LoginRegister
 
             DarkModeClicked?.Invoke(this, new ColorChangedEventArgs(Color.FromArgb(35, 36, 41)));
             GlobalSettingsAppearanceChanged?.Invoke(this, EventArgs.Empty);
+            ProfileInfoAppearanceChanged?.Invoke(this, EventArgs.Empty);
             pnDisplay.FillColor = (btn.Name == "Dark_btn") ? Color.FromArgb(35, 36, 41) : Color.FromArgb(35, 36, 41);
             Theme_Style.ForeColor = Color.White;
             Display.BackColor = Color.FromArgb(35, 36, 41);
