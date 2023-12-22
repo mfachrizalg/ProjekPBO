@@ -52,7 +52,7 @@ namespace LoginRegister
             string email = (string)selectedRows[0][resultColumn];
             this.email = email;
             //MessageBox.Show($"DASHBOARD\nUsername: {this.username}\n UserLevel: {this.userLVL}");
-            MessageBox.Show($"SETTINGS\nUsername: {this.username}\n Email: {this.email}");
+            //MessageBox.Show($"SETTINGS\nUsername: {this.username}\n Email: {this.email}");
         }
 
         private void UserProfile_btn_Click(object sender, EventArgs e)

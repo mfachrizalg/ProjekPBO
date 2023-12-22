@@ -58,14 +58,7 @@ namespace LoginRegister
         }
         private void check_show_CheckedChanged(object sender, EventArgs e)
         {
-            if (check_show.Checked == true)
-            {
-                Password_box.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                Password_box.UseSystemPasswordChar = true;
-            }
+            
         }
         private void Email_box_TextChanged(object sender, EventArgs e)
         {
@@ -84,7 +77,14 @@ namespace LoginRegister
 
         private void check_show_CheckedChanged_1(object sender, EventArgs e)
         {
-
+            if (check_show.Checked == true)
+            {
+                Password_box.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                Password_box.UseSystemPasswordChar = true;
+            }
         }
 
         private void Nama_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace LoginRegister
             Nama.Text = this.username;
             Username_box.Text = this.username;
             Email_box.Text = this.email;
-            
+            Password_box.Text = this.password;    
         }
     }
 }
