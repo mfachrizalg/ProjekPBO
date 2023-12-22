@@ -100,6 +100,8 @@
             // 
             // guna2Button5
             // 
+            this.guna2Button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button5.Animated = true;
             this.guna2Button5.AnimatedGIF = true;
             this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -118,9 +120,8 @@
             this.guna2Button5.HoverState.FillColor = System.Drawing.Color.White;
             this.guna2Button5.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.ImageOffset = new System.Drawing.Point(20, 0);
-            this.guna2Button5.ImageSize = new System.Drawing.Size(10, 10);
-            this.guna2Button5.Location = new System.Drawing.Point(3, 384);
+            this.guna2Button5.ImageOffset = new System.Drawing.Point(15, 0);
+            this.guna2Button5.Location = new System.Drawing.Point(5, 384);
             this.guna2Button5.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(203, 53);
@@ -132,6 +133,8 @@
             // 
             // guna2Button4
             // 
+            this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button4.Animated = true;
             this.guna2Button4.AnimatedGIF = true;
             this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -163,6 +166,8 @@
             // 
             // guna2Button3
             // 
+            this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button3.Animated = true;
             this.guna2Button3.AnimatedGIF = true;
             this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -182,7 +187,7 @@
             this.guna2Button3.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button3.ImageOffset = new System.Drawing.Point(15, 0);
-            this.guna2Button3.Location = new System.Drawing.Point(3, 282);
+            this.guna2Button3.Location = new System.Drawing.Point(4, 282);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(203, 53);
@@ -194,6 +199,8 @@
             // 
             // guna2Button2
             // 
+            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button2.Animated = true;
             this.guna2Button2.AnimatedGIF = true;
             this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -213,7 +220,7 @@
             this.guna2Button2.Image = global::LoginRegister.Properties.Resources.gray_dot;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(15, 0);
-            this.guna2Button2.Location = new System.Drawing.Point(3, 229);
+            this.guna2Button2.Location = new System.Drawing.Point(4, 229);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(203, 53);
@@ -225,6 +232,7 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button1.Animated = true;
             this.guna2Button1.AnimatedGIF = true;
             this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -267,6 +275,7 @@
             // 
             // DataType
             // 
+            this.DataType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DataType.Animated = true;
             this.DataType.AnimatedGIF = true;
             this.DataType.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -298,6 +307,7 @@
             // 
             // Intro
             // 
+            this.Intro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Intro.Animated = true;
             this.Intro.AnimatedGIF = true;
             this.Intro.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -375,8 +385,7 @@
             // 
             // Learningg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
             this.Controls.Add(this.pnList);
             this.Controls.Add(this.pnLearning);

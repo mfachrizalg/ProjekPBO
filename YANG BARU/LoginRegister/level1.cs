@@ -129,7 +129,10 @@ namespace LoginRegister
 
         private void back_Click(object sender, EventArgs e)
         {
-           
+            Home home = new Home();
+            home.Dock = DockStyle.Fill;
+            Dashboard.Instance.PanelUtama.Controls.Add(home);
+            Dashboard.Instance.PanelUtama.Controls["Home"].BringToFront();
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
