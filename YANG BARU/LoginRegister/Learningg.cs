@@ -162,6 +162,7 @@ namespace LoginRegister
 
         private void back_Click(object sender, EventArgs e)
         {
+            removeProcces();
             Home home = new Home();
             home.Dock = DockStyle.Fill;
             Dashboard.Instance.PanelUtama.Controls.Add(home);
